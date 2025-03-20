@@ -1,0 +1,102 @@
+[
+  {
+    "Name": "Kellie Marquot",
+    "Companyname": "Shipment Marquot",
+    "Address": "123 Eloff Street",
+    "City": "Johannesburg",
+    "Province": "Gauteng",
+    "Email": "kellie@shipmentmarquot.co.za",
+    "Phone": "+27 83 123 4567",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Carroll Maharry",
+    "Companyname": "Maharry Shipment",
+    "Address": "456 Long Street",
+    "City": "Cape Town",
+    "Province": "Western Cape",
+    "Email": "carroll@maharryshipment.co.za",
+    "Phone": "+27 83 234 5678",
+    "Type": "Feedlot"
+  },
+  {
+    "Name": "Rosenbaum Reichel",
+    "Companyname": "Reichel",
+    "Address": "789 Main Road",
+    "City": "Durban",
+    "Province": "KwaZulu-Natal",
+    "Email": "rosenbaum@reichel.co.za",
+    "Phone": "+27 83 345 6789",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Ashley Briggs",
+    "Companyname": "Ashley",
+    "Address": "321 High Level Road",
+    "City": "Cape Town",
+    "Province": "Western Cape",
+    "Email": "ashley@ashley.co.za",
+    "Phone": "+27 83 456 7890",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Carl Jenkins",
+    "Companyname": "Jenkins",
+    "Address": "654 Park Avenue",
+    "City": "Pretoria",
+    "Province": "Gauteng",
+    "Email": "carl@jenkins.co.za",
+    "Phone": "+27 83 567 8901",
+    "Type": "Feedlot"
+  },
+  {
+    "Name": "Bertha Martin",
+    "Companyname": "Martin",
+    "Address": "987 Simmonds Street",
+    "City": "Johannesburg",
+    "Province": "Gauteng",
+    "Email": "bertha@martin.co.za",
+    "Phone": "+27 83 678 9012",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Stacie Hall",
+    "Companyname": "Hall Store",
+    "Address": "213 Oak Avenue",
+    "City": "Bloemfontein",
+    "Province": "Free State",
+    "Email": "stacie@hallstore.co.za",
+    "Phone": "+27 83 789 0123",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Striker Marquot",
+    "Companyname": "Striker",
+    "Address": "132 Pine Street",
+    "City": "Port Elizabeth",
+    "Province": "Eastern Cape",
+    "Email": "striker@striker.co.za",
+    "Phone": "+27 83 890 1234",
+    "Type": "Farmer"
+  },
+  {
+    "Name": "Amanda Jones",
+    "Companyname": "Jones Store",
+    "Address": "321 West Street",
+    "City": "Durban",
+    "Province": "KwaZulu-Natal",
+    "Email": "amanda@jonesstore.co.za",
+    "Phone": "+27 83 901 2345",
+    "Type": "Other"
+  },
+  {
+    "Name": "Ashley Briggs",
+    "Companyname": "Briggs",
+    "Address": "654 Elm Street",
+    "City": "Pretoria",
+    "Province": "Gauteng",
+    "Email": "ashleyb@briggs.co.za",
+    "Phone": "+27 83 012 3456",
+    "Type": "Farmer"
+  }
+]

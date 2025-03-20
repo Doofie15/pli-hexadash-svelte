@@ -1,0 +1,90 @@
+[
+    {
+        "type": "primary",
+        "icon": "arrow-growth",
+        "total": "100",
+        "suffix": "",
+        "prefix": "",
+        "label": "Ewes Mated",
+        "growth": "upward",
+        "growthRate": "2",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "info",
+        "icon": "users-alt",
+        "total": "80",
+        "suffix": "",
+        "prefix": "",
+        "label": "Ewes Scanned Pregnant",
+        "growth": "upward",
+        "growthRate": "4 ",
+        "dataPeriod": "Ram Ewe Ratio"
+    },
+    {
+        "type": "success",
+        "icon": "usd-circle",
+        "total": "80",
+        "suffix": "",
+        "prefix": "",
+        "label": "Ewes Lambed",
+        "growth": "upward",
+        "growthRate": "11",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "warning",
+        "icon": "users-alt",
+        "total": "80",
+        "suffix": " %",
+        "prefix": "",
+        "label": "Lambing % (Ewes Mated)",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "primary",
+        "icon": "arrow-growth",
+        "total": "140",
+        "suffix": "",
+        "prefix": "",
+        "label": "Lambings Born",
+        "growth": "upward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "info",
+        "icon": "users-alt",
+        "total": "20",
+        "suffix": "",
+        "prefix": "",
+        "label": "Lambs Dead (Before 30 Days)",
+        "growth": "downward",
+        "growthRate": "1",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "success",
+        "icon": "users-alt",
+        "total": "6",
+        "suffix": " %",
+        "prefix": "",
+        "label": "Lambing Mortality %",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "warning",
+        "icon": "users-alt",
+        "total": "140",
+        "suffix": " %",
+        "prefix": "",
+        "label": "Lambing % (Ewes Lambed)",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    }
+  ]

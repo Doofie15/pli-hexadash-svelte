@@ -1,0 +1,3098 @@
+[
+    {
+        "id":1,
+        "name":"Aalwynhoek Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Uitenhage",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":2,
+        "name":"Aandrus Abattoir",
+        "districtMunicipality":"Ukhahlamba Municipality",
+        "localMunicipality":"Elundini ",
+        "town":"Maclear",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":3,
+        "name":"Adelaide 7. Abattoir CC",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Nxuba ",
+        "town":"Adelaide",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":4,
+        "name":"Aliwal Abattoir BK",
+        "districtMunicipality":"Ukhahlamba  ",
+        "localMunicipality":"Malethswai ",
+        "town":"Aliwal North",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":5,
+        "name":"Austin Evans Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Blue Crane Route",
+        "town":"Cookhouse ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":6,
+        "name":"Antons Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Despatch",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":7,
+        "name":"Andrews Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Skhisizwe ",
+        "town":"Elliot",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":8,
+        "name":"Bacon & Beef Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kamma ",
+        "town":"Kareedouw",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":9,
+        "name":"Barberque Brits Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Elundini ",
+        "town":"Maclear",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":10,
+        "name":"Barkly East  Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Senqu ",
+        "town":"Barkly East",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":11,
+        "name":"Blaauwkrantz Slagtery Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Lukhanji ",
+        "town":"Queenstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":12,
+        "name":"Bosbok Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":13,
+        "name":"Claremont  Farming Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Amathole District",
+        "town":"Beacon Bay",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":14,
+        "name":"Cloete Slagtery Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inkwa Local",
+        "town":"Molteno",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":15,
+        "name":"Cornish Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Emalahleni ",
+        "town":"Indwe",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":16,
+        "name":"Cradock Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Cradock ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":17,
+        "name":"Deepdrift",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Uitenhage ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":18,
+        "name":"De Wilge",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Cradock",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":19,
+        "name":"Dieprivier Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Jeffreys Bay",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":20,
+        "name":"Dowefontein Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Camdeboo",
+        "town":"Aberdeen",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":21,
+        "name":"Drakensburg ",
+        "districtMunicipality":"Alfred Nzo ",
+        "localMunicipality":"Matatiele ",
+        "town":"Matatiele",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":22,
+        "name":"East London Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Amathole",
+        "town":"Cambridge\/ East London",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":23,
+        "name":"Elandsfontein Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"Steynsburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":24,
+        "name":"Fonte Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":25,
+        "name":"Game Zone Game Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Nxuba ",
+        "town":"Adelaide",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":26,
+        "name":"Geelhoutboom",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":27,
+        "name":"Gerbers",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kamma ",
+        "town":"Kareedouw ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":28,
+        "name":"Glen Roy Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Great Kie ",
+        "town":"Komga",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":29,
+        "name":"Graaff Reinet Meat Processing",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Camdeboo",
+        "town":"Graaff Reinet",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":30,
+        "name":"Grandview Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Camdeboo ",
+        "town":"Aberdeen",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":31,
+        "name":"Grootfontein ADI",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Middelburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":32,
+        "name":"Hanover Cold Storage Abattoir",
+        "districtMunicipality":"Amathole District",
+        "localMunicipality":"Amathole",
+        "town":"Berlin",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":33,
+        "name":"Hauman Boerdery",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"Steynsburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":34,
+        "name":"Hillmoor Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"steynsburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":35,
+        "name":"Holme Park Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Great Kie ",
+        "town":"Komga",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":36,
+        "name":"Hopedale Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Uitenhage",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":37,
+        "name":"J le Roux Livestock",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Makana ",
+        "town":"Grahamstown ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":38,
+        "name":"Kareedouw Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kamma ",
+        "town":"Kareedouw",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":39,
+        "name":"Karnoor Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Ikwezi ",
+        "town":"Jansenville",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":40,
+        "name":"Karoo Ochse Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"North End P.E.",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":41,
+        "name":"Kei Livestock Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Amathole ",
+        "town":"Homeleigh",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":42,
+        "name":"Kirkwood Correctional Services ",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Sundays River Valley",
+        "town":"Kirkwood",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":43,
+        "name":"Kleinvlei Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"Venterstad",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":44,
+        "name":"Koelkor Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":45,
+        "name":"Lady Grey Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Senqu ",
+        "town":"Lady Grey",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":46,
+        "name":"Leeufontein Slagtery BK ",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Middelburg, ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":47,
+        "name":"Meat Traders Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Lukhanji ",
+        "town":"Queenstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":48,
+        "name":"Middledrift Correctional Services Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"North End, PE",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":49,
+        "name":"Noorsveld ",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Ikwezi ",
+        "town":"Jansenville",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":50,
+        "name":"Peace Abattoir ",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Lukhanji y",
+        "town":"Queenstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":51,
+        "name":"Post Chalmers Abattoir",
+        "districtMunicipality":"Chris Hani",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Cradock",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":52,
+        "name":"P&D Farming Abattoir",
+        "districtMunicipality":"Amathole ",
+        "localMunicipality":"Great Kie ",
+        "town":"Komga",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":53,
+        "name":"Red Line Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":" Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":54,
+        "name":"Riefontein Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Uitenhage",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":55,
+        "name":"Rosedale Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Makana ",
+        "town":"Grahamstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":56,
+        "name":"Rosedale ",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kouga ",
+        "town":"Humansdorp",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":57,
+        "name":"Sandfontein Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inkwa ",
+        "town":"Molteno",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":58,
+        "name":"Schoombee Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inxuba Yethemba",
+        "town":"Middelburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":59,
+        "name":"Skoonfontein",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"Steynsburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":60,
+        "name":"Stormberg Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inkwanca ",
+        "town":"Molteno",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":61,
+        "name":"Sterkstroom Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Inkwanca ",
+        "town":"Sterkstroom",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":62,
+        "name":"Steynsburg Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep",
+        "town":"Steynsburg",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":63,
+        "name":"Tariyyah Halaal ",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"North End, P.E",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":64,
+        "name":"Tarka Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Tsolwana ",
+        "town":"Tarkastad",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":65,
+        "name":"Umzikantu Abattoir",
+        "districtMunicipality":"O. R. Tambo ",
+        "localMunicipality":"King Sabata Dalindyebo",
+        "town":"Mthatha",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":66,
+        "name":"Venterstad Abattoir",
+        "districtMunicipality":"Ukhahlamba ",
+        "localMunicipality":"Gariep ",
+        "town":"Vensterstad",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":67,
+        "name":"Vriespoort Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Camdeboo ",
+        "town":"Aberdeen",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":68,
+        "name":"Walplaas ",
+        "districtMunicipality":"Cacadu",
+        "localMunicipality":"Camdeboo ",
+        "town":"Graaff Reinet",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":69,
+        "name":"Wancor Abattoir",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay",
+        "town":"Port Elizabeth  ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":70,
+        "name":"Weltevrede",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kama",
+        "town":"Witelsbos ",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":71,
+        "name":"Xhalanga Abattoir",
+        "districtMunicipality":"Chris Hani ",
+        "localMunicipality":"Emalahleni ",
+        "town":"Indwe",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":72,
+        "name":"Camdeboo Meat Processors",
+        "districtMunicipality":"Cacadu",
+        "localMunicipality":"Camdeboo ",
+        "town":"Graaff Reinet",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":73,
+        "name":"Graaff Reinet Meat Supplies ",
+        "districtMunicipality":"Cacadu",
+        "localMunicipality":"Camdeboo ",
+        "town":"Graaff Reinet",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":74,
+        "name":"Grahamstown Ostrich Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Makana ",
+        "town":"Grahamstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":75,
+        "name":"IMPEC",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Makana ",
+        "town":"Grahamstown",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":76,
+        "name":"Lentaba",
+        "districtMunicipality":"Nelson Mandela Bay",
+        "localMunicipality":"Nelson Mandela Bay ",
+        "town":" Walmer \/ Port Elizabeth",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":77,
+        "name":"Kleinbegin Abattoir",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kamma",
+        "town":"Linton Grange",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":78,
+        "name":"Bokmakierie",
+        "districtMunicipality":"Cacadu ",
+        "localMunicipality":"Kou-Kamma",
+        "town":"Krakeel Rivier",
+        "province":"Eastern Cape"
+    },
+    {
+        "id":79,
+        "name":"Blokhuis Vleis",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsomaholo ",
+        "town":"Sasolburg",
+        "province":"Free State"
+    },
+    {
+        "id":80,
+        "name":"Bulderg Abattior",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Kopanong ",
+        "town":"Reddersburg",
+        "province":"Free State"
+    },
+    {
+        "id":81,
+        "name":"Clocolan  Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Setsoto ",
+        "town":"Clocolan",
+        "province":"Free State"
+    },
+    {
+        "id":82,
+        "name":"Country Meat",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Moqhaka ",
+        "town":"Kroonstad",
+        "province":"Free State"
+    },
+    {
+        "id":83,
+        "name":"Dannie de Wet Abattior ",
+        "districtMunicipality":"Thabo Mofutsanyana",
+        "localMunicipality":"Nketoana",
+        "town":"Petrus Steyn",
+        "province":"Free State"
+    },
+    {
+        "id":84,
+        "name":"Edenburg Vleishandel",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Kopanong ",
+        "town":"Edenburg",
+        "province":"Free State"
+    },
+    {
+        "id":85,
+        "name":"Excell Vleis BK",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Mohokare ",
+        "town":"Rouxville",
+        "province":"Free State"
+    },
+    {
+        "id":86,
+        "name":"Excelsior Abattior",
+        "districtMunicipality":"Motheo ",
+        "localMunicipality":"Mantsopa ",
+        "town":"Excelsior",
+        "province":"Free State"
+    },
+    {
+        "id":87,
+        "name":"Frankfort Abattoir",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsomaholo ",
+        "town":"Sasolburg",
+        "province":"Free State"
+    },
+    {
+        "id":88,
+        "name":"Ficksburg Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Setsoto ",
+        "town":"Ficksburg",
+        "province":"Free State"
+    },
+    {
+        "id":89,
+        "name":"Fouriesdrif",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsomaholo ",
+        "town":"Oranjeville",
+        "province":"Free State"
+    },
+    {
+        "id":90,
+        "name":"Glen Abattoir",
+        "districtMunicipality":"Motheo",
+        "localMunicipality":"Mangaung ",
+        "town":"Glen",
+        "province":"Free State"
+    },
+    {
+        "id":91,
+        "name":"Global",
+        "districtMunicipality":"Motheo",
+        "localMunicipality":"Mangaung ",
+        "town":"Fichardtpark",
+        "province":"Free State"
+    },
+    {
+        "id":92,
+        "name":"Grootvlei Abattoir",
+        "districtMunicipality":"Mangaung ",
+        "localMunicipality":"Mangaung ",
+        "town":"Bloemfontein",
+        "province":"Free State"
+    },
+    {
+        "id":93,
+        "name":"Huntersvlei Farm Fresh",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Moqhaka ",
+        "town":" Viljoenskoon",
+        "province":"Free State"
+    },
+    {
+        "id":94,
+        "name":"Heilbron 24 Abattior",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Ngwathe ",
+        "town":"Heilbron",
+        "province":"Free State"
+    },
+    {
+        "id":95,
+        "name":"Heilbron Abattoir Bpk",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Ngwathe Local",
+        "town":"Heilbron ",
+        "province":"Free State"
+    },
+    {
+        "id":96,
+        "name":"Heuwelkor Twee",
+        "districtMunicipality":"Motheo",
+        "localMunicipality":"Mangaung ",
+        "town":"Bloemfontein",
+        "province":"Free State"
+    },
+    {
+        "id":97,
+        "name":"Jacobsdal",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Letsemeng ",
+        "town":"Jacobsdal ",
+        "province":"Free State"
+    },
+    {
+        "id":98,
+        "name":"Jagasfontein",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Kopanong ",
+        "town":"Fauresmith",
+        "province":"Free State"
+    },
+    {
+        "id":99,
+        "name":"Jimmie Roosskool",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Naledi ",
+        "town":"De Wetsdorp",
+        "province":"Free State"
+    },
+    {
+        "id":100,
+        "name":"Just Pork",
+        "districtMunicipality":"Lejweleputshwa",
+        "localMunicipality":"Matjhabeng ",
+        "town":"Glen Harmony\/ Virginia",
+        "province":"Free State"
+    },
+    {
+        "id":101,
+        "name":"Koppies Veebemarkers",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Ngwathe ",
+        "town":"Koppies",
+        "province":"Free State"
+    },
+    {
+        "id":102,
+        "name":"Klipscheur Abattoir",
+        "districtMunicipality":"Thabo Mofutsanyana",
+        "localMunicipality":"Dihlabeng",
+        "town":"Bethlehem",
+        "province":"Free State"
+    },
+    {
+        "id":103,
+        "name":"K.W. Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane ",
+        "localMunicipality":"Phumelela",
+        "town":"Vrede",
+        "province":"Free State"
+    },
+    {
+        "id":104,
+        "name":"Lady Brand Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane ",
+        "localMunicipality":"Mantsopa",
+        "town":"Laby Brand",
+        "province":"Free State"
+    },
+    {
+        "id":105,
+        "name":"L & B J Abattoir",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Kopanong ",
+        "town":"Phillippolis",
+        "province":"Free State"
+    },
+    {
+        "id":106,
+        "name":"Mahomed's",
+        "districtMunicipality":"Thabo Mofutsanyane ",
+        "localMunicipality":"Setsoto ",
+        "town":"Clocolan",
+        "province":"Free State"
+    },
+    {
+        "id":107,
+        "name":"Maree Abattoir",
+        "districtMunicipality":"Mangaung Metro ",
+        "localMunicipality":"Mangaung Metro ",
+        "town":"Bainsvlei",
+        "province":"Free State"
+    },
+    {
+        "id":108,
+        "name":"Marquard Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Setsoto ",
+        "town":"Marquard",
+        "province":"Free State"
+    },
+    {
+        "id":109,
+        "name":"Memel Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Phumelela ",
+        "town":"Memel",
+        "province":"Free State"
+    },
+    {
+        "id":110,
+        "name":"Metaalkop Abattoir",
+        "districtMunicipality":"Thabo Mofutsanyane ",
+        "localMunicipality":"Mantsopa",
+        "town":"Ladybrand",
+        "province":"Free State"
+    },
+    {
+        "id":111,
+        "name":"Midway Abattoir",
+        "districtMunicipality":"Motheo",
+        "localMunicipality":"Bloemfontein",
+        "town":"Danhof",
+        "province":"Free State"
+    },
+    {
+        "id":112,
+        "name":"Milos Abattoir ",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsomaholo ",
+        "town":"Sasolburg",
+        "province":"Free State"
+    },
+    {
+        "id":113,
+        "name":"M&Z",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Naledi ",
+        "town":"Dewetsdorp",
+        "province":"Free State"
+    },
+    {
+        "id":114,
+        "name":"Model Slaghuis",
+        "districtMunicipality":"Thabo Mofutsanyana",
+        "localMunicipality":"Dihlabeng",
+        "town":"Fouriesburg",
+        "province":"Free State"
+    },
+    {
+        "id":115,
+        "name":"N 3",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Maluti ",
+        "town":"Harrismith ",
+        "province":"Free State"
+    },
+    {
+        "id":116,
+        "name":"Ons Abattior",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Mohokare ",
+        "town":"Zastron",
+        "province":"Free State"
+    },
+    {
+        "id":117,
+        "name":"Phillipolis Abattior",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Kopanong ",
+        "town":"Phillipolis",
+        "province":"Free State"
+    },
+    {
+        "id":118,
+        "name":"Reitz Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane",
+        "localMunicipality":"Nketoana ",
+        "town":"Reitz",
+        "province":"Free State"
+    },
+    {
+        "id":119,
+        "name":"Rodenbeck",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Letsemeng",
+        "town":"Petrusburg",
+        "province":"Free State"
+    },
+    {
+        "id":120,
+        "name":"Star Multisave Abattior",
+        "districtMunicipality":"Thabo Mofutsanyane ",
+        "localMunicipality":"Mantsopa",
+        "town":"Tweespruit",
+        "province":"Free State"
+    },
+    {
+        "id":121,
+        "name":"Springfontein ",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Kopanong ",
+        "town":"Springfontein ",
+        "province":"Free State"
+    },
+    {
+        "id":122,
+        "name":"S.E. Wessels Abattior",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Moqhaka",
+        "town":"Steynsrus",
+        "province":"Free State"
+    },
+    {
+        "id":123,
+        "name":"Smithfield Abattior",
+        "districtMunicipality":"Xhariep",
+        "localMunicipality":"Mohokare",
+        "town":"Smithfield",
+        "province":"Free State"
+    },
+    {
+        "id":124,
+        "name":"Straw Lamb",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsomaholo ",
+        "town":"Sasolburg",
+        "province":"Free State"
+    },
+    {
+        "id":125,
+        "name":"Swiss Valley Farms",
+        "districtMunicipality":"Thabo Mofutsanyana",
+        "localMunicipality":"Maluti \u2013A-Phofung",
+        "town":"Harrismith",
+        "province":"Free State"
+    },
+    {
+        "id":126,
+        "name":"Thaba N\u2019chu",
+        "districtMunicipality":"Motheo ",
+        "localMunicipality":"Mangaung ",
+        "town":"Thaba N\u2019chu",
+        "province":"Free State"
+    },
+    {
+        "id":127,
+        "name":"Twin Palms Meat Abattior",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Emfuleni\/ Metsimaholo ",
+        "town":"Potchefstroom",
+        "province":"Free State"
+    },
+    {
+        "id":128,
+        "name":"Umfasa Abattior",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Letsemeng",
+        "town":"Jacosdaal",
+        "province":"Free State"
+    },
+    {
+        "id":129,
+        "name":"Villiers Abattior",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Mafube ",
+        "town":"Villiers",
+        "province":"Free State"
+    },
+    {
+        "id":130,
+        "name":"Vredefort Abattior",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Ngwathe ",
+        "town":"Vredefort",
+        "province":"Free State"
+    },
+    {
+        "id":131,
+        "name":"Weltevrede",
+        "districtMunicipality":"Thabo Mufatsanyana",
+        "localMunicipality":"Dihlabeng ",
+        "town":"Bethlehem",
+        "province":"Free State"
+    },
+    {
+        "id":132,
+        "name":"Wolla Terblanche",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Naledi ",
+        "town":"Dewetsdorp",
+        "province":"Free State"
+    },
+    {
+        "id":133,
+        "name":"Wolwehoek",
+        "districtMunicipality":"Fezile Dabi",
+        "localMunicipality":"Metsimaholo ",
+        "town":"Sasolburg",
+        "province":"Free State"
+    },
+    {
+        "id":134,
+        "name":"Zastron Abattior",
+        "districtMunicipality":"Xhariep ",
+        "localMunicipality":"Mohokare ",
+        "town":"Zastron",
+        "province":"Free State"
+    },
+    {
+        "id":135,
+        "name":"Rietvalei vleis produkte EDMS BPK",
+        "districtMunicipality":"Ekhuruleni",
+        "localMunicipality":"Ekhuruleni",
+        "town":"Benoni",
+        "province":"Gauteng"
+    },
+    {
+        "id":136,
+        "name":"R & R (PTY) LTD",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Pretoria",
+        "province":"Gauteng"
+    },
+    {
+        "id":137,
+        "name":"Rica abattoir",
+        "districtMunicipality":"Ekurhuleni",
+        "localMunicipality":"Ekurhuleni",
+        "town":"Modderfontein",
+        "province":"Gauteng"
+    },
+    {
+        "id":138,
+        "name":"Boekenhout",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Cullinan",
+        "province":"Gauteng"
+    },
+    {
+        "id":139,
+        "name":"Klipeiland abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Pretoria",
+        "province":"Gauteng"
+    },
+    {
+        "id":140,
+        "name":"N & N vark abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Lesedi",
+        "town":"Heidelburg",
+        "province":"Gauteng"
+    },
+    {
+        "id":141,
+        "name":"Africa piggery",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":"Vanderbijlpark",
+        "province":"Gauteng"
+    },
+    {
+        "id":142,
+        "name":"Diamond \"L\" abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Bronkhorspruit",
+        "province":"Gauteng"
+    },
+    {
+        "id":143,
+        "name":"Angels  abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Bronkhorstpruit",
+        "province":"Gauteng"
+    },
+    {
+        "id":144,
+        "name":"Foch abattoir & cold  meat's",
+        "districtMunicipality":"Johannesburg ",
+        "localMunicipality":"Johannesburg",
+        "town":"Roodepoort",
+        "province":"Gauteng"
+    },
+    {
+        "id":145,
+        "name":"Baviaanspoort",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Baviaanspoort ",
+        "province":"Gauteng"
+    },
+    {
+        "id":146,
+        "name":"Leeuwkop abattoir",
+        "districtMunicipality":"Johannesburg",
+        "localMunicipality":"Johannesburg",
+        "town":"Leeuwkop",
+        "province":"Gauteng"
+    },
+    {
+        "id":147,
+        "name":"Chamdor meat packers",
+        "districtMunicipality":"West rand",
+        "localMunicipality":"Mogale",
+        "town":"Krugersdorp",
+        "province":"Gauteng"
+    },
+    {
+        "id":148,
+        "name":"Zonderwater",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Cullinan",
+        "province":"Gauteng"
+    },
+    {
+        "id":149,
+        "name":"Bronkhorspruit abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Cullinan",
+        "province":"Gauteng"
+    },
+    {
+        "id":150,
+        "name":"Lynca vark abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Midvaal",
+        "town":"Randvaal ",
+        "province":"Gauteng"
+    },
+    {
+        "id":151,
+        "name":"Boschkop abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":"Vereeniging",
+        "province":"Gauteng"
+    },
+    {
+        "id":152,
+        "name":"Rietpoort abattoir",
+        "districtMunicipality":"Ekurhuleni",
+        "localMunicipality":"Ekurhuleni",
+        "town":"Nigel",
+        "province":"Gauteng"
+    },
+    {
+        "id":153,
+        "name":"Morgan abattoir",
+        "districtMunicipality":"Ekhuruleni",
+        "localMunicipality":"Ekurhuleni",
+        "town":"Springs",
+        "province":"Gauteng"
+    },
+    {
+        "id":154,
+        "name":"Farmers meat abattoir",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Delmas",
+        "town":"Delmas",
+        "province":"Gauteng"
+    },
+    {
+        "id":155,
+        "name":"Uitvlucht abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":"Drie riviere",
+        "province":"Gauteng"
+    },
+    {
+        "id":156,
+        "name":"Vereeniging abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":"Vereeniging                  ",
+        "province":"Gauteng"
+    },
+    {
+        "id":157,
+        "name":"Middelvlei abattoir",
+        "districtMunicipality":"West rand",
+        "localMunicipality":"Ranfontein",
+        "town":"Middelvlei                      ",
+        "province":"Gauteng"
+    },
+    {
+        "id":158,
+        "name":"Holfontein lammers",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":" Vanderbiljpark",
+        "province":"Gauteng"
+    },
+    {
+        "id":159,
+        "name":"Chalmar beef (PTY) LTD",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Bronkhorspruit",
+        "province":"Gauteng"
+    },
+    {
+        "id":160,
+        "name":"Foxtrot abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Cullinan",
+        "province":"Gauteng"
+    },
+    {
+        "id":161,
+        "name":"Porkus abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Bronkhorspruit",
+        "province":"Gauteng"
+    },
+    {
+        "id":162,
+        "name":"Comet varsvleis ",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Lesedi",
+        "town":"Heidelberg",
+        "province":"Gauteng"
+    },
+    {
+        "id":163,
+        "name":" Beef brand abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Cullinan",
+        "province":"Gauteng"
+    },
+    {
+        "id":164,
+        "name":"Rietspruit abattoir",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Emfuleni",
+        "town":"Vanderbijlpark  ",
+        "province":"Gauteng"
+    },
+    {
+        "id":165,
+        "name":"Eskort limited",
+        "districtMunicipality":"Sedibeng",
+        "localMunicipality":"Lesedi",
+        "town":"Heidelburg ",
+        "province":"Gauteng"
+    },
+    {
+        "id":166,
+        "name":"Roodeplaat abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Pretoria",
+        "province":"Gauteng"
+    },
+    {
+        "id":167,
+        "name":"Irene abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Irene",
+        "province":"Gauteng"
+    },
+    {
+        "id":168,
+        "name":"Renbro abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Hammanskraal",
+        "province":"Gauteng"
+    },
+    {
+        "id":169,
+        "name":"Strydfontein abattoir",
+        "districtMunicipality":"Tshwane",
+        "localMunicipality":"Tshwane",
+        "town":"Pretoria north",
+        "province":"Gauteng"
+    },
+    {
+        "id":170,
+        "name":"Enterprice foods (pork pakers)",
+        "districtMunicipality":"Ekhuruleni",
+        "localMunicipality":"Ekurhuleni",
+        "town":"Kempton park",
+        "province":"Gauteng"
+    },
+    {
+        "id":171,
+        "name":"Greenlands ",
+        "districtMunicipality":"Sisonke ",
+        "localMunicipality":"Greater Kokstad ",
+        "town":"Kokstad",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":172,
+        "name":"Cato Ridge  ",
+        "districtMunicipality":"Umgungundlovu\/ Ethekwini",
+        "localMunicipality":"Mkhambathini ",
+        "town":"Cato Ridge",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":173,
+        "name":"Abattior",
+        "districtMunicipality":null,
+        "localMunicipality":null,
+        "town":null,
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":174,
+        "name":"Drakensburg ",
+        "districtMunicipality":"Sisonke ",
+        "localMunicipality":"Matatiele",
+        "town":"Matatiele",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":175,
+        "name":"Abattior",
+        "districtMunicipality":null,
+        "localMunicipality":null,
+        "town":null,
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":176,
+        "name":"Triple A Beef",
+        "districtMunicipality":"Umgungundlovu ",
+        "localMunicipality":"Msunduzi ",
+        "town":"Pietermaritzburg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":177,
+        "name":"Ladysmith",
+        "districtMunicipality":"Uthukela",
+        "localMunicipality":"Ladysmith ",
+        "town":"Ladysmith",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":178,
+        "name":"Kokstad ",
+        "districtMunicipality":"Sisonke ",
+        "localMunicipality":"Greater Kokstad ",
+        "town":"Kokstad",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":179,
+        "name":"Bayensfield",
+        "districtMunicipality":"Umgungunldovu",
+        "localMunicipality":"Richmond",
+        "town":"Baynesfield",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":180,
+        "name":"Ambleside  Meats",
+        "districtMunicipality":"Uthukela",
+        "localMunicipality":"Okhahlamba",
+        "town":"Winterton",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":181,
+        "name":"Jacques",
+        "districtMunicipality":"Uthukela ",
+        "localMunicipality":"Umtshezi ",
+        "town":"Estcourt",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":182,
+        "name":"Pidelta",
+        "districtMunicipality":"Umzinyathi ",
+        "localMunicipality":"Umvothi ",
+        "town":"Greytown",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":183,
+        "name":"A1-Mazbah",
+        "districtMunicipality":"Umgungundlaovu",
+        "localMunicipality":"Richmond",
+        "town":"Thornville",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":184,
+        "name":"Bones",
+        "districtMunicipality":"Uthukela",
+        "localMunicipality":"Okhahlamba",
+        "town":"Bergville",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":185,
+        "name":"A1 Shukran",
+        "districtMunicipality":"Uthukela",
+        "localMunicipality":"Umtshezi",
+        "town":"Weenen",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":186,
+        "name":"Honey Valley",
+        "districtMunicipality":"Sisonke",
+        "localMunicipality":"Ubuhlebezwe",
+        "town":"Ixopo",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":187,
+        "name":"Cedara Agric. College",
+        "districtMunicipality":"Umgungundlovu ",
+        "localMunicipality":"Msunduzi ",
+        "town":"Pietermaritzburg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":188,
+        "name":"Sevontein",
+        "districtMunicipality":"Umgungundlovu ",
+        "localMunicipality":"Msunduzi ",
+        "town":"Pietermaritzburg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":189,
+        "name":"Agrimeat",
+        "districtMunicipality":"Umgingundlovu",
+        "localMunicipality":"Mkhambathini",
+        "town":"Eston",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":190,
+        "name":"Raynor ",
+        "districtMunicipality":"Sisonke",
+        "localMunicipality":"Kwa-sani",
+        "town":"Underberg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":191,
+        "name":"Weston ",
+        "districtMunicipality":"Umgungundluvo",
+        "localMunicipality":"Mooi Mpofana",
+        "town":"Mooi River",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":192,
+        "name":"Glencoe Pig",
+        "districtMunicipality":"Umzinyathi",
+        "localMunicipality":"Endumeni",
+        "town":"Glencoe",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":193,
+        "name":"Eshowe",
+        "districtMunicipality":"Uthungulu ",
+        "localMunicipality":"Umlalazi ",
+        "town":"Eshowe",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":194,
+        "name":"Hluhluwe",
+        "districtMunicipality":"Mkhanyakude ",
+        "localMunicipality":"The Big Five False ",
+        "town":"Hluhluwe",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":195,
+        "name":"Free",
+        "districtMunicipality":"Zululand ",
+        "localMunicipality":"Ulundi ",
+        "town":"Ulundi ",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":196,
+        "name":"J. Khumalo",
+        "districtMunicipality":"Zululand ",
+        "localMunicipality":"Ulundi ",
+        "town":"Ulindi",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":197,
+        "name":"Komzani",
+        "districtMunicipality":"Umzinyathi ",
+        "localMunicipality":"Endumeni ",
+        "town":"Dundee",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":198,
+        "name":"M\/Meats",
+        "districtMunicipality":"Zululand ",
+        "localMunicipality":"Abaqulusi ",
+        "town":"Vreyheid",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":199,
+        "name":"M\/Meats",
+        "districtMunicipality":"Zululand ",
+        "localMunicipality":"Abaqulusi ",
+        "town":"Vreyheid",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":200,
+        "name":"R\/Side",
+        "districtMunicipality":"Amajuba",
+        "localMunicipality":"Dannhauser",
+        "town":"Dannhauser",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":201,
+        "name":"Nongoma Suspend",
+        "districtMunicipality":"Zululand",
+        "localMunicipality":"Nongoma",
+        "town":"Nongoma",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":202,
+        "name":"Nooitgedacht",
+        "districtMunicipality":"Zululand ",
+        "localMunicipality":"Abaqulusi ",
+        "town":"Vryheid",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":203,
+        "name":"New Castle",
+        "districtMunicipality":"Amajuba",
+        "localMunicipality":"Newcastle",
+        "town":"Newcastle",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":204,
+        "name":"Greenlands",
+        "districtMunicipality":"Sisonke District",
+        "localMunicipality":"Greater Kokstad ",
+        "town":"Kokstad",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":205,
+        "name":"T H Niemack",
+        "districtMunicipality":"Ugu ",
+        "localMunicipality":"Hibiscus Coast ",
+        "town":"Nqabeni",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":206,
+        "name":"La Rochelle",
+        "districtMunicipality":"Ugu ",
+        "localMunicipality":"Hibiscus",
+        "town":"Ramsgate",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":207,
+        "name":"Chakide",
+        "districtMunicipality":"Umgungundlovu ",
+        "localMunicipality":"Msunduzi ",
+        "town":"Pietermaritzburg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":208,
+        "name":"Cow Boys ",
+        "districtMunicipality":"Umgungundlovu ",
+        "localMunicipality":"Msunduzi",
+        "town":"Pietermaritzburg",
+        "province":"Kwazulu Natal"
+    },
+    {
+        "id":209,
+        "name":"Deelkraal",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":210,
+        "name":"Deugsaamheid",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":211,
+        "name":"Eckstein ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":212,
+        "name":"Grango",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Polokwane",
+        "town":"Polokwane",
+        "province":"Limpopo"
+    },
+    {
+        "id":213,
+        "name":"Madicor 16",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"GreaterTzaneen",
+        "town":"Tzaneen",
+        "province":"Limpopo"
+    },
+    {
+        "id":214,
+        "name":"Leeuwkuil Abattoir",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":215,
+        "name":"Mieliekloof ",
+        "districtMunicipality":"Waterberg ",
+        "localMunicipality":"Modimolle",
+        "town":"Modimolle",
+        "province":"Limpopo"
+    },
+    {
+        "id":216,
+        "name":"Bandelierkop",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"Ba- Phalaborwa",
+        "town":"Phalaborwa, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":217,
+        "name":"Waterberg District Municipal Abattoir",
+        "districtMunicipality":"Waterberg ",
+        "localMunicipality":"Mogalakwena",
+        "town":"Potgietersrus. ",
+        "province":"Limpopo"
+    },
+    {
+        "id":218,
+        "name":"Phalaborwa",
+        "districtMunicipality":"Mopoani",
+        "localMunicipality":"Greater Tzaneen",
+        "town":"Tzaneen",
+        "province":"Limpopo"
+    },
+    {
+        "id":219,
+        "name":"Harmonie",
+        "districtMunicipality":"Waterberg ",
+        "localMunicipality":"Mookgopong",
+        "town":"Roedtan",
+        "province":"Limpopo"
+    },
+    {
+        "id":220,
+        "name":"Spaza Beef",
+        "districtMunicipality":"Waterberg ",
+        "localMunicipality":"Lephalale",
+        "town":"Ellisras",
+        "province":"Limpopo"
+    },
+    {
+        "id":221,
+        "name":"Vivo",
+        "districtMunicipality":"Sekhukhune ",
+        "localMunicipality":"Elias Motsoaledi",
+        "town":"Groblersdal ",
+        "province":"Limpopo"
+    },
+    {
+        "id":222,
+        "name":"Sirkel F",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":223,
+        "name":"Vencor",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Polokwane",
+        "town":"Polokwane",
+        "province":"Limpopo"
+    },
+    {
+        "id":224,
+        "name":"Ellisras",
+        "districtMunicipality":null,
+        "localMunicipality":"Lephalale",
+        "town":"Sibasa",
+        "province":"Limpopo"
+    },
+    {
+        "id":225,
+        "name":"Thohoyando Correctional Services",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":226,
+        "name":"Ground Zest T\/A Vygeboomsdrift Varke",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Bandelierkop, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":227,
+        "name":"P. J. Ludick",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":228,
+        "name":"Sterkrivier Abattoir",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Polokwane",
+        "town":"Duiwelskloof, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":229,
+        "name":"Kareebosch",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"Greater Letaba",
+        "town":null,
+        "province":"Limpopo"
+    },
+    {
+        "id":230,
+        "name":"Modjadji",
+        "districtMunicipality":"Waterberg ",
+        "localMunicipality":"Lephalale",
+        "town":"Vaalwater",
+        "province":"Limpopo"
+    },
+    {
+        "id":231,
+        "name":"Tredway",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":232,
+        "name":"Tolwe",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Kutama",
+        "province":"Limpopo"
+    },
+    {
+        "id":233,
+        "name":"Mathelemusa",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Thohoyandou ",
+        "province":"Limpopo"
+    },
+    {
+        "id":234,
+        "name":"Mapitas ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichard",
+        "province":"Limpopo"
+    },
+    {
+        "id":235,
+        "name":"Shayandima Butchery",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Shayandima ",
+        "province":"Limpopo"
+    },
+    {
+        "id":236,
+        "name":"C Net ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Shayandima",
+        "province":"Limpopo"
+    },
+    {
+        "id":237,
+        "name":"Fly ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Sibasa ",
+        "province":"Limpopo"
+    },
+    {
+        "id":238,
+        "name":"Nkhumeleni ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Makhado",
+        "province":"Limpopo"
+    },
+    {
+        "id":239,
+        "name":"Netshikhudeni ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Tshakhuma ",
+        "province":"Limpopo"
+    },
+    {
+        "id":240,
+        "name":"Tshifhiwa ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Lwamondo ",
+        "province":"Limpopo"
+    },
+    {
+        "id":241,
+        "name":"Mukwevho ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Sibasa",
+        "province":"Limpopo"
+    },
+    {
+        "id":242,
+        "name":"Langanani ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Lwamondo",
+        "province":"Limpopo"
+    },
+    {
+        "id":243,
+        "name":"Tshedza   ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Mutale",
+        "town":" Sagole ",
+        "province":"Limpopo"
+    },
+    {
+        "id":244,
+        "name":"Mathule ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Lwamondo ",
+        "province":"Limpopo"
+    },
+    {
+        "id":245,
+        "name":"Mutanda ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Sibasa",
+        "province":"Limpopo"
+    },
+    {
+        "id":246,
+        "name":"Ramokgopa ",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Molemole",
+        "town":"Ramokgopa. ",
+        "province":"Limpopo"
+    },
+    {
+        "id":247,
+        "name":"Lonsdale ",
+        "districtMunicipality":"Capricorn ",
+        "localMunicipality":"Aganang",
+        "town":"Lonsdale",
+        "province":"Limpopo"
+    },
+    {
+        "id":248,
+        "name":"Saselamani ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Thulamela",
+        "town":"Saselamani",
+        "province":"Limpopo"
+    },
+    {
+        "id":249,
+        "name":"Brotherhood ",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Nzhelele",
+        "province":"Limpopo"
+    },
+    {
+        "id":250,
+        "name":"Azwinndini",
+        "districtMunicipality":"Vhembe",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":251,
+        "name":"Moria",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Polokwane",
+        "town":"Boyne",
+        "province":"Limpopo"
+    },
+    {
+        "id":252,
+        "name":"Risaba",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"GreaterTzaneen",
+        "town":"Letsiltele",
+        "province":"Limpopo"
+    },
+    {
+        "id":253,
+        "name":"Relela",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"GreaterTzaneen",
+        "town":"Tzaneen",
+        "province":"Limpopo"
+    },
+    {
+        "id":254,
+        "name":"Mabongo",
+        "districtMunicipality":"Mopani",
+        "localMunicipality":"Greater Giyani",
+        "town":"Giyani",
+        "province":"Limpopo"
+    },
+    {
+        "id":255,
+        "name":"Kgotsong ",
+        "districtMunicipality":"Capricorn",
+        "localMunicipality":"Lepele-Nkumpi",
+        "town":"Mphahlele",
+        "province":"Limpopo"
+    },
+    {
+        "id":256,
+        "name":"Valenciance",
+        "districtMunicipality":"Sekhukhune ",
+        "localMunicipality":"Greater Tubatse",
+        "town":"Burgersfort",
+        "province":"Limpopo"
+    },
+    {
+        "id":257,
+        "name":"Shibisani",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Thulamela",
+        "town":"Tshigalo, ",
+        "province":"Limpopo"
+    },
+    {
+        "id":258,
+        "name":"Tompi Seleka",
+        "districtMunicipality":"Sekhukhune",
+        "localMunicipality":"Ephraim Mogale Local Municipality (Formerly known as Marble Hall)",
+        "town":"Marble Hall",
+        "province":"Limpopo"
+    },
+    {
+        "id":259,
+        "name":"Thathe Phiphidi Abattoir",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Thulamela",
+        "town":"Vhufuli",
+        "province":"Limpopo"
+    },
+    {
+        "id":260,
+        "name":"Kangi's Abattoir",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Makhado",
+        "town":"Munzhedzi",
+        "province":"Limpopo"
+    },
+    {
+        "id":261,
+        "name":"Valdezia",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Makhado",
+        "town":"valdezia ",
+        "province":"Limpopo"
+    },
+    {
+        "id":262,
+        "name":"Vele Meat Abattoir",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Thulamela",
+        "town":"Thohoyandou",
+        "province":"Limpopo"
+    },
+    {
+        "id":263,
+        "name":"Nermutandani Abattoir",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Makhado",
+        "town":"Vuwani",
+        "province":"Limpopo"
+    },
+    {
+        "id":264,
+        "name":"Bridgeway Abattoir",
+        "districtMunicipality":"Mopani ",
+        "localMunicipality":"Greater Letaba",
+        "town":"Letsitele                ",
+        "province":"Limpopo"
+    },
+    {
+        "id":265,
+        "name":"Thand's Abattoir",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Makhado",
+        "town":"Louis Trichardt",
+        "province":"Limpopo"
+    },
+    {
+        "id":266,
+        "name":"Vhangani",
+        "districtMunicipality":"Vhembe ",
+        "localMunicipality":"Makhado",
+        "town":"Masia",
+        "province":"Limpopo"
+    },
+    {
+        "id":267,
+        "name":"Barberton    Correctional Services",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Umjindi",
+        "town":"Barbeton",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":268,
+        "name":"Barnel",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Umjindi",
+        "town":"Barberton",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":269,
+        "name":"Belfast",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Emakhazeni",
+        "town":"Belfast",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":270,
+        "name":"Bergendal Trust",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Mbombela",
+        "town":"White River",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":271,
+        "name":"Blinkwater",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Emakhazeni",
+        "town":"Stoffelburg",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":272,
+        "name":"Driefontein",
+        "districtMunicipality":"Albert Luthuli",
+        "localMunicipality":"Dipaleseng",
+        "town":"Balfour",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":273,
+        "name":"Ermelo",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Msikalingwa",
+        "town":"Ermelo",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":274,
+        "name":"E & T",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Mkhondo",
+        "town":"Piet Retief",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":275,
+        "name":"G3",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Steve Tshwete ",
+        "town":"Mhluzi",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":276,
+        "name":"Goedehoop Leslie",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Govan Mbeki",
+        "town":"Leandra ",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":277,
+        "name":"Goedetrouw",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Mkhondo",
+        "town":"Piet Retief",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":278,
+        "name":"Glen Aggy",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Mkhondo",
+        "town":"Amsterdam",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":279,
+        "name":"James du Toit",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Govan Mbeki",
+        "town":"Bethal",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":280,
+        "name":"Kanhym",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Steve Tshwete ",
+        "town":"Middelburg",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":281,
+        "name":"Klipfontein",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Govan Mbeki",
+        "town":"Bethal",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":282,
+        "name":"Klipplaatdrift",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Pixley ka Seme",
+        "town":"Amersfoort",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":283,
+        "name":"Lydenburg",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Thaba Chweu",
+        "town":"Lydenburg",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":284,
+        "name":"Mauricadale",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Nkomazi",
+        "town":"Malelane",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":285,
+        "name":"Medina Meats",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Steve Tshwete ",
+        "town":"Middelburg ",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":286,
+        "name":"Moedverloern",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Govan Mbeki",
+        "town":"Leslie",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":287,
+        "name":"Mpumalanga Butchery",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Aklbert Luthuli",
+        "town":"Carolina",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":288,
+        "name":"Piet Rietief",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Mkhondo",
+        "town":"Piet Retief",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":289,
+        "name":"Ramburg",
+        "districtMunicipality":"Enhlanzeni",
+        "localMunicipality":"Mbombela",
+        "town":"Nelspruit",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":290,
+        "name":"Saragossa",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Emakhazeni",
+        "town":"Waterval  Boven",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":291,
+        "name":"Standerton",
+        "districtMunicipality":"Gert Sibande",
+        "localMunicipality":"Lekwa",
+        "town":"Standerton",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":292,
+        "name":"Super D",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Steve Tshwete ",
+        "town":"Middelburg",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":293,
+        "name":"Waterval    Boven",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Emakhazeni",
+        "town":"Waterval Boven",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":294,
+        "name":"Witbank",
+        "districtMunicipality":"Nkangala",
+        "localMunicipality":"Emalahleni",
+        "town":"Wit bank",
+        "province":"Mpumalanga"
+    },
+    {
+        "id":295,
+        "name":"Baphiring",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Mabaalstad",
+        "province":"North West"
+    },
+    {
+        "id":296,
+        "name":"Big 6 Abattior",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Welgeval",
+        "province":"North West"
+    },
+    {
+        "id":297,
+        "name":"Bloemhof ",
+        "districtMunicipality":"Dr Ruth Segomotsi Mompati",
+        "localMunicipality":"Lekwa-Teemane",
+        "town":"Bloemhof",
+        "province":"North West"
+    },
+    {
+        "id":298,
+        "name":"Fourie\u2019s vleis",
+        "districtMunicipality":"Dr Ruth Segomotso Mompati",
+        "localMunicipality":"Kagisano",
+        "town":"Ganyesa",
+        "province":"North West"
+    },
+    {
+        "id":299,
+        "name":"GSS",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Swartklip",
+        "province":"North West"
+    },
+    {
+        "id":300,
+        "name":"Lekgotla",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Lerome",
+        "province":"North West"
+    },
+    {
+        "id":301,
+        "name":"Losperfontein",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Madibeng",
+        "town":"Brits",
+        "province":"North West"
+    },
+    {
+        "id":302,
+        "name":"SWG (Delareyville)",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":" Tswaing",
+        "town":"Delareyville",
+        "province":"North West"
+    },
+    {
+        "id":303,
+        "name":"Kareespruit",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Ramotshere",
+        "town":"Zeerust",
+        "province":"North West"
+    },
+    {
+        "id":304,
+        "name":"Kessler Meat (Pty) Ltd ",
+        "districtMunicipality":"Bonjala",
+        "localMunicipality":"Madibeng",
+        "town":"Brits",
+        "province":"North West"
+    },
+    {
+        "id":305,
+        "name":"Koster Slaapale",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Kgetleng",
+        "town":"Koster",
+        "province":"North West"
+    },
+    {
+        "id":306,
+        "name":"Kgama Butchery",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Pilanesburg",
+        "province":"North West"
+    },
+    {
+        "id":307,
+        "name":"Madutle",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Welgeval",
+        "province":"North West"
+    },
+    {
+        "id":308,
+        "name":"Mahems ",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Ditsobotla",
+        "town":"Coligny",
+        "province":"North West"
+    },
+    {
+        "id":309,
+        "name":"Mosa",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Ledig",
+        "province":"North West"
+    },
+    {
+        "id":310,
+        "name":"Orama",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Sandfontien",
+        "province":"North West"
+    },
+    {
+        "id":311,
+        "name":"Potch Abattior EDMS",
+        "districtMunicipality":"Dr. Kenneth Kaunda",
+        "localMunicipality":" Tlokwe",
+        "town":"Potchersfstroom",
+        "province":"North West"
+    },
+    {
+        "id":312,
+        "name":"Ramanala",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Katane",
+        "town":"Sefikile",
+        "province":"North West"
+    },
+    {
+        "id":313,
+        "name":"Rooigrond Prison",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Mafikeng",
+        "town":"Mafikeng",
+        "province":"North West"
+    },
+    {
+        "id":314,
+        "name":"Russord",
+        "districtMunicipality":"Dr Ruth Sekgomotsi Mompati",
+        "localMunicipality":"Taung",
+        "town":"Reivilo",
+        "province":"North West"
+    },
+    {
+        "id":315,
+        "name":"Rustenburg Abattior (Pty) Ltd T\/A Marico Meats",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Rustenburg",
+        "town":"Rustenburg",
+        "province":"North West"
+    },
+    {
+        "id":316,
+        "name":"Saamstaan",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Kgetleng",
+        "town":"Swaartruggens",
+        "province":"North West"
+    },
+    {
+        "id":317,
+        "name":"Silverblade",
+        "districtMunicipality":"Dr. Kenneth Kaunda",
+        "localMunicipality":"City of Matlosana",
+        "town":"Klerksdorp",
+        "province":"North West"
+    },
+    {
+        "id":318,
+        "name":"Soloprop",
+        "districtMunicipality":"Dr Ruth Segomotso Mompati",
+        "localMunicipality":"Naledi",
+        "town":"Vryburg ",
+        "province":"North West"
+    },
+    {
+        "id":319,
+        "name":"Supervleis",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Tswaing",
+        "town":"Delareyville",
+        "province":"North West"
+    },
+    {
+        "id":320,
+        "name":"Sysferfontein ",
+        "districtMunicipality":"Dr. Kenneth Kaunda",
+        "localMunicipality":" Tlokwe",
+        "town":"Potchersfstroom",
+        "province":"North West"
+    },
+    {
+        "id":321,
+        "name":"Syferfortein Safaris",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Ramotshere",
+        "town":"Syferfortein Farm",
+        "province":"North West"
+    },
+    {
+        "id":322,
+        "name":"S.R. Schweizer- Reneke",
+        "districtMunicipality":"Dr Ruth Segomotsi Mompati",
+        "localMunicipality":"Mamusa",
+        "town":"Schweizer- Reneke",
+        "province":"North West"
+    },
+    {
+        "id":323,
+        "name":"Stella Vleis",
+        "districtMunicipality":"Dr Ruth Segomotsi Mompati",
+        "localMunicipality":"Naledi",
+        "town":"Stella",
+        "province":"North West"
+    },
+    {
+        "id":324,
+        "name":"Tshukudu",
+        "districtMunicipality":"Bojanala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Silwerkrans",
+        "province":"North West"
+    },
+    {
+        "id":325,
+        "name":"Ventersdorp",
+        "districtMunicipality":"Dr. Kenneth Kaunda",
+        "localMunicipality":"Ventersdorp",
+        "town":"Ventersdorp",
+        "province":"North West"
+    },
+    {
+        "id":326,
+        "name":"Wolmaransstad",
+        "districtMunicipality":"Dr. Kenneth Kaunda",
+        "localMunicipality":"Maquassie Hills",
+        "town":"Wolmaransstad",
+        "province":"North West"
+    },
+    {
+        "id":327,
+        "name":"West End Red Meat",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Mafikeng",
+        "town":"Mareestsane",
+        "province":"North West"
+    },
+    {
+        "id":328,
+        "name":"Yarona",
+        "districtMunicipality":"Bonjala Platinum",
+        "localMunicipality":"Moses Kotane",
+        "town":"Lerome",
+        "province":"North West"
+    },
+    {
+        "id":329,
+        "name":"Zeerust",
+        "districtMunicipality":"Ngaka Modiri Molema",
+        "localMunicipality":"Ramotshere",
+        "town":"Zeerust",
+        "province":"North West"
+    },
+    {
+        "id":330,
+        "name":"Albertinia Moslem abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":null,
+        "town":"Albertinia",
+        "province":"Western Cape "
+    },
+    {
+        "id":331,
+        "name":"Callie's Abattoir",
+        "districtMunicipality":"West Coast",
+        "localMunicipality":"Bergrivier ",
+        "town":"Porteville",
+        "province":"Western Cape "
+    },
+    {
+        "id":332,
+        "name":"Scheurfontein Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":333,
+        "name":"Bonnievale Abattoir",
+        "districtMunicipality":"Cape Winelands",
+        "localMunicipality":"Langeberg",
+        "town":"Bonnievale",
+        "province":"Western Cape "
+    },
+    {
+        "id":334,
+        "name":"Robertson Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Langeberg ",
+        "town":"Robertson",
+        "province":"Western Cape "
+    },
+    {
+        "id":335,
+        "name":"Bredasdorp Slagpale",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Cape Agulhas",
+        "town":"Bredasdorp",
+        "province":"Western Cape "
+    },
+    {
+        "id":336,
+        "name":"Clanwilliam Abattoir",
+        "districtMunicipality":"West Coast ",
+        "localMunicipality":"Cederberg",
+        "town":"Clanwilliam",
+        "province":"Western Cape "
+    },
+    {
+        "id":337,
+        "name":"Winelands Pork Abattoir",
+        "districtMunicipality":"Cape town ",
+        "localMunicipality":"Cape town",
+        "town":"Bellville",
+        "province":"Western Cape "
+    },
+    {
+        "id":338,
+        "name":"Hamlet Abattoir",
+        "districtMunicipality":"Cape Winelands",
+        "localMunicipality":"Witzenberg",
+        "town":"Tulbagh",
+        "province":"Western Cape "
+    },
+    {
+        "id":339,
+        "name":"Rooiheuwel Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":340,
+        "name":"Buffelsrivier abattoir (Viskuil)",
+        "districtMunicipality":"Central Karoo ",
+        "localMunicipality":"Laingsburg",
+        "town":"Laingsburg",
+        "province":"Western Cape "
+    },
+    {
+        "id":341,
+        "name":"Van Rensburg Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"George",
+        "town":"George",
+        "province":"Western Cape "
+    },
+    {
+        "id":342,
+        "name":"Tomis abattoir & Meat Wholesalers",
+        "districtMunicipality":"Cape Winelands",
+        "localMunicipality":"Drakenstein ",
+        "town":"Wellington",
+        "province":"Western Cape "
+    },
+    {
+        "id":343,
+        "name":"Excelsior Abattoir",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Cape Agulhas",
+        "town":"Bredasdorp",
+        "province":"Western Cape "
+    },
+    {
+        "id":344,
+        "name":"Roelcor George Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"George",
+        "town":"George East",
+        "province":"Western Cape "
+    },
+    {
+        "id":345,
+        "name":"Klein Karoo Rooivleis Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Oudtshoorn",
+        "town":"Oudtshoorn",
+        "province":"Western Cape "
+    },
+    {
+        "id":346,
+        "name":"Klipkraal Rooivleis Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Nelspoort",
+        "province":"Western Cape "
+    },
+    {
+        "id":347,
+        "name":"Awet  Abattoir",
+        "districtMunicipality":"Cape Winelands",
+        "localMunicipality":"Witzenberg",
+        "town":"Tulbagh",
+        "province":"Western Cape "
+    },
+    {
+        "id":348,
+        "name":"Paarl Abattoir",
+        "districtMunicipality":"Cape Winelands ",
+        "localMunicipality":"Drakenstein ",
+        "town":"Paarl",
+        "province":"Western Cape "
+    },
+    {
+        "id":349,
+        "name":"Deli-Co Abattoir",
+        "districtMunicipality":"West Coast",
+        "localMunicipality":"Swartland",
+        "town":"Riebeek Kasteel",
+        "province":"Western Cape "
+    },
+    {
+        "id":350,
+        "name":"Uitvlug Abattoir",
+        "districtMunicipality":"West Coast",
+        "localMunicipality":"Matzikama",
+        "town":"Vanrhynsdorp",
+        "province":"Western Cape "
+    },
+    {
+        "id":351,
+        "name":"Towerkop Slagpale Bk",
+        "districtMunicipality":"Eden ",
+        "localMunicipality":"Kannaland",
+        "town":"Ladismith",
+        "province":"Western Cape "
+    },
+    {
+        "id":352,
+        "name":"Roelcor Vleis Abattoir",
+        "districtMunicipality":"West coast",
+        "localMunicipality":"Swartland",
+        "town":"Malmesbury",
+        "province":"Western Cape "
+    },
+    {
+        "id":353,
+        "name":"Bulwater Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Prince Albert",
+        "town":"Leeu Gamka",
+        "province":"Western Cape "
+    },
+    {
+        "id":354,
+        "name":"Moorreesburg abattoir",
+        "districtMunicipality":"West coast",
+        "localMunicipality":"Swartland",
+        "town":"Moorreesburg",
+        "province":"Western Cape "
+    },
+    {
+        "id":355,
+        "name":"Napier abattoir",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Cape Agulhas",
+        "town":"Napier",
+        "province":"Western Cape "
+    },
+    {
+        "id":356,
+        "name":"Ostriswell abattoir",
+        "districtMunicipality":"Overberg district ",
+        "localMunicipality":"Swellendam",
+        "town":"Swellendam",
+        "province":"Western Cape "
+    },
+    {
+        "id":357,
+        "name":"Mosstrich abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Mossel Bay.",
+        "town":"Mossel Bay",
+        "province":"Western Cape "
+    },
+    {
+        "id":358,
+        "name":"Jongensklip Abattoir",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Theewaterskloof",
+        "town":"Caledon",
+        "province":"Western Cape "
+    },
+    {
+        "id":359,
+        "name":"Helderstroom Abattoir",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Theewaterskloof",
+        "town":"Caledon",
+        "province":"Western Cape "
+    },
+    {
+        "id":360,
+        "name":"Nobelsfontein Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"George",
+        "town":"George - Oos",
+        "province":"Western Cape "
+    },
+    {
+        "id":361,
+        "name":"Osdam Abattoir",
+        "districtMunicipality":"Cape Winelands",
+        "localMunicipality":"Witzenberg",
+        "town":"Ceres",
+        "province":"Western Cape "
+    },
+    {
+        "id":362,
+        "name":"Travellers Rest ",
+        "districtMunicipality":null,
+        "localMunicipality":null,
+        "town":"Clanwilliam",
+        "province":"Western Cape "
+    },
+    {
+        "id":363,
+        "name":"Cartol Abattoir",
+        "districtMunicipality":"West Coast",
+        "localMunicipality":"Saldanha Bay",
+        "town":"Saldanha",
+        "province":"Western Cape "
+    },
+    {
+        "id":364,
+        "name":"Hessequa Abattoir",
+        "districtMunicipality":"Overberg",
+        "localMunicipality":"Hessequa",
+        "town":"Riversdal",
+        "province":"Western Cape "
+    },
+    {
+        "id":365,
+        "name":"Bartelsfontein Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Mossel Bay.",
+        "town":"Mosselbaai",
+        "province":"Western Cape "
+    },
+    {
+        "id":366,
+        "name":"Prins Albert Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Prince Albert",
+        "town":"Prins Albert",
+        "province":"Western Cape "
+    },
+    {
+        "id":367,
+        "name":"Fernbank Abattoir",
+        "districtMunicipality":"Within  the  jurisdiction  of  both  the  Garden  Route\/Klein  Karoo  District ",
+        "localMunicipality":null,
+        "town":"Karatara",
+        "province":"Western Cape "
+    },
+    {
+        "id":368,
+        "name":"Swellendam Abattoir",
+        "districtMunicipality":"Overberg district ",
+        "localMunicipality":"Swellendam",
+        "town":"Swellendam",
+        "province":"Western Cape "
+    },
+    {
+        "id":369,
+        "name":"Beaufort-wes Karoo Lam Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":370,
+        "name":"Knysna Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Knysna",
+        "town":"Knysna",
+        "province":"Western Cape "
+    },
+    {
+        "id":371,
+        "name":"Mosselbaai Vleis-handelaars Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Mossel Bay.",
+        "town":"Hartenbos",
+        "province":"Western Cape "
+    },
+    {
+        "id":372,
+        "name":"Merweville Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Merweville",
+        "province":"Western Cape "
+    },
+    {
+        "id":373,
+        "name":"Namlam Pty Ltd",
+        "districtMunicipality":"Namakwa ",
+        "localMunicipality":"Nama Khoi",
+        "town":"Springbok",
+        "province":"Western Cape "
+    },
+    {
+        "id":374,
+        "name":"Koup Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":375,
+        "name":"Worcester Abattoir",
+        "districtMunicipality":"Cape Winelands ",
+        "localMunicipality":"Breede Valley ",
+        "town":"Worcester",
+        "province":"Western Cape "
+    },
+    {
+        "id":376,
+        "name":"Vonkfontein Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":377,
+        "name":"Desert Star Abattoir",
+        "districtMunicipality":"Central Karoo",
+        "localMunicipality":"Beaufort West",
+        "town":"Beaufort West",
+        "province":"Western Cape "
+    },
+    {
+        "id":378,
+        "name":"Slanghoek Abattoir",
+        "districtMunicipality":"Overberg ",
+        "localMunicipality":"Cape Agulhas",
+        "town":"Bredasdorp",
+        "province":"Western Cape "
+    },
+    {
+        "id":379,
+        "name":"Drakenstein Red Meat",
+        "districtMunicipality":"Cape Winelands ",
+        "localMunicipality":"Drakenstein ",
+        "town":"Paarl South",
+        "province":"Western Cape "
+    },
+    {
+        "id":380,
+        "name":"Voorberg Korrektiewe Dienste",
+        "districtMunicipality":"West coast",
+        "localMunicipality":"Bergrivier ",
+        "town":"Porteville",
+        "province":"Western Cape "
+    },
+    {
+        "id":381,
+        "name":"Nanini 210 BK H\/A Hartman & Seuns",
+        "districtMunicipality":"Central Karoo ",
+        "localMunicipality":"Laingsburg",
+        "town":"Laingsburg",
+        "province":"Western Cape "
+    },
+    {
+        "id":382,
+        "name":"Dormehl Farms Abattoir",
+        "districtMunicipality":"Within  the  jurisdiction  of  both  the  Garden  Route\/Klein  Karoo  District ",
+        "localMunicipality":null,
+        "town":"Karatara",
+        "province":"Western Cape "
+    },
+    {
+        "id":383,
+        "name":"Swartland Volstruise",
+        "districtMunicipality":"West coast",
+        "localMunicipality":"Swartland",
+        "town":"Malmesbury",
+        "province":"Western Cape "
+    },
+    {
+        "id":384,
+        "name":"Bitterfontein Abattoir",
+        "districtMunicipality":"West Coast",
+        "localMunicipality":null,
+        "town":"Bitterfontein",
+        "province":"Western Cape "
+    },
+    {
+        "id":385,
+        "name":"Stilbaai Abattoir",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Hessequa ",
+        "town":"Stilbaai",
+        "province":"Western Cape "
+    },
+    {
+        "id":386,
+        "name":"Grabouw Abattoir",
+        "districtMunicipality":"Overberg ",
+        "localMunicipality":"Theewaterskloof",
+        "town":"Grabouw",
+        "province":"Western Cape "
+    },
+    {
+        "id":387,
+        "name":"Klein Karoo Kooperasie Abattoir No.1",
+        "districtMunicipality":"Eden",
+        "localMunicipality":"Oudsthoorn",
+        "town":"Oudsthoorn",
+        "province":"Western Cape "
+    }
+]

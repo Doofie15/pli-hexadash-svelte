@@ -1,0 +1,90 @@
+[
+    {
+        "type": "primary",
+        "icon": "arrow-growth",
+        "total": "100",
+        "suffix": "",
+        "prefix": "",
+        "label": "Lambs Weaned",
+        "growth": "upward",
+        "growthRate": "2",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "info",
+        "icon": "users-alt",
+        "total": "65",
+        "suffix": "",
+        "prefix": "",
+        "label": "# Ewe Lambs Weaned",
+        "growth": "upward",
+        "growthRate": "4 ",
+        "dataPeriod": "Ram Ewe Ratio"
+    },
+    {
+        "type": "success",
+        "icon": "usd-circle",
+        "total": "45",
+        "suffix": "",
+        "prefix": "",
+        "label": "# Male Lambs Weaned",
+        "growth": "upward",
+        "growthRate": "11",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "warning",
+        "icon": "users-alt",
+        "total": "80",
+        "suffix": " %",
+        "prefix": "",
+        "label": "Weaning % (Lambs Born)",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "primary",
+        "icon": "arrow-growth",
+        "total": "90",
+        "suffix": " %",
+        "prefix": "",
+        "label": "Weaning % (Ewes Mated)",
+        "growth": "upward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "info",
+        "icon": "users-alt",
+        "total": "28.8",
+        "suffix": " Kg",
+        "prefix": "",
+        "label": "Average Weaning Weight",
+        "growth": "downward",
+        "growthRate": "1",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "success",
+        "icon": "users-alt",
+        "total": "2800",
+        "suffix": " Kg",
+        "prefix": "",
+        "label": "Total Kg Weaned",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    },
+    {
+        "type": "warning",
+        "icon": "users-alt",
+        "total": "140",
+        "suffix": " g/day",
+        "prefix": "",
+        "label": "Average Daily Gain",
+        "growth": "downward",
+        "growthRate": "6",
+        "dataPeriod": "Since Last Year"
+    }
+  ]
