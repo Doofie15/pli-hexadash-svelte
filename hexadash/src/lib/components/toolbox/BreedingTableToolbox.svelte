@@ -11,45 +11,48 @@
 			return;
 		}
 
-		// Define CSV headers
 		const headers = [
 			'Group Name',
 			'Mating Type',
-			'Ewes Mated',
-			'Rams Used',
+			'Status',
+			'Ewes',
+			'Rams',
 			'Ram/Ewe Ratio %',
-			'Mating Start',
-			'Mating End',
+			'Start Date',
+			'End Date',
 			'Days',
 			'Lambing Start',
 			'Lambing End',
-			'Mating Weight'
+			'Mating Weight (kg)',
+			'Production Year',
+			'Notes'
 		];
 
-		// Convert selected rows to CSV format
 		const csvContent = [
 			headers.join(','),
 			...$selectedBreedingRows.map(record => [
 				record.groupName,
 				record.matingType,
+				record.status,
 				record.ewes,
 				record.rams,
-				((record.rams / record.ewes) * 100).toFixed(2),
+				record.ramEweRatio,
 				record.startDate,
 				record.endDate,
 				record.days,
 				record.lambingStartDate,
 				record.lambingEndDate,
-				record.averageMatingWeight
+				record.averageMatingWeight,
+				record.productionYear,
+				`"${record.notes.replace(/"/g, '""')}"`
 			].join(','))
 		].join('\n');
 
-		// Create and trigger download
 		const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 		const link = document.createElement('a');
 		const url = URL.createObjectURL(blob);
 		link.setAttribute('href', url);
-		link.setAttribute('download', 'breeding_records.csv');
+		link.setAttribute('download', `breeding_records_${new Date().toISOString().split('T')[0]}.csv`);
 		link.style.visibility = 'hidden';
 		document.body.appendChild(link);
 		link.click();
