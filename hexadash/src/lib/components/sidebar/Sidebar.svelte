@@ -184,31 +184,41 @@
 		<div class="sidebar__menu-group">
 			<ul class="sidebar_nav">
 				<li class="has-child open">
-					<a href={'#'} class="has-child__toggle active">
+					<a href={'#'} class="has-child__toggle">
 						<span class="nav-icon uil uil-create-dashboard" />
-						<span class="menu-text">Dashboards</span>
+						<span class="menu-text">Breeding</span>
 						<span class="toggle-icon" />
 					</a>
 					<ul>
-						<li class="menu-item active">
-							<a href="/home-breeding">Breeding</a>
+						<li class="menu-item">
+							<a href="/home-breeding">Overview</a>
 						</li>
+						<li class="menu-item">
+							<a href="/pages/all-breeding">All Breeding</a>
+						</li>
+						<li class="menu-item">
+							<a href="/pages/page-add_breeding">Add Breeding</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-child">
+					<a href={'#'} class="has-child__toggle">
+						<span class="nav-icon uil uil-create-dashboard" />
+						<span class="menu-text">Other Dashboards</span>
+						<span class="toggle-icon" />
+					</a>
+					<ul>
 						<li class="menu-item">
 							<a href="/home-scanning">Scanning</a>
 						</li>
 						<li class="menu-item">
 							<a href="/home-lambing">Lambing</a>
 						</li>
-					
 						<li class="menu-item">
 							<a href="/home-weaning">Weaning</a>
 						</li>
-
 						<li class="menu-item">
 							<a href="/pages/page-add_weaning">Add Weaning</a>
-						</li>
-						<li class="menu-item">
-							<a href="/pages/page-add_breeding">Add Breeding</a>
 						</li>
 						<li class="menu-item">
 							<a href="/pages/page-add_scanning">Add Scanning</a>
