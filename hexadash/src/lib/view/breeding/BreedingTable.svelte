@@ -2,24 +2,38 @@
 	import { onMount } from 'svelte';
 	import { Table, Badge, Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'sveltestrap';
 	import breedingData from '@demo-data/breeding-records.json';
+	import { selectedBreedingRows, allRowsSelected } from '$lib/stores/breedingStore';
 
 	$: checked = false;
 	function toggleCheck() {
-		checked ? (checked = false) : (checked = true);
+		checked = !checked;
+		if (checked) {
+			$selectedBreedingRows = breedingData.records.filter(record => 
+				record.matingType === matingType || matingType === 'All'
+			);
+		} else {
+			$selectedBreedingRows = [];
+		}
+		$allRowsSelected = checked;
 	}
+
+	function toggleRowSelection(record) {
+		if ($selectedBreedingRows.find(r => r.id === record.id)) {
+			$selectedBreedingRows = $selectedBreedingRows.filter(r => r.id !== record.id);
+		} else {
+			$selectedBreedingRows = [...$selectedBreedingRows, record];
+		}
+		const visibleRecords = breedingData.records.filter(record => 
+			record.matingType === matingType || matingType === 'All'
+		);
+		checked = $selectedBreedingRows.length === visibleRecords.length;
+		$allRowsSelected = checked;
+	}
+
+	$: isRowSelected = (record) => $selectedBreedingRows.some(r => r.id === record.id);
 
 	let matingType = 'All';
 	$: matingType;
-	
-	function formatDate(dateString) {
-		if (!dateString) return '';
-		const date = new Date(dateString);
-		return date.toLocaleDateString('en-US', { 
-			month: 'long', 
-			day: 'numeric', 
-			year: 'numeric' 
-		});
-	}
 	
 	function getStatusColor(type) {
 		if (type === 'Natural Mating') return 'success';
@@ -27,12 +41,18 @@
 		if (type === 'Laparoscopic AI') return 'info';
 		return 'danger';
 	}
-	
+
+	function formatDate(dateStr) {
+		return new Date(dateStr).toLocaleDateString('en-GB');
+	}
+
 	onMount(() => {
 		let sortLinks = document.querySelectorAll('.data-filter-box a');
 		sortLinks.forEach((item) => {
 			item.addEventListener('click', function () {
 				matingType = this.innerText;
+				$selectedBreedingRows = []; // Clear selection when filter changes
+				checked = false;
 				item
 					.closest('.data-filter-box')
 					.querySelectorAll('a')
@@ -52,7 +72,13 @@
 				<th>
 					<div class="d-flex align-items-center">
 						<div class="custom-checkbox check-all">
-							<input class="checkbox" type="checkbox" id="check-all" on:click={toggleCheck} />
+							<input 
+								class="checkbox" 
+								type="checkbox" 
+								id="check-all" 
+								on:click={toggleCheck}
+								bind:checked={checked}
+							/>
 							<label for="check-all">Group Name</label>
 						</div>
 					</div>
@@ -95,7 +121,7 @@
 		<tbody>
 			{#each breedingData.records as record, i}
 				{#if record.matingType === matingType || matingType === 'All'}
-					<tr>
+					<tr class:selected={isRowSelected(record)}>
 						<td>
 							<div class="d-flex align-items-center">
 								<div class="me-3 d-flex align-items-center">
@@ -107,10 +133,11 @@
 												<input
 													class="checkbox"
 													type="checkbox"
-													id="check-grp-content-{i}"
-													{checked}
+													id="checkbox-{record.id}"
+													checked={isRowSelected(record)}
+													on:change={() => toggleRowSelection(record)}
 												/>
-												<label for="check-grp-content-{i}" />
+												<label for="checkbox-{record.id}" />
 											</div>
 										</div>
 									</div>

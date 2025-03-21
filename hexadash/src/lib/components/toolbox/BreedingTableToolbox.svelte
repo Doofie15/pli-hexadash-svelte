@@ -1,8 +1,60 @@
 <script>
 	import { SearchIcon } from 'svelte-feather-icons';
 	import { Input } from 'sveltestrap';
+	import { selectedBreedingRows } from '$lib/stores/breedingStore';
 
 	export let buttonText;
+
+	function exportToCSV() {
+		if ($selectedBreedingRows.length === 0) {
+			alert('Please select at least one row to export');
+			return;
+		}
+
+		// Define CSV headers
+		const headers = [
+			'Group Name',
+			'Mating Type',
+			'Ewes Mated',
+			'Rams Used',
+			'Ram/Ewe Ratio %',
+			'Mating Start',
+			'Mating End',
+			'Days',
+			'Lambing Start',
+			'Lambing End',
+			'Mating Weight'
+		];
+
+		// Convert selected rows to CSV format
+		const csvContent = [
+			headers.join(','),
+			...$selectedBreedingRows.map(record => [
+				record.groupName,
+				record.matingType,
+				record.ewes,
+				record.rams,
+				((record.rams / record.ewes) * 100).toFixed(2),
+				record.startDate,
+				record.endDate,
+				record.days,
+				record.lambingStartDate,
+				record.lambingEndDate,
+				record.averageMatingWeight
+			].join(','))
+		].join('\n');
+
+		// Create and trigger download
+		const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+		const link = document.createElement('a');
+		const url = URL.createObjectURL(blob);
+		link.setAttribute('href', url);
+		link.setAttribute('download', 'breeding_records.csv');
+		link.style.visibility = 'hidden';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	}
 </script>
 
 <div class="table-top-toolbox-wrap d-flex justify-content-between flex-wrap mb-25 mt-n10">
@@ -39,13 +91,24 @@
 
 		<div class="content-center mt-10">
 			<div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
-				<button class="order-bg-opacity-secondary radius-md btn btn-sm color-secondary">
+				<button 
+					class="order-bg-opacity-secondary radius-md btn btn-sm color-secondary"
+					on:click={exportToCSV}
+				>
 					Export
 				</button>
-				<button class="btn-primary radius-md btn btn-sm">
+				<a href="/pages/page-add_breeding" class="btn-primary radius-md btn btn-sm">
 					<i class="la la-plus" /> Add {buttonText}
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style lang="scss">
+	:global {
+		.selected {
+			background-color: rgba(95, 99, 242, 0.1);
+		}
+	}
+</style>
