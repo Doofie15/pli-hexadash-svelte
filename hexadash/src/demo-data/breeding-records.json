@@ -16,6 +16,7 @@
       "lambingStartDate": "2025-07-29",
       "lambingEndDate": "2025-09-12",
       "averageMatingWeight": 65.3,
+      "productionYear": 2025,
       "notes": "Excellent condition ewes, strong rams. Expect good lambing percentage.",
       "files": ["spring2025a_plan.pdf", "spring2025a_ewes.xlsx"]
     },
@@ -35,6 +36,7 @@
       "lambingStartDate": "2025-06-30",
       "lambingEndDate": "2025-08-13",
       "averageMatingWeight": 68.7,
+      "productionYear": 2025,
       "notes": "Used premium semen from top performing rams. All ewes in excellent condition.",
       "files": ["spring2025b_ai_records.pdf", "spring2025b_semen_quality.xlsx"]
     },
@@ -54,6 +56,7 @@
       "lambingStartDate": "2025-06-14",
       "lambingEndDate": "2025-07-28",
       "averageMatingWeight": 62.1,
+      "productionYear": 2025,
       "notes": "Ram showed low libido. Consider replacing for next season.",
       "files": ["winter2025a_issues.pdf"]
     },
@@ -73,6 +76,7 @@
       "lambingStartDate": "2025-08-07",
       "lambingEndDate": "2025-09-21",
       "averageMatingWeight": 64.8,
+      "productionYear": 2025,
       "notes": "Good condition ewes, experienced rams. Weather conditions favorable.",
       "files": ["winter2025b_plan.pdf", "winter2025b_weather_data.xlsx"]
     },
@@ -92,6 +96,7 @@
       "lambingStartDate": "2025-08-12",
       "lambingEndDate": "2025-09-27",
       "averageMatingWeight": 70.2,
+      "productionYear": 2025,
       "notes": "Premium ewes selected for this group. Using imported semen from award-winning rams.",
       "files": ["spring2025c_ai_protocol.pdf", "spring2025c_ewe_selection.xlsx"]
     },
@@ -111,6 +116,7 @@
       "lambingStartDate": "2025-07-19",
       "lambingEndDate": "2025-09-03",
       "averageMatingWeight": 66.5,
+      "productionYear": 2025,
       "notes": "Research project on improving conception rates with modified AI protocol.",
       "files": ["research_protocol.pdf", "research_data_collection.xlsx"]
     },
@@ -130,6 +136,7 @@
       "lambingStartDate": "2025-07-24",
       "lambingEndDate": "2025-09-08",
       "averageMatingWeight": 69.3,
+      "productionYear": 2025,
       "notes": "Premium merino ewes with champion rams. Expecting high quality wool genetics.",
       "files": ["premium_merino_breeding_plan.pdf", "ram_wool_quality_data.xlsx"]
     },
@@ -149,6 +156,7 @@
       "lambingStartDate": "2025-08-02",
       "lambingEndDate": "2025-09-17",
       "averageMatingWeight": 72.1,
+      "productionYear": 2025,
       "notes": "Using specialized Dorper semen for meat production improvement.",
       "files": ["dorper_ai_schedule.pdf", "dorper_genetic_improvement.xlsx"]
     },
@@ -168,6 +176,7 @@
       "lambingStartDate": "2025-08-09",
       "lambingEndDate": "2025-09-23",
       "averageMatingWeight": 74.5,
+      "productionYear": 2025,
       "notes": "Suffolk ewes in excellent condition. Rams selected for growth rate genetics.",
       "files": ["suffolk_breeding_plan.pdf", "suffolk_growth_data.xlsx"]
     }

@@ -46,6 +46,10 @@
 		return new Date(dateStr).toLocaleDateString('en-GB');
 	}
 
+	function getProductionYear(dateStr) {
+		return new Date(dateStr).getFullYear();
+	}
+
 	onMount(() => {
 		let sortLinks = document.querySelectorAll('.data-filter-box a');
 		sortLinks.forEach((item) => {
@@ -112,6 +116,9 @@
 				</th>
 				<th>
 					<span class="userDatatable-title">Mating Weight</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Production Year</span>
 				</th>
 				<th>
 					<span class="userDatatable-title float-end">Action</span>
@@ -184,6 +191,9 @@
 						</td>
 						<td>
 							<div class="userDatatable-title">{record.averageMatingWeight} kg</div>
+						</td>
+						<td>
+							<div class="userDatatable-title">{getProductionYear(record.lambingStartDate)}</div>
 						</td>
 						<td>
 							<div class="card-extra">
