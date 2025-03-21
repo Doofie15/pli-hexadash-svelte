@@ -1,6 +1,7 @@
 import {
 	sveltekit
 } from '@sveltejs/kit/vite';
+import { resolve } from 'path';
 
 /** @type {import('vite').UserConfig} */
 const config = {
@@ -10,6 +11,9 @@ const config = {
 	},
 	resolve: {
 		dedupe: ['@fullcalendar/common'],
+		alias: {
+			'@demo-data': resolve('./src/demo-data')
+		}
 	},
 	optimizeDeps: {
 		include: ['@fullcalendar/common'],

@@ -1,0 +1,54 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "groupName": "#02-0003",
+      "matingType": "Natural Mating",
+      "status": "Active",
+      "ewes": 25,
+      "rams": 2,
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-15"
+    },
+    {
+      "id": 2,
+      "groupName": "#02-0004",
+      "matingType": "Cervical AI",
+      "status": "Completed",
+      "ewes": 30,
+      "rams": 0,
+      "startDate": "2025-02-01",
+      "endDate": "2025-03-15"
+    },
+    {
+      "id": 3,
+      "groupName": "#02-0005",
+      "matingType": "Natural Mating",
+      "status": "Failed",
+      "ewes": 15,
+      "rams": 1,
+      "startDate": "2025-01-15",
+      "endDate": "2025-02-28"
+    },
+    {
+      "id": 4,
+      "groupName": "#02-0006",
+      "matingType": "Natural Mating",
+      "status": "Active",
+      "ewes": 20,
+      "rams": 2,
+      "startDate": "2025-03-10",
+      "endDate": "2025-04-24"
+    },
+    {
+      "id": 5,
+      "groupName": "#02-0007",
+      "matingType": "Laparoscopic AI",
+      "status": "Active",
+      "ewes": 35,
+      "rams": 0,
+      "startDate": "2025-03-15",
+      "endDate": "2025-04-30"
+    }
+  ]
+}

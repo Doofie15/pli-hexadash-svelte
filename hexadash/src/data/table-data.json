@@ -1,0 +1,34 @@
+{
+  "breedingrecords": [
+    {
+      "id": 1,
+      "groupName": "Spring 2025 A",
+      "matingType": "Natural",
+      "status": "Active",
+      "ewes": 25,
+      "rams": 2,
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-15"
+    },
+    {
+      "id": 2,
+      "groupName": "Winter 2024 B",
+      "matingType": "AI",
+      "status": "Completed",
+      "ewes": 40,
+      "rams": 0,
+      "startDate": "2024-12-15",
+      "endDate": "2025-01-30"
+    },
+    {
+      "id": 3,
+      "groupName": "Fall 2024 C",
+      "matingType": "Natural",
+      "status": "Failed",
+      "ewes": 15,
+      "rams": 1,
+      "startDate": "2024-09-01",
+      "endDate": "2024-10-15"
+    }
+  ]
+}
