@@ -2,7 +2,7 @@
 	import { Container, Row, Col,Button} from 'sveltestrap';
 	import BreadcrumbOne from '@components/breadcrumbs/BreadcrumbOne.svelte';
 	import OverviewCards from '@components/cards/OverviewCards.svelte';
-	import overviewCardData from '@data/broverviewCard.json';
+	import overviewCardData from '@demo-data/breeding-overview.js';
 	import BreedingChart from '@view/dashboard/Breeding/BreedingChart.svelte';
 	import BreedingTypeCart from '@view/dashboard/Breeding/BreedingTypeChart.svelte';
 	import BreedingTable from '@view/dashboard/breeding/BreedingTable.svelte';
