@@ -1,0 +1,189 @@
+{
+  "overview": {
+    "totalActiveBreedings": 6,
+    "totalCompletedBreedings": 1,
+    "totalFailedBreedings": 1,
+    "totalScheduledBreedings": 1,
+    "totalEwes": 185,
+    "totalRams": 8,
+    "averageRamEweRatio": 9.02,
+    "averageMatingWeight": 68.17,
+    "averageMatingDays": 44.56
+  },
+  "matingTypeDistribution": [
+    {
+      "type": "Natural Mating",
+      "count": 5,
+      "percentage": 55.56
+    },
+    {
+      "type": "Cervical AI",
+      "count": 2,
+      "percentage": 22.22
+    },
+    {
+      "type": "Laparoscopic AI",
+      "count": 2,
+      "percentage": 22.22
+    }
+  ],
+  "statusDistribution": [
+    {
+      "status": "Active",
+      "count": 6,
+      "percentage": 66.67
+    },
+    {
+      "status": "Completed",
+      "count": 1,
+      "percentage": 11.11
+    },
+    {
+      "status": "Failed",
+      "count": 1,
+      "percentage": 11.11
+    },
+    {
+      "status": "Scheduled",
+      "count": 1,
+      "percentage": 11.11
+    }
+  ],
+  "monthlyBreedings": [
+    {
+      "month": "Jan 2025",
+      "count": 1
+    },
+    {
+      "month": "Feb 2025",
+      "count": 4
+    },
+    {
+      "month": "Mar 2025",
+      "count": 4
+    },
+    {
+      "month": "Apr 2025",
+      "count": 0
+    },
+    {
+      "month": "May 2025",
+      "count": 0
+    },
+    {
+      "month": "Jun 2025",
+      "count": 0
+    }
+  ],
+  "expectedLambings": [
+    {
+      "month": "Jun 2025",
+      "count": 1
+    },
+    {
+      "month": "Jul 2025",
+      "count": 3
+    },
+    {
+      "month": "Aug 2025",
+      "count": 5
+    },
+    {
+      "month": "Sep 2025",
+      "count": 0
+    },
+    {
+      "month": "Oct 2025",
+      "count": 0
+    },
+    {
+      "month": "Nov 2025",
+      "count": 0
+    }
+  ],
+  "performanceMetrics": [
+    {
+      "groupId": 1,
+      "groupName": "Spring 2025 A",
+      "expectedLambingRate": 175,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 2,
+      "groupName": "Spring 2025 B",
+      "expectedLambingRate": 190,
+      "actualLambingRate": 185,
+      "lambsSurvivalRate": 95
+    },
+    {
+      "groupId": 3,
+      "groupName": "Winter 2025 A",
+      "expectedLambingRate": 160,
+      "actualLambingRate": 120,
+      "lambsSurvivalRate": 90
+    },
+    {
+      "groupId": 4,
+      "groupName": "Winter 2025 B",
+      "expectedLambingRate": 170,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 5,
+      "groupName": "Spring 2025 C",
+      "expectedLambingRate": 195,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 6,
+      "groupName": "Research Group A",
+      "expectedLambingRate": 200,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 7,
+      "groupName": "Premium Merino",
+      "expectedLambingRate": 180,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 8,
+      "groupName": "Dorper Group",
+      "expectedLambingRate": 185,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    },
+    {
+      "groupId": 9,
+      "groupName": "Suffolk Group",
+      "expectedLambingRate": 190,
+      "actualLambingRate": null,
+      "lambsSurvivalRate": null
+    }
+  ],
+  "historicalData": [
+    {
+      "year": 2023,
+      "totalBreedings": 12,
+      "averageLambingRate": 165,
+      "averageSurvivalRate": 92
+    },
+    {
+      "year": 2024,
+      "totalBreedings": 15,
+      "averageLambingRate": 172,
+      "averageSurvivalRate": 94
+    },
+    {
+      "year": 2025,
+      "totalBreedings": 9,
+      "averageLambingRate": 183,
+      "averageSurvivalRate": 95
+    }
+  ]
+}

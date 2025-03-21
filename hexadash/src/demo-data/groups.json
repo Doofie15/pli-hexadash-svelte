@@ -1,102 +1,92 @@
 [
-    {
-      "id": 1,
-      "code": "2020-01",
-      "name": "Jan 2020",
-      "matingtype": "Natural Mating",
-      "matingstart": "01 Jan 2024",
-      "matingend": "04 Feb 2024",
-      "lambingstart": "27 May 2024",
-      "lambingend": "04 Nov 2024",
-      "status": "Active"
-    },
-    {
-      "id": 2,
-      "code": "EFGH5678",
-      "name": "Sample Animal 2",
-      "matingtype": "Cervical AI",
-      "matingstart": "01 Feb 2024",
-      "matingend": "06 Mar 2024",
-      "lambingstart": "27 Jun 2024",
-      "lambingend": "05 Dec 2024",
-      "status": "In Active"
-    },
-    {
-      "id": 3,
-      "code": "IJKL9012",
-      "name": "Sample Animal 3",
-      "matingtype": "Laparoscopic AI",
-      "matingstart": "01 Mar 2024",
-      "matingend": "04 Apr 2024",
-      "lambingstart": "25 Jul 2024",
-      "lambingend": "07 Dec 2024",
-      "status": "Active"
-    },
-    {
-      "id": 4,
-      "code": "MNOP3456",
-      "name": "Sample Animal 4",
-      "matingtype": "Natural Mating",
-      "matingstart": "01 Apr 2024",
-      "matingend": "05 May 2024",
-      "lambingstart": "25 Aug 2024",
-      "lambingend": "07 Jan 2025",
-      "status": "In Active"
-    },
-    {
-      "id": 5,
-      "code": "QRST7890",
-      "name": "Sample Animal 5",
-      "matingtype": "Cervical AI",
-      "matingstart": "01 May 2024",
-      "matingend": "04 Jun 2024",
-      "lambingstart": "24 Sep 2024",
-      "lambingend": "06 Feb 2025",
-      "status": "Active"
-    },
-    {
-      "id": 6,
-      "code": "UVWX1234",
-      "name": "Sample Animal 6",
-      "matingtype": "Laparoscopic AI",
-      "matingstart": "01 Jun 2024",
-      "matingend": "05 Jul 2024",
-      "lambingstart": "25 Oct 2024",
-      "lambingend": "09 Mar 2025",
-      "status": "In Active"
-    },
-    {
-      "id": 7,
-      "code": "YZAB5678",
-      "name": "Sample Animal 7",
-      "matingtype": "Natural Mating",
-      "matingstart": "01 Jul 2024",
-      "matingend": "04 Aug 2024",
-      "lambingstart": "24 Nov 2024",
-      "lambingend": "08 Apr 2025",
-      "status": "Active"
-    },
-    {
-      "id": 8,
-      "code": "CDEF9012",
-      "name": "Sample Animal 8",
-      "matingtype": "Cervical AI",
-      "matingstart": "01 Aug 2024",
-      "matingend": "04 Sep 2024",
-      "lambingstart": "25 Dec 2024",
-      "lambingend": "09 May 2025",
-      "status": "In Active"
-    },
-    {
-      "id": 9,
-      "code": "GHIJ3456",
-      "name": "Sample Animal 9",
-      "matingtype": "Laparoscopic AI",
-      "matingstart": "01 Sep 2024",
-      "matingend": "05 Oct 2024",
-      "lambingstart": "25 Jan 2025",
-      "lambingend": "09 Jun 2025",
-      "status": "Active"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "code": "GRP-2025-001",
+    "name": "Spring 2025 A",
+    "description": "Spring breeding group for farm section A",
+    "createdAt": "2025-01-10T08:30:00Z",
+    "status": "Active",
+    "animalCount": 27,
+    "location": "Section A - North Paddock"
+  },
+  {
+    "id": 2,
+    "code": "GRP-2025-002",
+    "name": "Spring 2025 B",
+    "description": "Spring breeding group for farm section B",
+    "createdAt": "2025-01-15T09:45:00Z",
+    "status": "Active",
+    "animalCount": 30,
+    "location": "Section B - East Paddock"
+  },
+  {
+    "id": 3,
+    "code": "GRP-2025-003",
+    "name": "Winter 2025 A",
+    "description": "Winter breeding group for farm section A",
+    "createdAt": "2025-01-20T10:15:00Z",
+    "status": "Active",
+    "animalCount": 16,
+    "location": "Section A - South Paddock"
+  },
+  {
+    "id": 4,
+    "code": "GRP-2025-004",
+    "name": "Winter 2025 B",
+    "description": "Winter breeding group for farm section B",
+    "createdAt": "2025-01-25T11:30:00Z",
+    "status": "Active",
+    "animalCount": 22,
+    "location": "Section B - West Paddock"
+  },
+  {
+    "id": 5,
+    "code": "GRP-2025-005",
+    "name": "Spring 2025 C",
+    "description": "Spring breeding group for farm section C",
+    "createdAt": "2025-02-01T08:00:00Z",
+    "status": "Active",
+    "animalCount": 35,
+    "location": "Section C - Central Paddock"
+  },
+  {
+    "id": 6,
+    "code": "GRP-2025-006",
+    "name": "Research Group A",
+    "description": "Special research breeding group",
+    "createdAt": "2025-02-05T14:20:00Z",
+    "status": "Active",
+    "animalCount": 12,
+    "location": "Research Facility - Paddock 1"
+  },
+  {
+    "id": 7,
+    "code": "GRP-2025-007",
+    "name": "Premium Merino",
+    "description": "Premium merino breeding group",
+    "createdAt": "2025-02-10T09:30:00Z",
+    "status": "Active",
+    "animalCount": 18,
+    "location": "Premium Section - Paddock 3"
+  },
+  {
+    "id": 8,
+    "code": "GRP-2025-008",
+    "name": "Dorper Group",
+    "description": "Dorper sheep breeding group",
+    "createdAt": "2025-02-15T10:45:00Z",
+    "status": "Active",
+    "animalCount": 25,
+    "location": "Dorper Section - East Field"
+  },
+  {
+    "id": 9,
+    "code": "GRP-2025-009",
+    "name": "Suffolk Group",
+    "description": "Suffolk sheep breeding group",
+    "createdAt": "2025-02-20T11:15:00Z",
+    "status": "Active",
+    "animalCount": 20,
+    "location": "Suffolk Section - North Field"
+  }
+]

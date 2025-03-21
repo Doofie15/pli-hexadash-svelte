@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { Table, Badge } from 'sveltestrap';
+	import { Table, Badge, Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'sveltestrap';
 	import breedingData from '@demo-data/breeding-records.json';
 
 	$: checked = false;
@@ -61,16 +61,31 @@
 					<span class="userDatatable-title">Mating Type</span>
 				</th>
 				<th>
-					<span class="userDatatable-title">Ewes</span>
+					<span class="userDatatable-title">Ewes Mated</span>
 				</th>
 				<th>
-					<span class="userDatatable-title">Rams</span>
+					<span class="userDatatable-title">Rams Used</span>
 				</th>
 				<th>
-					<span class="userDatatable-title">Start Date</span>
+					<span class="userDatatable-title">Ram/Ewe Ratio %</span>
 				</th>
 				<th>
-					<span class="userDatatable-title">End Date</span>
+					<span class="userDatatable-title">Mating Start</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Mating End</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Days</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Lambing Start</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Lambing End</span>
+				</th>
+				<th>
+					<span class="userDatatable-title">Mating Weight</span>
 				</th>
 				<th>
 					<span class="userDatatable-title float-end">Action</span>
@@ -123,29 +138,39 @@
 							<div class="userDatatable-title">{record.rams}</div>
 						</td>
 						<td>
+							<div class="userDatatable-title">{record.ramEweRatio}</div>
+						</td>
+						<td>
 							<div class="userDatatable-title">{formatDate(record.startDate)}</div>
 						</td>
 						<td>
 							<div class="userDatatable-title">{formatDate(record.endDate)}</div>
 						</td>
 						<td>
-							<ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
-								<li>
-									<a href={'#'} class="view">
-										<i class="uil uil-eye" />
-									</a>
-								</li>
-								<li>
-									<a href={'#'} class="edit">
-										<i class="uil uil-edit" />
-									</a>
-								</li>
-								<li>
-									<a href={'#'} class="remove">
-										<i class="uil uil-trash-alt" />
-									</a>
-								</li>
-							</ul>
+							<div class="userDatatable-title">{record.days}</div>
+						</td>
+						<td>
+							<div class="userDatatable-title">{formatDate(record.lambingStartDate)}</div>
+						</td>
+						<td>
+							<div class="userDatatable-title">{formatDate(record.lambingEndDate)}</div>
+						</td>
+						<td>
+							<div class="userDatatable-title">{record.averageMatingWeight} kg</div>
+						</td>
+						<td>
+							<div class="card-extra">
+								<Dropdown nav>
+									<DropdownToggle nav>
+										<img class="svg" alt="" src="/img/svg/more-horizontal.svg" />
+									</DropdownToggle>
+									<DropdownMenu end>
+										<DropdownItem href={'#'}>View</DropdownItem>
+										<DropdownItem href={'#'}>Edit</DropdownItem>
+										<DropdownItem href={'#'}>Delete</DropdownItem>
+									</DropdownMenu>
+								</Dropdown>
+							</div>
 						</td>
 					</tr>
 				{/if}
@@ -154,6 +179,16 @@
 	</Table>
 </div>
 
-<style>
+<style lang="scss">
 	/* Table styles are imported from the parent component */
+	.card-extra {
+		:global {
+			.nav-link {
+				padding: 0;
+				svg {
+					outline: 0;
+				}
+			}
+		}
+	}
 </style>
