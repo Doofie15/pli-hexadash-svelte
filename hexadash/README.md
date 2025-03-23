@@ -4,12 +4,13 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 ## Project Overview
 
-Hexadash is a comprehensive dashboard application built with Svelte and SvelteKit. It includes various modules for managing different aspects of the business, including a specialized breeding management section.
+Hexadash is a comprehensive dashboard application built with Svelte and SvelteKit. It includes various modules for managing different aspects of the business, including specialized breeding and scanning management sections.
 
 ### Key Features
 
 - **Dashboard Overview**: Visual representation of key metrics
 - **Breeding Management**: Complete system for tracking breeding records
+- **Scanning Management**: Track and analyze pregnancy scanning results
 - **Groups Management**: Track and manage breeding groups and lambing seasons
 - **Order Management**: Track and manage customer orders
 - **User Management**: Manage user accounts and permissions
@@ -22,7 +23,7 @@ The breeding module provides a complete solution for managing breeding records. 
 - **All Breeding Records**: Comprehensive list of all breeding records with filtering options
 - **Add Breeding**: Form for adding new breeding records
 
-The All Breeding page serves as a template for other data display pages in the application. See the [Breeding Page Template Documentation](./docs/BREEDING_PAGE_TEMPLATE.md) for more details.
+The All Breeding page serves as a template for other data display pages in the application. See the [Breeding Components Documentation](./src/BREEDING_COMPONENTS_README.md) for more details.
 
 ### Data Source
 
@@ -31,6 +32,24 @@ The breeding components use data from the `src/demo-data/breeding-records.json` 
 - Mating types and dates
 - Ewe and ram counts
 - Lambing dates and statistics
+
+## Scanning Module
+
+The scanning module provides tools for tracking and analyzing pregnancy scanning results. It includes:
+
+- **Scanning Dashboard**: Overview of scanning statistics
+- **Scan Type Chart**: Visual breakdown of scan results (Singles, Twins, Triplets, Dry)
+- **Scanning Records**: Detailed list of scanning sessions with results
+
+See the [Scanning Components Documentation](./src/SCANNING_COMPONENTS_README.md) for more details.
+
+### Data Source
+
+The scanning components use data from the `src/demo-data/scanning-records.json` file, which contains detailed scanning records including:
+- Group information
+- Scanning dates
+- Number of ewes scanned
+- Breakdown of results (Singles, Twins, Triplets, Dry)
 
 ## Groups Module
 
