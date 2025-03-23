@@ -12,7 +12,7 @@
 		{#if tableHead}
 			<thead>
 				<tr>
-					<th class="text-center">Group Name</th>
+					<th class="text-start">Group Name</th>
 					<th class="text-center">Mating Type</th>
 					<th class="text-center">Mating Start</th>
 					<th class="text-center">Mating End</th>
@@ -27,8 +27,8 @@
 		<tbody>
 			{#each dataPeriod as data}
 				<tr>
-					<td class="text-center">
-						<div class="selling-product-img d-flex align-items-center justify-content-center">
+					<td class="text-start">
+						<div class="selling-product-img d-flex align-items-start justify-content-start">
 							<div class="selling-product-img-wrapper order-bg-opacity-primary align-items-center">
 								<!-- Use a default image if no specific image is available -->
 								<img class="img-fluid" src="/img/sellers/1.png" alt="img" />
