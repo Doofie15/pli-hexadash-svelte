@@ -29,12 +29,14 @@
 
 	const tooltip = {
 		callbacks: {
-			title() {
-				return `Breeding Statistics`;
+			title(tooltipItems) {
+				return tooltipItems[0].label;
 			},
 			label(t) {
-				const { formattedValue, dataset } = t;
-				return `${formattedValue} ${dataset.label}`;
+				const { dataIndex, formattedValue, dataset } = t;
+				const groupName = t.chart.data.labels[dataIndex];
+				const rams = chartData[revenue].rams[dataIndex];
+				return [`${formattedValue} ${dataset.label}`, `${rams} Rams`];
 			}
 		}
 	};
@@ -55,39 +57,30 @@
 			record => record.productionYear >= currentYear - 4 && record.productionYear <= currentYear
 		);
 		
-		// Group data by production year
-		const groupByYear = (records) => {
-			const yearGroups = {};
+		// Group data by group name
+		const groupByGroup = (records) => {
+			// Sort records by ewes count in descending order
+			const sortedRecords = [...records].sort((a, b) => b.ewes - a.ewes);
 			
-			records.forEach(record => {
-				const year = record.productionYear;
-				if (!yearGroups[year]) {
-					yearGroups[year] = {
-						ewes: 0,
-						rams: 0
-					};
-				}
-				
-				yearGroups[year].ewes += record.ewes;
-				yearGroups[year].rams += record.rams;
-			});
+			// Take top 8 groups by ewes count to avoid overcrowding
+			const topGroups = sortedRecords.slice(0, 8);
 			
-			// Convert to arrays for chart
-			const years = Object.keys(yearGroups).sort();
-			const ewesData = years.map(year => yearGroups[year].ewes);
-			const ramsData = years.map(year => yearGroups[year].rams);
+			// Extract group names and ewes/rams counts
+			const groupNames = topGroups.map(record => record.groupName);
+			const ewesData = topGroups.map(record => record.ewes);
+			const ramsData = topGroups.map(record => record.rams);
 			
 			return {
-				labels: years,
+				labels: groupNames,
 				ewes: ewesData,
 				rams: ramsData
 			};
 		};
 		
 		// Process data for each time period
-		const thisYearData = groupByYear(thisYearRecords);
-		const fiveYearsData = groupByYear(fiveYearsRecords);
-		const allData = groupByYear(allRecords);
+		const thisYearData = groupByGroup(thisYearRecords);
+		const fiveYearsData = groupByGroup(fiveYearsRecords);
+		const allData = groupByGroup(allRecords);
 		
 		return {
 			today: {
@@ -127,27 +120,6 @@
 			hoverRadius: '6',
 			pointBorderColor: '#fff',
 			pointBackgroundColor: primaryColor,
-			hoverBorderWidth: 2,
-			amount: '',
-			amountClass: 'current-amount',
-			lineTension: 0.5
-		},
-		{
-			data: chartData[revenue].rams,
-			borderColor: '#2C99FF',
-			borderWidth: 3,
-			fill: true,
-			backgroundColor: () =>
-				chartLinearGradient(document.getElementById('ninjadash-sales-revenue'), 300, {
-					start: 'rgba(44, 153, 255, 0.3)',
-					end: 'rgba(44, 153, 255, 0.05)'
-				}),
-			label: 'Rams',
-			pointStyle: 'circle',
-			pointRadius: '0',
-			hoverRadius: '6',
-			pointBorderColor: '#fff',
-			pointBackgroundColor: '#2C99FF',
 			hoverBorderWidth: 2,
 			amount: '',
 			amountClass: 'current-amount',
@@ -200,7 +172,11 @@
 					size: 14,
 					family: "'Jost', sans-serif"
 				},
-				color: '#747474'
+				color: '#747474',
+				padding: 10,
+				autoSkip: true,
+				maxRotation: 45,
+				minRotation: 45
 			}
 		}
 	};
