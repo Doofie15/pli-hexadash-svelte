@@ -43,8 +43,8 @@
     let showTagColorDropdown = false;
     
     let averageMatingWeight = '';
-    let numberOfEwesMated = 0;
-    let numberOfRamsUsed = 0;
+    let numberOfEwesMated = '';
+    let numberOfRamsUsed = '';
     let ramToEweRatio = 0;
     let matingStartDate = null;
     let matingEndDate = null;
@@ -227,7 +227,16 @@
 
     function handleSubmit() {
         formValidated = true;
-        // Rest of your submit logic
+        
+        // Check if all required fields are filled
+        if (!selectedGroup || !matingType || !numberOfEwesMated || !matingStartDate || !matingEndDate) {
+            console.log("Form validation failed");
+            return;
+        }
+        
+        // If validation passes, proceed with form submission
+        console.log("Form submitted successfully");
+        // Add your form submission logic here
     }
 </script>
 
@@ -242,17 +251,17 @@
                 <Form>
                     <Row>
                         <Col lg={4} class="mb-25">
-                            <FormGroup class="mb-20 was-validated" >
+                            <FormGroup class="mb-20">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <Label for="Groups">Group Name / Lambing Season</Label>
                                     <Button color="primary" size="xs" class="btn-squared radius-xs fs-15 fw-400 text-capitalize" on:click={openAddGroupModal}>Add Groups</Button>
                                 </div>
-                            <Col md={12}>
-                                <div id="group-select-container" class="position-relative">
+                            <Col md={12} class="d-flex">
+                                <div id="group-select-container" class="position-relative flex-grow-1">
                                     <Input 
                                         type="text" 
                                         id="groupselect" 
-                                        class="form-select is-valid form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg" 
+                                        class="form-select form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg {formValidated && !selectedGroup ? 'is-invalid' : ''}" 
                                         placeholder="Please Select" 
                                         value={selectedGroup ? selectedGroup.name : ''}
                                         on:focus={() => showDropdown = true}
@@ -260,7 +269,6 @@
                                             groupSearchTerm = e.target.value;
                                             filterGroups();
                                         }}
-                                        required={formValidated}
                                     />
                                     {#if formValidated && !selectedGroup}
                                         <div class="invalid-feedback">Please Select An Existing Group</div>
@@ -290,16 +298,15 @@
                             </Col>
                             </FormGroup>
 
-                            <FormGroup class="mb-20 was-validated ">
-                                <Label for groupselect>Mating Type</Label>
+                            <FormGroup class="mb-20">
+                                <Label for="matingtype">Mating Type</Label>
                             <Col md={12}>
                                 <Input 
                                     type="select"  
                                     id="matingtype" 
-                                    class="form-select form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg" 
+                                    class="form-select form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg {formValidated && !matingType ? 'is-invalid' : ''}" 
                                     placeholder="Please Select" 
                                     bind:value={matingType}
-                                    required={formValidated}
                                 >
                                     <option disabled selected value="">Please Select...</option>
                                     <option value="Natural Mating">Natural Mating</option>
@@ -313,43 +320,59 @@
 
                             </FormGroup>
 
-                            <FormGroup for="lambsweaned" id="lambsweaned" class="mb-25 was-validated">
+                            <FormGroup class="mb-25">
                                 <Label>Number of Ewes Mated</Label>
-                                <Input type="numeric" class="form-control-lg ih-medium" id="ewesmated" bind:value={numberOfEwesMated} placeholder="Enter Number of Ewes Mated" required />
+                                <Input 
+                                    type="number" 
+                                    class="form-control-lg ih-medium {formValidated && !numberOfEwesMated ? 'is-invalid' : ''}" 
+                                    id="ewesmated" 
+                                    bind:value={numberOfEwesMated} 
+                                    placeholder="Enter Number of Ewes Mated" 
+                                />
+                                {#if formValidated && !numberOfEwesMated}
+                                    <div class="invalid-feedback">Please enter number of ewes mated</div>
+                                {/if}
                             </FormGroup>
 
-                            <FormGroup class="mb-25 ">
+                            <FormGroup class="mb-25">
                                 <Label>Number of Rams Used</Label>
-                                <Input type="numeric" class="form-control-lg ih-medium" placeholder="Enter Number of Rams Used"  bind:value={numberOfRamsUsed} />
+                                <Input 
+                                    type="number" 
+                                    class="form-control-lg ih-medium" 
+                                    placeholder="Enter Number of Rams Used" 
+                                    bind:value={numberOfRamsUsed} 
+                                />
                             </FormGroup>
 
-                            <FormGroup for="Mating Start" class="mb-25 ">
+                            <FormGroup class="mb-25">
                                 <Label>Mating Dates</Label>
                                 <div class="custom-date-ranger custom-date-ranger__bottom custom-date-ranger__lg position-relative d-flex align-items-center">
-                                    <div class="form-group mb-0 was-validated">
+                                    <div class="form-group mb-0">
                                         <DatePicker 
                                             format="DD MMMM YYYY" 
                                             id="Matingstart" 
-                                            bind:value={matingStartDate} 
+                                            bind:selected={matingStartDate} 
                                             on:date-selected={updateMatingStart} 
                                             placeholder="Mating Start" 
-                                            required
-                                            class="ih-medium"
+                                            class="ih-medium {formValidated && !matingStartDate ? 'is-invalid' : ''}"
                                         />
-                                        <div class="invalid-feedback">Please select a start date</div>
+                                        {#if formValidated && !matingStartDate}
+                                            <div class="invalid-feedback">Please select a start date</div>
+                                        {/if}
                                     </div>
                                     <span class="divider">-</span>
-                                    <div class="form-group mb-0 was-validated">
+                                    <div class="form-group mb-0">
                                         <DatePicker 
                                             format="DD MMMM YYYY" 
                                             id="Matingend" 
-                                            bind:value={matingEndDate} 
+                                            bind:selected={matingEndDate} 
                                             on:date-selected={updateMatingEnd} 
                                             placeholder="Mating End" 
-                                            required
-                                            class="ih-medium"
+                                            class="ih-medium {formValidated && !matingEndDate ? 'is-invalid' : ''}"
                                         />
-                                        <div class="invalid-feedback">Please select an end date</div>
+                                        {#if formValidated && !matingEndDate}
+                                            <div class="invalid-feedback">Please select an end date</div>
+                                        {/if}
                                     </div>
                                     <a href={'#'}>
                                         <img class="svg" alt="" src={'/img/svg/calendar.svg'} />
