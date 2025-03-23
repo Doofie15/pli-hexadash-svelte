@@ -49,9 +49,55 @@ The filtering is implemented in `BreedingTable.svelte` by creating filtered data
 
 - **Page Container**: Uses `Container fluid` for full-width layout
 - **Breadcrumb**: Displays the current page location in the navigation hierarchy
-- **Data Table**: Displays records with consistent styling
-- **Table Toolbox**: Provides filtering and action buttons
-- **Pagination**: Allows navigation between pages of data
+
+### 2. Add Breeding Record Form
+
+The Add Breeding Record form includes several key components:
+
+#### Group Selection
+- **Searchable Group Dropdown**:
+  - Allows filtering of groups by name or code as the user types
+  - Displays both group code and name for easy identification
+  - Dropdown appears when the field is focused and disappears when clicking outside
+  - Validation ensures a group is selected before form submission
+
+- **Add Groups Button**:
+  - Positioned next to the group dropdown
+  - Opens the standardized Add Groups modal (see Groups Module Documentation)
+  - Allows creation of new groups without leaving the breeding record form
+  - Newly created groups immediately appear in the dropdown for selection
+
+#### Date Selection
+- **DatePicker Component**:
+  - Uses `@beyonk/svelte-datepicker` for date selection
+  - Immediate date selection without confirmation step
+  - Validation ensures both mating start and end dates are selected
+  - Automatically calculates mating days difference when both dates are selected
+
+#### Form Validation
+- Conditional validation that only shows messages after form submission attempt
+- Required fields marked visually
+- Validation logic prevents submission of incomplete forms
+
+```javascript
+// Example of searchable group dropdown implementation
+let selectedGroup = null;
+let groupSearchTerm = '';
+let filteredGroups = [...groupOptions];
+let showDropdown = false;
+
+// Filter groups based on search input
+function filterGroups() {
+    if (!groupSearchTerm) {
+        filteredGroups = [...groupOptions];
+    } else {
+        filteredGroups = groupOptions.filter(group => 
+            group.name.toLowerCase().includes(groupSearchTerm.toLowerCase()) ||
+            group.code.toLowerCase().includes(groupSearchTerm.toLowerCase())
+        );
+    }
+}
+```
 
 ### 2. Component Hierarchy
 

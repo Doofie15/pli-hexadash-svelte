@@ -39,6 +39,16 @@ The Groups module allows tracking of breeding groups and lambing seasons through
 - **Groups Dashboard**: Overview of all breeding groups
 - **Status Tracking**: Visual indicators for Breeding, Scanning, Lambing, and Weaning events
 - **Filtering Options**: Filter groups by time period or search by name/attributes
+- **Add Groups Modal**: Quick creation of new groups with lambing season name and tag color selection
+
+### Add Groups Modal
+
+The application includes a standardized modal for adding new groups across different sections:
+
+- **Required Fields**: Lambing Season Name and Tag Color
+- **Tag Color System**: Color-coded system with 11 color options for visual group identification
+- **Inline Creation**: Add groups directly from breeding record forms without navigating away
+- **Validation**: Form validation ensures all required fields are completed
 
 ### Status Badges
 

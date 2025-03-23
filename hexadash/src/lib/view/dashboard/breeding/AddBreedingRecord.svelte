@@ -2,15 +2,111 @@
     import { Container, Row, Col, Card, CardBody, CardHeader, Form, FormGroup, Input, Label, Button } from 'sveltestrap';
     import DatePicker from '@beyonk/svelte-datepicker/src/components/DatePicker.svelte';
     import { onMount } from 'svelte';
-
+    import { Modal, ModalHeader, ModalBody, ModalFooter } from 'sveltestrap';
+    
+    // Import groups data
+    import groupsData from '../../../../demo-data/groups.json';
+    
+    // Extract group names and IDs for the dropdown
+    let groupOptions = groupsData.map(group => ({
+        id: group.id,
+        name: group.name,
+        code: group.code
+    }));
+    
+    let selectedGroup = null;
+    let groupSearchTerm = '';
+    let filteredGroups = [...groupOptions];
+    let showDropdown = false;
+    let formValidated = false;
+    
+    // Add Groups Modal state
+    let showAddGroupModal = false;
+    let newLambingSeasonName = '';
+    let newTagColor = '';
+    
+    // Tag color options
+    const tagColorOptions = [
+        { value: 'White (1)', color: '#ffffff' },
+        { value: 'Purple (2)', color: '#800080' },
+        { value: 'Light Blue (3)', color: '#add8e6' },
+        { value: 'Blue (4)', color: '#0000ff' },
+        { value: 'Green (5)', color: '#008000' },
+        { value: 'Lime (6)', color: '#00ff00' },
+        { value: 'Yellow (7)', color: '#ffff00' },
+        { value: 'Orange (8)', color: '#ffa500' },
+        { value: 'Beige (9)', color: '#f5f5dc' },
+        { value: 'Pink (10)', color: '#ffc0cb' },
+        { value: 'Red (11)', color: '#ff0000' }
+    ];
+    
+    let showTagColorDropdown = false;
+    
     let averageMatingWeight = '';
     let numberOfEwesMated = 0;
     let numberOfRamsUsed = 0;
     let ramToEweRatio = 0;
-    let matingStartDate = new Date();
-    let matingEndDate = new Date();
+    let matingStartDate = null;
+    let matingEndDate = null;
     let matingDaysDifference = 0;
-
+    let matingType = '';
+    
+    // Function to open the Add Group modal
+    function openAddGroupModal() {
+        // Close the dropdown first to prevent overlay issues
+        showDropdown = false;
+        showAddGroupModal = true;
+    }
+    
+    // Function to close the Add Group modal
+    function closeAddGroupModal() {
+        showAddGroupModal = false;
+        // Reset form values
+        newLambingSeasonName = '';
+        newTagColor = '';
+        showTagColorDropdown = false;
+    }
+    
+    // Function to save the new group
+    function saveNewGroup() {
+        // Validate form
+        if (!newLambingSeasonName || !newTagColor) {
+            alert('Please fill in all required fields');
+            return;
+        }
+        
+        // Create a new group
+        const newGroup = {
+            id: `GRP-${new Date().getTime()}`,
+            name: newLambingSeasonName,
+            code: `GRP-${groupOptions.length + 1}`,
+            tagColor: newTagColor
+        };
+        
+        // Add to options
+        groupOptions = [...groupOptions, newGroup];
+        
+        // Update filtered groups
+        filterGroups();
+        
+        // Select the new group
+        selectedGroup = newGroup;
+        
+        // Close modal
+        closeAddGroupModal();
+    }
+    
+    // Filter groups based on search input
+    function filterGroups() {
+        if (!groupSearchTerm) {
+            filteredGroups = [...groupOptions];
+        } else {
+            filteredGroups = groupOptions.filter(group => 
+                group.name.toLowerCase().includes(groupSearchTerm.toLowerCase()) ||
+                group.code.toLowerCase().includes(groupSearchTerm.toLowerCase())
+            );
+        }
+    }
 
     $: if (numberOfEwesMated > 0) {
         ramToEweRatio = (numberOfRamsUsed / numberOfEwesMated) * 100;
@@ -18,17 +114,42 @@
         ramToEweRatio = 0;
     }
 
-    // Ensure the calculation is triggered when matingStartDate or matingEndDate changes
-    $: {
-        console.log("matingStartDate:", matingStartDate);
-        console.log("matingEndDate:", matingEndDate);
-        if (matingStartDate && matingEndDate && matingEndDate.getTime() > matingStartDate.getTime()) {
+    // Function to update matingStartDate based on the selected date
+    function updateMatingStart(event) {
+        matingStartDate = event.detail.date;
+        // Only calculate if both dates are set
+        if (matingEndDate) {
+            calculateMatingDays();
+        } else {
+            matingDaysDifference = 0; // Reset if only start date is set
+        }
+    }
+
+    // Function to update matingEndDate based on the selected date
+    function updateMatingEnd(event) {
+        matingEndDate = event.detail.date;
+        // Only calculate if both dates are set
+        if (matingStartDate) {
+            calculateMatingDays();
+        } else {
+            matingDaysDifference = 0; // Reset if only end date is set
+        }
+    }
+
+    // Function to calculate the number of mating days
+    function calculateMatingDays() {
+        if (matingStartDate && matingEndDate) {
+            // Create new Date objects with just the date part to avoid time issues
             const start = new Date(matingStartDate.getFullYear(), matingStartDate.getMonth(), matingStartDate.getDate());
             const end = new Date(matingEndDate.getFullYear(), matingEndDate.getMonth(), matingEndDate.getDate());
-            const timeDiff = end - start;
-            matingDaysDifference = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            
+            // Calculate the difference in milliseconds
+            const diffTime = Math.abs(end - start);
+            
+            // Convert to days and add 1 to include both the start and end day
+            matingDaysDifference = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
         } else {
-            matingDaysDifference = 0; // Reset if end date is not set or is before the start date
+            matingDaysDifference = 0;
         }
     }
 
@@ -86,9 +207,28 @@
 		deleteButton.parentNode.removeChild(deleteButton);
 	}
 
+    // Add click handler to close dropdown when clicking outside
+    function handleClickOutside(event) {
+        const container = document.getElementById('group-select-container');
+        if (container && !container.contains(event.target)) {
+            showDropdown = false;
+        }
+    }
+    
     onMount(() => {
-        // Initialize with current date or specific date logic here
+        // Add event listener for clicks outside the dropdown
+        document.addEventListener('click', handleClickOutside);
+        
+        // Clean up the event listener when component is destroyed
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
     });
+
+    function handleSubmit() {
+        formValidated = true;
+        // Rest of your submit logic
+    }
 </script>
 
 <div class="component-page mb-25">
@@ -105,51 +245,111 @@
                             <FormGroup class="mb-20 was-validated" >
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <Label for="Groups">Group Name / Lambing Season</Label>
-                                    <Button color ="primary" size="xs" class="btn-squared radius-xs fs-15 fw-400 text-capitalize" on:click={addGroups}>Add Groups</Button>
+                                    <Button color="primary" size="xs" class="btn-squared radius-xs fs-15 fw-400 text-capitalize" on:click={openAddGroupModal}>Add Groups</Button>
                                 </div>
                             <Col md={12}>
-                                <Input type="select"  id=groupselect class="form-select is-valid form-control select-arrow-none ih-medium  radius-xs b-light shadow-none color-light  fs-14" placeholder="Please Select" required>
-                                    <option disabled selected value="">Please Select...</option>
-                                    <option value="Group 1">Winter 2020</option>
-                                    <option value="Group 2">Somer 2020</option>
-                                </Input>
-                                <div id=groupselect class="invalid-feedback">Please Select An Existing Group</div>
+                                <div id="group-select-container" class="position-relative">
+                                    <Input 
+                                        type="text" 
+                                        id="groupselect" 
+                                        class="form-select is-valid form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg" 
+                                        placeholder="Please Select" 
+                                        value={selectedGroup ? selectedGroup.name : ''}
+                                        on:focus={() => showDropdown = true}
+                                        on:input={(e) => {
+                                            groupSearchTerm = e.target.value;
+                                            filterGroups();
+                                        }}
+                                        required={formValidated}
+                                    />
+                                    {#if formValidated && !selectedGroup}
+                                        <div class="invalid-feedback">Please Select An Existing Group</div>
+                                    {/if}
+                                    
+                                    {#if showDropdown}
+                                        <div class="dropdown-menu show w-100" style="max-height: 200px; overflow-y: auto;">
+                                            {#if filteredGroups.length === 0}
+                                                <button class="dropdown-item disabled">No matching groups found</button>
+                                            {:else}
+                                                {#each filteredGroups as group}
+                                                    <button 
+                                                        class="dropdown-item" 
+                                                        type="button"
+                                                        on:click={() => {
+                                                            selectedGroup = group;
+                                                            showDropdown = false;
+                                                        }}
+                                                    >
+                                                        <span class="fw-bold">{group.code}</span> - {group.name}
+                                                    </button>
+                                                {/each}
+                                            {/if}
+                                        </div>
+                                    {/if}
+                                </div>
                             </Col>
                             </FormGroup>
 
                             <FormGroup class="mb-20 was-validated ">
                                 <Label for groupselect>Mating Type</Label>
                             <Col md={12}>
-                                <Input type="select"  id=matingtype class="form-select is-valid form-control select-arrow-none ih-medium  radius-xs b-light shadow-none color-light  fs-14" placeholder="Please Select" required>
+                                <Input 
+                                    type="select"  
+                                    id="matingtype" 
+                                    class="form-select form-control select-arrow-none ih-medium radius-xs b-light shadow-none color-light fs-14 form-control-lg" 
+                                    placeholder="Please Select" 
+                                    bind:value={matingType}
+                                    required={formValidated}
+                                >
                                     <option disabled selected value="">Please Select...</option>
                                     <option value="Natural Mating">Natural Mating</option>
                                     <option value="Cervical AI">Cervical AI</option>
                                     <option value="Laparoscopic AI">Laparoscopic AI</option>
                                 </Input>
-                                <div id=groupselect class="invalid-feedback">Please Select Mating Type</div>
+                                {#if formValidated && !matingType}
+                                    <div class="invalid-feedback">Please Select Mating Type</div>
+                                {/if}
                             </Col>
 
                             </FormGroup>
 
                             <FormGroup for="lambsweaned" id="lambsweaned" class="mb-25 was-validated">
                                 <Label>Number of Ewes Mated</Label>
-                                <Input type="numeric" class="form-control-lg was-validated" id="ewesmated" bind:value={numberOfEwesMated} placeholder="Enter Number of Ewes Mated" required />
+                                <Input type="numeric" class="form-control-lg ih-medium" id="ewesmated" bind:value={numberOfEwesMated} placeholder="Enter Number of Ewes Mated" required />
                             </FormGroup>
 
                             <FormGroup class="mb-25 ">
                                 <Label>Number of Rams Used</Label>
-                                <Input type="numeric" class="form-control-lg" placeholder="Enter Number of Rams Used"  bind:value={numberOfRamsUsed} />
+                                <Input type="numeric" class="form-control-lg ih-medium" placeholder="Enter Number of Rams Used"  bind:value={numberOfRamsUsed} />
                             </FormGroup>
 
                             <FormGroup for="Mating Start" class="mb-25 ">
                                 <Label>Mating Dates</Label>
                                 <div class="custom-date-ranger custom-date-ranger__bottom custom-date-ranger__lg position-relative d-flex align-items-center">
-                                    <div class="form-group mb-0" required>
-                                        <DatePicker format="DD MMMM YYYY" id="Matingstart" bind:value={matingStartDate} placeholder="Mating Start" />
+                                    <div class="form-group mb-0 was-validated">
+                                        <DatePicker 
+                                            format="DD MMMM YYYY" 
+                                            id="Matingstart" 
+                                            bind:value={matingStartDate} 
+                                            on:date-selected={updateMatingStart} 
+                                            placeholder="Mating Start" 
+                                            required
+                                            class="ih-medium"
+                                        />
+                                        <div class="invalid-feedback">Please select a start date</div>
                                     </div>
                                     <span class="divider">-</span>
-                                    <div class="form-group mb-0">
-                                        <DatePicker format="DD MMMM YYYY" id="Matingend" bind:value={matingEndDate} placeholder="Mating End" />
+                                    <div class="form-group mb-0 was-validated">
+                                        <DatePicker 
+                                            format="DD MMMM YYYY" 
+                                            id="Matingend" 
+                                            bind:value={matingEndDate} 
+                                            on:date-selected={updateMatingEnd} 
+                                            placeholder="Mating End" 
+                                            required
+                                            class="ih-medium"
+                                        />
+                                        <div class="invalid-feedback">Please select an end date</div>
                                     </div>
                                     <a href={'#'}>
                                         <img class="svg" alt="" src={'/img/svg/calendar.svg'} />
@@ -162,27 +362,43 @@
                             <FormGroup class="mb-25">
                                 <Label>Average Mating Weight (Kg)</Label>
                                 <div class="input-group">
-                                    <Input type="numeric" class="form-control-lg" bind:value={averageMatingWeight} />
+                                    <Input 
+                                        type="number" 
+                                        class="form-control-lg ih-medium" 
+                                        bind:value={averageMatingWeight} 
+                                        step="0.01" 
+                                        min="0" 
+                                        placeholder="Enter weight (e.g., 65.75)"
+                                        on:input={(e) => {
+                                            // Limit to 2 decimal places
+                                            if (e.target.value.includes('.') && e.target.value.split('.')[1].length > 2) {
+                                                e.target.value = parseFloat(e.target.value).toFixed(2);
+                                                averageMatingWeight = parseFloat(e.target.value);
+                                            }
+                                        }}
+                                    />
                                 </div>
                             </FormGroup>
                             <FormGroup class="mb-25">
                                 <Label>Number of Mating Days</Label>
-                                <Input type="text" id="Matingdays" class="form-control-lg" value={matingDaysDifference + ' days'} readonly />
+                                <Input type="text" id="Matingdays" class="form-control-lg ih-medium" value={matingDaysDifference + ' days'} readonly />
                             </FormGroup>
                             
                             <FormGroup class="mb-25">
                                 <Label>Ram to Ewe Ratio (%)</Label>
                                 <div class="input-group">
-                                    <Input type="text" class="form-control-lg" value={ramToEweRatio.toFixed(2) + ' %'} readonly />
+                                    <Input type="text" class="form-control-lg ih-medium" value={ramToEweRatio.toFixed(2) + ' %'} readonly />
                                 </div>
                             </FormGroup>
                             
                                 <FormGroup	class="mb-20">
                                     <Label> Notes</Label>
-                                    <Input type="textarea" 
-                                            class="form-control-lg"  
-                                            rows="12"
-                                            placeholder="Additional Notes"	/>
+                                    <textarea
+                                        class="form-control form-control-lg ih-medium"
+                                        id="notes"
+                                        rows="5"
+                                        placeholder="Additional Notes"
+                                    ></textarea>
                                 </FormGroup>
                         </Col>
                         <Col>
@@ -218,7 +434,7 @@
                                 </FormGroup>
                             
                                 <div class="button-group d-flex pt-25">
-                                <Button color="primary" size="default" class="btn-squared text-capitalize"
+                                <Button color="primary" size="default" class="btn-squared text-capitalize" on:click={handleSubmit}
                                     >Add Record
                                 </Button>
 
@@ -235,9 +451,61 @@
         </Card>
 </Col>
 	</Container>
+
+<!-- Modal for adding a new group -->
+<Modal isOpen={showAddGroupModal} toggle={closeAddGroupModal} size="md">
+    <ModalHeader toggle={closeAddGroupModal}>Add New Group</ModalHeader>
+    <ModalBody>
+        <FormGroup>
+            <Label for="lambingSeasonName">Lambing Season Name <span class="text-danger">*</span></Label>
+            <Input 
+                type="text" 
+                name="lambingSeasonName" 
+                id="lambingSeasonName" 
+                placeholder="Enter lambing season name" 
+                bind:value={newLambingSeasonName} 
+                noValidate
+            />
+        </FormGroup>
+        <FormGroup>
+            <Label for="tagColor">Tag Color <span class="text-danger">*</span></Label>
+            <div class="position-relative">
+                <Input 
+                    type="text" 
+                    name="tagColor" 
+                    id="tagColor" 
+                    placeholder="Select tag color" 
+                    value={newTagColor} 
+                    on:focus={() => showTagColorDropdown = true}
+                    readonly
+                    noValidate
+                />
+                {#if showTagColorDropdown}
+                    <div class="dropdown-menu show w-100" style="max-height: 200px; overflow-y: auto;">
+                        {#each tagColorOptions as option}
+                            <button 
+                                class="dropdown-item d-flex align-items-center" 
+                                type="button"
+                                on:click={() => {
+                                    newTagColor = option.value;
+                                    showTagColorDropdown = false;
+                                }}
+                            >
+                                <span class="color-dot mr-2" style="background-color: {option.color}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 8px;"></span>
+                                {option.value}
+                            </button>
+                        {/each}
+                    </div>
+                {/if}
+            </div>
+        </FormGroup>
+    </ModalBody>
+    <ModalFooter>
+        <button class="btn btn-secondary" on:click={closeAddGroupModal}>Cancel</button>
+        <button class="btn btn-primary" on:click={saveNewGroup}>Save changes</button>
+    </ModalFooter>
+</Modal>
 </div>
-
-
 
 <style lang="scss">
 	:global {
@@ -303,5 +571,3 @@
 		}
 	}
 </style>
-
-	

@@ -49,7 +49,54 @@ The TableToolboxgroups component follows the consistent structure of all table t
   - Export button with appropriate styling classes
   - Add Group button with primary styling
 
-### 2. GroupsTable
+### 2. Add Groups Modal
+
+The Add Groups modal provides a standardized interface for creating new groups across the application:
+
+#### Modal Structure
+- Medium-sized modal with header, body, and footer
+- Clean, focused design with only essential fields
+- Required fields marked with red asterisks (*) 
+- Save and Cancel buttons in the footer
+
+#### Form Fields
+1. **Lambing Season Name** (required):
+   - Text input field for entering the lambing season name
+   - Placeholder text: "Enter lambing season name"
+
+2. **Tag Color** (required):
+   - Dropdown selection with 11 color options
+   - Each option displays a color dot next to the text
+   - Color options include: White (1), Purple (2), Light Blue (3), Blue (4), Green (5), Lime (6), Yellow (7), Orange (8), Beige (9), Pink (10), Red (11)
+   - Visual indicators help users identify colors easily
+
+#### Implementation Details
+- The modal can be accessed from multiple locations:
+  - Groups page via the "Add Group" button
+  - Add Breeding Record form via the "Add Groups" button
+- Form validation ensures both fields are filled before saving
+- New groups are immediately available in dropdown selectors
+- The modal resets form fields when closed
+
+#### Code Example
+```javascript
+// Tag color options
+const tagColorOptions = [
+    { value: 'White (1)', color: '#ffffff' },
+    { value: 'Purple (2)', color: '#800080' },
+    { value: 'Light Blue (3)', color: '#add8e6' },
+    { value: 'Blue (4)', color: '#0000ff' },
+    { value: 'Green (5)', color: '#008000' },
+    { value: 'Lime (6)', color: '#00ff00' },
+    { value: 'Yellow (7)', color: '#ffff00' },
+    { value: 'Orange (8)', color: '#ffa500' },
+    { value: 'Beige (9)', color: '#f5f5dc' },
+    { value: 'Pink (10)', color: '#ffc0cb' },
+    { value: 'Red (11)', color: '#ff0000' }
+];
+```
+
+### 3. GroupsTable
 
 The GroupsTable component displays all group records with their status information:
 
