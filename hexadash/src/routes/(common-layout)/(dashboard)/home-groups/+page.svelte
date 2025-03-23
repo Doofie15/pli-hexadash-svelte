@@ -2,7 +2,7 @@
 	import PaginationBasic from '@components/paginations/PaginationBasic.svelte';
 	import { Container, Row, Col, Card, CardBody } from 'sveltestrap';
 	import BreadcrumbOne from '@components/breadcrumbs/BreadcrumbOne.svelte';
-	import GroupsTable from '@lib/view/dashboard/Groups/GroupsTable.svelte';
+	import GroupsTable from '@view/dashboard/Groups/GroupsTable.svelte';
 	import TableToolbox from '@components/toolbox/TableToolboxgroups.svelte';
 	
 	let timeFilter = 'This Year';

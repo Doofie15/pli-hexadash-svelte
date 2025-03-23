@@ -37,6 +37,41 @@
 		
 		return timeFilterPassed && searchFilterPassed;
 	});
+
+	// Function to determine event status
+	function getEventStatus(group) {
+		const today = new Date();
+		
+		// Check breeding status
+		const breedingStatus = group.matingStart && group.matingEnd ? 
+			(new Date(group.matingEnd) < today ? 'Recorded' : 'Pending') : 'Pending';
+		
+		// Check scanning status
+		const scanningStatus = group.scanningDate ? 
+			(new Date(group.scanningDate) < today ? 'Recorded' : 'Pending') : 'Pending';
+		
+		// Check lambing status
+		const lambingStatus = group.lambingStart && group.lambingEnd ? 
+			(new Date(group.lambingEnd) < today ? 'Recorded' : 'Pending') : 'Pending';
+		
+		// Check weaning status
+		const weaningStatus = group.weaningDate ? 
+			(new Date(group.weaningDate) < today ? 'Recorded' : 'Pending') : 'Pending';
+		
+		// Overall status
+		const isCompleted = breedingStatus === 'Recorded' && 
+						   scanningStatus === 'Recorded' && 
+						   lambingStatus === 'Recorded' && 
+						   weaningStatus === 'Recorded';
+		
+		return {
+			breeding: breedingStatus,
+			scanning: scanningStatus,
+			lambing: lambingStatus,
+			weaning: weaningStatus,
+			overall: isCompleted ? 'Completed' : 'In Progress'
+		};
+	}
 </script>
 
 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -53,7 +88,7 @@
 					<div class="d-flex align-items-center">
 						<div class="custom-checkbox check-all">
 							<input class="checkbox" type="checkbox" id="check-all" on:click={toggleCheck} />
-							<label for="check-all">Code</label>
+							<label for="check-all"></label>
 						</div>
 					</div>
 				</th>
@@ -70,10 +105,16 @@
 					<span class="Datatable-title">Mating End</span>
 				</th>
 				<th>
+					<span class="Datatable-title">Scanning Date</span>
+				</th>
+				<th>
 					<span class="Datatable-title">Lambing Start</span>
 				</th>
 				<th>
 					<span class="Datatable-title">Lambing End</span>
+				</th>
+				<th>
+					<span class="Datatable-title">Weaning Date</span>
 				</th>
 				<th>
 					<span class="Datatable-title">Status</span>
@@ -88,23 +129,20 @@
 				<tr>
 					<td>
 						<div class="d-flex align-items-center">
-							<div class="me-3 d-flex align-items-center">
-								<div class="checkbox-group-wrapper">
-									<div class="checkbox-group d-flex">
-										<div
-											class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex"
-										>
-											<input
-												class="checkbox"
-												type="checkbox"
-												id="check-grp-content-{i}"
-												{checked}
-											/>
-											<label for="check-grp-content-{i}" />
-										</div>
+							<div class="checkbox-group-wrapper">
+								<div class="checkbox-group d-flex">
+									<div
+										class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex"
+									>
+										<input
+											class="checkbox"
+											type="checkbox"
+											id="check-grp-content-{i}"
+											{checked}
+										/>
+										<label for="check-grp-content-{i}" />
 									</div>
 								</div>
-								<div class="orderDatatable-title">{data.code}</div>
 							</div>
 						</div>
 					</td>
@@ -137,26 +175,38 @@
 						<div class="Datatable-title">{data.matingEnd}</div>
 					</td>
 					<td>
+						<div class="Datatable-title">{data.scanningDate}</div>
+					</td>
+					<td>
 						<div class="Datatable-title">{data.lambingStart}</div>
 					</td>
 					<td>
 						<div class="Datatable-title">{data.lambingEnd}</div>
 					</td>
 					<td>
-						<div class="groupDatatable-content d-inline-block">
-							<Badge
-								pill
-								color={data.status === 'Active'
-									? 'Success'
-									: data.status === 'In Active'
-									? 'danger'
-									: 'warning'}
-								class="bg-{data.status === 'Active'
-									? 'success'
-									: data.status === 'In Active'
-									? 'danger'
-									: 'danger'}"
-								>{data.status}
+						<div class="Datatable-title">{data.weaningDate}</div>
+					</td>
+					<td>
+						<div class="status-badges-container">
+							<Badge pill 
+								color={getEventStatus(data).breeding === 'Recorded' ? 'success' : 'warning'} 
+								class="bg-{getEventStatus(data).breeding === 'Recorded' ? 'success' : 'warning'} status-badge">
+								B
+							</Badge>
+							<Badge pill 
+								color={getEventStatus(data).scanning === 'Recorded' ? 'success' : 'warning'} 
+								class="bg-{getEventStatus(data).scanning === 'Recorded' ? 'success' : 'warning'} status-badge">
+								S
+							</Badge>
+							<Badge pill 
+								color={getEventStatus(data).lambing === 'Recorded' ? 'success' : 'warning'} 
+								class="bg-{getEventStatus(data).lambing === 'Recorded' ? 'success' : 'warning'} status-badge">
+								L
+							</Badge>
+							<Badge pill 
+								color={getEventStatus(data).weaning === 'Recorded' ? 'success' : 'warning'} 
+								class="bg-{getEventStatus(data).weaning === 'Recorded' ? 'success' : 'warning'} status-badge">
+								W
 							</Badge>
 						</div>
 					</td>
@@ -182,7 +232,7 @@
 				</tr>
 			{:else}
 				<tr>
-					<td colspan="9" class="text-center py-4">
+					<td colspan="11" class="text-center py-4">
 						<div class="empty-state">
 							<p class="mb-0">No groups found matching your criteria</p>
 						</div>
@@ -193,8 +243,25 @@
 	</Table>
 </div>
 
-<style lang="scss">
-	:global {
-		@import '../../../../assets/sass/components/_table';
+<style>
+	.empty-state {
+		padding: 2rem;
+		text-align: center;
+		color: #868e96;
+	}
+	
+	.status-badges-container {
+		display: flex;
+		gap: 0.25rem;
+	}
+	
+	:global(.status-badge) {
+		font-size: 0.7rem;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>
