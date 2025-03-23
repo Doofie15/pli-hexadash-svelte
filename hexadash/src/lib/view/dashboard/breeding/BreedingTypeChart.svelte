@@ -2,8 +2,15 @@
 	import { Card, CardHeader, CardBody } from 'sveltestrap';
 	import CardExtra from '@components/cards/CardExtra.svelte';
 	import Chartjs from '@components/utilities/Chartjs.svelte';
+	import breedingData from '@demo-data/breeding-records.json';
+	import { onMount } from 'svelte';
 
-	let height = 250;
+	// Time filter state
+	export let timeFilter = 'today';
+	let isLoading = false;
+
+	// Chart configuration
+	let height = 500	;
 	let scales = {
 		y: {
 			display: false
@@ -30,45 +37,106 @@
 			animateRotate: true
 		}
 	};
-	let dataStats = [
-		{
-			icons: [''],
-			labels: ['Natural Mating'],
-			revenue: [80],
-			color: '#8231D3'
-		},
-		{
-			icons: [''],
-			labels: ['Cervical Ai'],
-			revenue: [15],
-			color: '#00AAFF'
-		},
-		{
-			icons: [''],
-			labels: ['Laoproscopic AI'],
-			revenue: [5],
-			color: '#5840FF'
-		}
-	];
-	let labels = [];
-	let revenues = [];
-	let colors = [];
-	dataStats.forEach((elm) => {
-		labels.push(elm.labels);
-		revenues.push(elm.revenue);
-		colors.push(elm.color);
-	});
 
-	let chartData = [
+	// Get current year for filtering
+	const currentYear = new Date().getFullYear();
+
+	// Process data from breeding records
+	const processBreedingTypeData = () => {
+		// Get all records
+		const allRecords = breedingData.records;
+		
+		// Filter records based on time period
+		let filteredRecords;
+		if (timeFilter === 'today') {
+			// This Year - current year only
+			filteredRecords = allRecords.filter(record => {
+				const recordYear = new Date(record.timestamp).getFullYear();
+				return recordYear === currentYear;
+			});
+		} else if (timeFilter === 'week') {
+			// 5 Years - current year and 4 previous years
+			filteredRecords = allRecords.filter(record => {
+				const recordYear = new Date(record.timestamp).getFullYear();
+				return recordYear >= currentYear - 4 && recordYear <= currentYear;
+			});
+		} else {
+			// All time
+			filteredRecords = [...allRecords];
+		}
+
+		// Count ewes by mating type
+		const matingTypeCounts = {};
+		let totalEwes = 0;
+
+		filteredRecords.forEach(record => {
+			const { matingType, ewes } = record;
+			if (!matingTypeCounts[matingType]) {
+				matingTypeCounts[matingType] = 0;
+			}
+			matingTypeCounts[matingType] += ewes;
+			totalEwes += ewes;
+		});
+
+		// Calculate percentages and prepare data
+		const matingTypeData = [];
+		
+		// Softer, livestock-friendly colors
+		const colors = {
+			'Natural Mating': '#4CAF50', // Green
+			'Cervical AI': '#2196F3',    // Blue
+			'Laparoscopic AI': '#FF9800' // Orange
+		};
+		
+		// Icons for each mating type
+		const icons = {
+			'Natural Mating': 'sheep',
+			'Cervical AI': 'syringe',
+			'Laparoscopic AI': 'microscope'
+		};
+
+		for (const [type, count] of Object.entries(matingTypeCounts)) {
+			const percentage = totalEwes > 0 ? Math.round((count / totalEwes) * 100) : 0;
+			matingTypeData.push({
+				label: type,
+				value: percentage,
+				count: count,
+				color: colors[type] || '#78909C', // Default color if not in predefined colors
+				icon: icons[type] || 'info-circle'
+			});
+		}
+
+		// Sort by value (percentage) in descending order
+		matingTypeData.sort((a, b) => b.value - a.value);
+
+		return matingTypeData;
+	};
+
+	// Handle tab/filter changes
+	const handleTabActivation = (value) => {
+		isLoading = true;
+		timeFilter = value;
+		setTimeout(() => {
+			isLoading = false;
+		}, 100);
+	};
+
+	// Reactive data processing based on timeFilter
+	$: dataStats = processBreedingTypeData();
+	$: labels = dataStats.map(item => item.label);
+	$: values = dataStats.map(item => item.value);
+	$: colors = dataStats.map(item => item.color);
+
+	$: chartData = [
 		{
-			label: 'Revenue Generated',
-			data: revenues,
+			label: 'Mating Type Distribution',
+			data: values,
 			backgroundColor: colors
 		}
 	];
 
 	let tooltip = {
-		backgroundColor: '#0066F',
+		backgroundColor: '#0066FF',
 		titleFontSize: 16,
 		titleFontColor: '#0066ff',
 		bodyFontColor: '#000',
@@ -77,7 +145,11 @@
 
 		callbacks: {
 			title(t) {
-				console.log(t);
+				return t[0].label;
+			},
+			label(t) {
+				const { dataIndex } = t;
+				return `${values[dataIndex]}% (${dataStats[dataIndex].count} ewes)`;
 			}
 		}
 	};
@@ -85,45 +157,68 @@
 
 <Card class="border-0 px-25 h-100">
 	<CardHeader class="px-0 border-0 pb-md-20 pb-0">
-		<h6>Mating Type </h6>
-		<CardExtra />
+		<h6>Mating Type</h6>
+		<div class="card-extra">
+			<ul class="card-tab-links nav">
+				<li>
+					<a
+						on:click|preventDefault={() => {
+							handleTabActivation('today');
+						}}
+						href={'#'}
+						class={timeFilter === 'today' ? 'active' : ''}>This Year</a
+					>
+				</li>
+				<li>
+					<a
+						on:click|preventDefault={() => {
+							handleTabActivation('week');
+						}}
+						href={'#'}
+						class={timeFilter === 'week' ? 'active' : ''}>5 Years</a
+					>
+				</li>
+				<li>
+					<a
+						on:click|preventDefault={() => {
+							handleTabActivation('months');
+						}}
+						href={'#'}
+						class={timeFilter === 'months' ? 'active' : ''}>All</a
+					>
+				</li>
+			</ul>
+		</div>
 	</CardHeader>
-	<CardBody class="p-0">
-		<div class="chart-content revenuePieChart--wrapper px-0">
-			<Chartjs
-				type="pie"
-				className="revenuePieChart"
-				id="revenuePieChart"
-				{labels}
-				{options}
-				{scales}
-				datasets={chartData}
-				{tooltip}
-				{height}
-			/>
-			<div class="chart-content__details">
-				{#each dataStats as { icons, labels, revenue }}
-					<div class="chart-content__single">
-						{#each icons as icon}
-							<span class="icon color-{icon}">
-								{#if icon === 'facebook'}
-									<span class="uil uil-facebook-f" />
-								{:else if icon === 'twitter'}
-									<span class="uil uil-twitter" />
-								{:else if icon === 'google'}
-									<img class="svg" alt="" src={'/img/svg/google-customIcon.svg'} />
-								{/if}
-							</span>
-						{/each}
-						{#each labels as label}
-							<span class="label">{label}</span>
-						{/each}
-						{#each revenue as data}
-							<span class="data">{data} %</span>
-						{/each}
-					</div>
-				{/each}
-			</div>
+	<CardBody class="p-0 d-flex flex-column h-100">
+		<div class="chart-content revenuePieChart--wrapper px-0 flex-grow-1">
+			{#if !isLoading}
+				<div class="chart-container">
+					<Chartjs
+						type="pie"
+						className="revenuePieChart"
+						id="revenuePieChart"
+						{labels}
+						{options}
+						{scales}
+						datasets={chartData}
+						{tooltip}
+						{height}
+					/>
+				</div>
+			{:else}
+				<div class="chart-loading"><a-spin /></div>
+			{/if}
+		</div>
+		<div class="chart-legend">
+			{#each dataStats as item}
+				<div class="legend-item">
+					<span class="color-indicator" style="background-color: {item.color}"></span>
+					<span class="icon"><i class="fas fa-{item.icon}"></i></span>
+					<span class="label">{item.label}</span>
+					<span class="value">{item.value}%</span>
+				</div>
+			{/each}
 		</div>
 	</CardBody>
 </Card>
@@ -131,79 +226,59 @@
 <style lang="scss">
 	:global {
 		@import '../../../../..//src/assets/sass/mixins/media-queries';
+		
 		.chart-content {
-			padding: 25px 25px 50px;
+			padding: 15px 15px 0;
 			display: flex;
+			flex-direction: column;
 			align-items: center;
+			
+			.chart-container {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+		}
+		
+		.chart-legend {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
-			@include sm {
-				flex-wrap: wrap;
-			}
-			@include MinSm {
-				&.revenuePieChart--wrapper {
-					.revenuePieChart {
-						margin-left: -21px;
-					}
-					.chart-content__details {
-						margin-left: 30px;
-					}
-				}
-			}
-			.chart-content__details {
+			gap: 12px;
+			padding: 15px 15px 20px;
+			margin-top: auto;
+			border-top: 1px solid var(--border-light);
+			
+			.legend-item {
 				display: flex;
 				align-items: center;
-				@include sm {
-					flex-wrap: wrap;
-					justify-content: center;
+				margin-right: 10px;
+				
+				.color-indicator {
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+					margin-right: 5px;
 				}
-			}
-			.chart-content__single {
-				text-align: center;
-				span {
-					display: block;
-					&.icon {
-						width: 80px;
-						height: 80px;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						margin: 22px 22px 0;
-						border-radius: 10px;
-						@include xs {
-							width: 60px;
-							height: 60px;
-							margin: 15px 15px 0;
-						}
-						svg {
-							width: 30px;
-						}
-						span,
-						i {
-							font-size: 30px;
-						}
-						&.color-facebook {
-							background: rgba(var(--color-primary-rgba), 0.2);
-							color: var(--color-primary);
-						}
-						&.color-google {
-							background: #5840ff20;
-						}
-						&.color-twitter {
-							background: #00aaff20;
-						}
-					}
-					&.label {
-						font-weight: 500;
-						font-size: 15px;
-						margin-top: 7px;
-						color: var(--color-dark);
-					}
-					&.data {
-						font-weight: 500;
-						font-size: 14px;
-						margin-top: 2px;
-						color: var(--color-gray);
-					}
+				
+				.icon {
+					margin-right: 5px;
+					font-size: 12px;
+					color: var(--color-dark);
+				}
+				
+				.label {
+					font-weight: 500;
+					font-size: 13px;
+					color: var(--color-dark);
+					margin-right: 5px;
+				}
+				
+				.value {
+					font-size: 13px;
+					font-weight: 600;
+					color: var(--color-gray);
 				}
 			}
 		}

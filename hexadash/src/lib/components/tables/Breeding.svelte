@@ -87,11 +87,11 @@
 					th {
 						font-size: 12px;
 						font-weight: 500;
-						line-height: 18px;
+						line-height: 16px;
 						text-transform: uppercase;
 						color: var(--color-gray);
 						border: none;
-						padding: 6px 15px;
+						padding: 5px 15px;
 						vertical-align: middle;
 					}
 				}
@@ -99,18 +99,19 @@
 			tbody {
 				tr {
 					&:hover {
-						box-shadow: 0 15px 50px var(--shadow3);
+						box-shadow: 0 10px 30px var(--shadow3);
 						td {
 							background: var(--color-white);
 						}
 					}
 					td {
-						padding: 20px 15px;
+						padding: 10px 15px;
 						color: var(--color-dark);
 						font-weight: 500;
 						border: none;
 						background: var(--color-white);
 						vertical-align: middle;
+						font-size: 13px;
 						
 						&:first-child {
 							border-radius: 10px 0 0 10px;
@@ -120,11 +121,11 @@
 						}
 						.selling-product-img {
 							img {
-								max-width: 40px;
-								border-radius: 10px;
+								max-width: 32px;
+								border-radius: 8px;
 							}
 							span {
-								margin-left: 15px;
+								margin-left: 12px;
 								color: var(--color-dark);
 								font-weight: 500;
 							}
