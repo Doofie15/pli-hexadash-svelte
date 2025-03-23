@@ -8,17 +8,10 @@
 	
 	const dispatch = createEventDispatcher();
 	let searchTerm = '';
-	let matingTypeFilter = 'All';
 
 	function handleSearch(event) {
 		searchTerm = event.target.value;
 		dispatch('search', { searchTerm });
-	}
-
-	function handleMatingTypeFilter(event, filter) {
-		event.preventDefault();
-		matingTypeFilter = filter;
-		dispatch('filterChange', { matingTypeFilter });
 	}
 
 	function exportToCSV() {
@@ -94,16 +87,16 @@
 				<div class="data-filter-wrap">
 					<ul class="nav px-1 data-filter-box">
 						<li>
-							<a class={matingTypeFilter === 'All' ? 'active' : ''} href="#all" on:click={(e) => handleMatingTypeFilter(e, 'All')}>All</a>
+							<a class="active" href="#all">All</a>
 						</li>
 						<li>
-							<a class={matingTypeFilter === 'Natural Mating' ? 'active' : ''} href="#natural" on:click={(e) => handleMatingTypeFilter(e, 'Natural Mating')}>Natural Mating</a>
+							<a href="#natural">Natural Mating</a>
 						</li>
 						<li>
-							<a class={matingTypeFilter === 'Cervical AI' ? 'active' : ''} href="#cervical" on:click={(e) => handleMatingTypeFilter(e, 'Cervical AI')}>Cervical AI</a>
+							<a href="#cervical">Cervical AI</a>
 						</li>
 						<li>
-							<a class={matingTypeFilter === 'Laparoscopic AI' ? 'active' : ''} href="#laparoscopic" on:click={(e) => handleMatingTypeFilter(e, 'Laparoscopic AI')}>Laparoscopic AI</a>
+							<a href="#laparoscopic">Laparoscopic AI</a>
 						</li>
 					</ul>
 				</div>
