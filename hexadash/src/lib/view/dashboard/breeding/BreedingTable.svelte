@@ -4,15 +4,38 @@
 		CardHeader,
 		CardBody
 	} from 'sveltestrap';
-	import breedingrecords from '@data/table-data.json';
+	import breedingData from '@demo-data/breeding-records.json';
 	import Breeding from '@components/tables/Breeding.svelte';
-	const sellers = breedingrecords.breedingrecords;
+	
+	// Create filtered data sets based on production year
+	const currentYear = new Date().getFullYear();
+	const fiveYearsAgo = currentYear - 5;
+	
+	const thisYearRecords = breedingData.records.filter(record => {
+		const productionYear = new Date(record.lambingStartDate).getFullYear();
+		return productionYear === currentYear;
+	});
+	
+	const fiveYearRecords = breedingData.records.filter(record => {
+		const productionYear = new Date(record.lambingStartDate).getFullYear();
+		return productionYear >= fiveYearsAgo;
+	});
+	
+	const allRecords = breedingData.records;
+	
+	// Create a data structure similar to what the component expects
+	const periodData = {
+		'today': thisYearRecords,
+		'week': fiveYearRecords,
+		'month': allRecords
+	};
+	
 	let period = 'today';
 	let currentTab = 'today';
-	let dataPeriod = sellers[period];
+	let dataPeriod = periodData[period];
 
 	function changeData(data) {
-		dataPeriod = sellers[data];
+		dataPeriod = periodData[data];
 		currentTab = data;
 	}
 </script>

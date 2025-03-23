@@ -1,6 +1,10 @@
 <script>
 	export let dataPeriod;
 	export let tableHead = true;
+
+	function formatDate(dateStr) {
+		return new Date(dateStr).toLocaleDateString('en-GB');
+	}
 </script>
 
 <div class="selling-table-wrap selling-table-wrap--source table-responsive">
@@ -16,7 +20,9 @@
 					<th># Ewes Mated</th>
 					<th># Rams Used</th>
 					<th>Ram Ewe Ratio</th>
-					<th>Expected Lambing</th>
+					<th>Lambing Start</th>
+					<th>Lambing End</th>
+					<th>Production Year</th>
 				</tr>
 			</thead>
 		{/if}
@@ -26,19 +32,22 @@
 					<td>
 						<div class="selling-product-img d-flex align-items-center">
 							<div class="selling-product-img-wrapper order-bg-opacity-primary align-items-end">
-								<img class=" img-fluid" src="/img/sellers/{data.img}" alt="img" />
+								<!-- Use a default image if no specific image is available -->
+								<img class="img-fluid" src="/img/sellers/1.png" alt="img" />
 							</div>
-							<span>{data.grname}</span>
+							<span>{data.groupName}</span>
 						</div>
 					</td>
-					<td>{data.matingtype}</td>
-					<td>{data.matingstart}</td>
-					<td>{data.matingend}</td>
-					<td>{data.matingdays}</td>
-					<td>{data.ewesmated}</td>
-					<td>{data.ramsused}</td>
-					<td>{data.rameweratio}</td>
-					<td>{data.explambingdate}</td>
+					<td>{data.matingType}</td>
+					<td>{formatDate(data.startDate)}</td>
+					<td>{formatDate(data.endDate)}</td>
+					<td>{data.days}</td>
+					<td>{data.ewes}</td>
+					<td>{data.rams}</td>
+					<td>{data.ramEweRatio}</td>
+					<td>{formatDate(data.lambingStartDate)}</td>
+					<td>{formatDate(data.lambingEndDate)}</td>
+					<td>{data.productionYear}</td>
 				</tr>
 			{/each}
 		</tbody>
@@ -75,149 +84,49 @@
 		table {
 			thead {
 				tr {
-					background: var(--bg-normal);
-				}
-			}
-		}
-		@include lg {
-			padding-bottom: 0;
-		}
-
-		table {
-			tbody {
-				td {
-					white-space: nowrap;
-					padding: 10px 15px 10px 0;
-					color: var(--color-dark);
-				}
-
-				tr {
-					&:first-child {
-						td {
-							padding-top: 15px;
-						}
-					}
-				}
-			}
-
-			thead {
-				tr {
+					background: var(--color-white);
 					th {
 						font-size: 12px;
 						font-weight: 500;
 						line-height: 18px;
-						color: var(--color-light);
 						text-transform: uppercase;
-						padding: 11px 15px;
+						color: var(--color-gray);
+						border: none;
+						padding: 6px 15px;
 					}
 				}
 			}
-
-			tr th {
-				&:first-child {
-					border-radius: 6px 0 0 6px;
-				}
-
-				&:last-child {
-					border-radius: 0 6px 6px 0;
-				}
-			}
-		}
-
-		&.selling-table-wrap--2 {
-			table {
-				tbody {
-					tr {
-						&:first-child {
-							td {
-								padding-top: 3px;
-							}
-						}
-
-						td {
-							&:not(:first-child) {
-								font-size: 14px;
-							}
-
-							&:last-child {
-								padding-right: 0;
-							}
-						}
-					}
-				}
-			}
-		}
-		.selling-product-img {
-			img {
-				margin-right: 12px;
-				width: 32px;
-				height: 32px;
-				border-radius: 5px;
-			}
-
-			span {
-				color: var(--color-dark);
-				font-size: 15px;
-				font-weight: 500;
-				line-height: lh(15px, 20px);
-				@include ssm {
-					padding-right: 15px;
-				}
-			}
-
-			&--2 {
-				img {
-					width: 25px;
-					height: 25px;
-					border-radius: 0;
-					object-fit: contain;
-				}
-			}
-		}
-		&--source {
-			.selling-product-img-wrapper {
-				margin-right: 12px;
-				width: 32px;
-				height: 32px;
-				border-radius: 8px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				img {
-					width: auto;
-					height: auto;
-					margin-right: 0;
-					border-radius: 0;
-				}
-
-				i {
-					font-size: 18px;
-				}
-			}
-
-			.progress {
-				min-width: 120px;
-				height: 4px;
-			}
-			&.selling-table-wrap {
-				table {
-					tbody {
-						td {
-							width: 15%;
-						}
-					}
-				}
-			}
-
-			.table--default {
-				tr td:last-child {
-					padding-right: 0;
-				}
-
-				tbody tr {
+			tbody {
+				tr {
 					&:hover {
-						background-color: transparent;
+						box-shadow: 0 15px 50px var(--shadow3);
+						td {
+							background: var(--color-white);
+						}
+					}
+					td {
+						padding: 20px 15px;
+						color: var(--color-dark);
+						font-weight: 500;
+						border: none;
+						background: var(--color-white);
+						&:first-child {
+							border-radius: 10px 0 0 10px;
+						}
+						&:last-child {
+							border-radius: 0 10px 10px 0;
+						}
+						.selling-product-img {
+							img {
+								max-width: 40px;
+								border-radius: 10px;
+							}
+							span {
+								margin-left: 15px;
+								color: var(--color-dark);
+								font-weight: 500;
+							}
+						}
 					}
 				}
 			}
