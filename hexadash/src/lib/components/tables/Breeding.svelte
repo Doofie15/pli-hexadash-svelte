@@ -12,42 +12,38 @@
 		{#if tableHead}
 			<thead>
 				<tr>
-					<th>Group Name</th>
-					<th>Mating Type</th>
-					<th>Mating Start</th>
-					<th>Mating End</th>
-					<th>Mating Days</th>
-					<th># Ewes Mated</th>
-					<th># Rams Used</th>
-					<th>Ram Ewe Ratio</th>
-					<th>Lambing Start</th>
-					<th>Lambing End</th>
-					<th>Production Year</th>
+					<th class="text-center">Group Name</th>
+					<th class="text-center">Mating Type</th>
+					<th class="text-center">Mating Start</th>
+					<th class="text-center">Mating End</th>
+					<th class="text-center">Mating Days</th>
+					<th class="text-center"># Ewes Mated</th>
+					<th class="text-center"># Rams Used</th>
+					<th class="text-center">Ram Ewe Ratio</th>
+					<th class="text-center">Expected Lambing</th>
 				</tr>
 			</thead>
 		{/if}
 		<tbody>
 			{#each dataPeriod as data}
 				<tr>
-					<td>
-						<div class="selling-product-img d-flex align-items-center">
-							<div class="selling-product-img-wrapper order-bg-opacity-primary align-items-end">
+					<td class="text-center">
+						<div class="selling-product-img d-flex align-items-center justify-content-center">
+							<div class="selling-product-img-wrapper order-bg-opacity-primary align-items-center">
 								<!-- Use a default image if no specific image is available -->
 								<img class="img-fluid" src="/img/sellers/1.png" alt="img" />
 							</div>
 							<span>{data.groupName}</span>
 						</div>
 					</td>
-					<td>{data.matingType}</td>
-					<td>{formatDate(data.startDate)}</td>
-					<td>{formatDate(data.endDate)}</td>
-					<td>{data.days}</td>
-					<td>{data.ewes}</td>
-					<td>{data.rams}</td>
-					<td>{data.ramEweRatio}</td>
-					<td>{formatDate(data.lambingStartDate)}</td>
-					<td>{formatDate(data.lambingEndDate)}</td>
-					<td>{data.productionYear}</td>
+					<td class="text-center">{data.matingType}</td>
+					<td class="text-center">{formatDate(data.startDate)}</td>
+					<td class="text-center">{formatDate(data.endDate)}</td>
+					<td class="text-center">{data.days}</td>
+					<td class="text-center">{data.ewes}</td>
+					<td class="text-center">{data.rams}</td>
+					<td class="text-center">{data.ramEweRatio}</td>
+					<td class="text-center">{formatDate(data.lambingStartDate)}</td>
 				</tr>
 			{/each}
 		</tbody>
@@ -82,6 +78,9 @@
 			}
 		}
 		table {
+			width: 100%;
+			table-layout: fixed;
+			
 			thead {
 				tr {
 					background: var(--color-white);
@@ -93,6 +92,7 @@
 						color: var(--color-gray);
 						border: none;
 						padding: 6px 15px;
+						vertical-align: middle;
 					}
 				}
 			}
@@ -110,6 +110,8 @@
 						font-weight: 500;
 						border: none;
 						background: var(--color-white);
+						vertical-align: middle;
+						
 						&:first-child {
 							border-radius: 10px 0 0 10px;
 						}
