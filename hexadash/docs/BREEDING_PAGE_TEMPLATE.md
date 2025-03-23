@@ -6,6 +6,43 @@ This document outlines the structure and components of the Breeding Pages, which
 
 The Breeding Pages follow a consistent layout pattern that should be used as a reference for all other data display pages in the application. This ensures a uniform user experience across the dashboard.
 
+## Data Source
+
+The breeding components use data from `src/demo-data/breeding-records.json`, which contains detailed breeding records with the following structure:
+
+```json
+{
+  "records": [
+    {
+      "id": 1,
+      "groupName": "Spring 2025 A",
+      "matingType": "Natural Mating",
+      "ewes": 25,
+      "rams": 2,
+      "ramEweRatio": 8,
+      "startDate": "2025-03-01",
+      "endDate": "2025-04-15",
+      "days": 45,
+      "lambingStartDate": "2025-07-29",
+      "lambingEndDate": "2025-09-12",
+      "averageMatingWeight": 65.3,
+      "productionYear": 2025
+      // Additional fields...
+    }
+    // More records...
+  ]
+}
+```
+
+### Data Filtering
+
+The breeding table implements time-based filtering with three options:
+- **This Year**: Shows only records from the current year
+- **5 Years**: Shows records from the last five years
+- **All**: Shows all available records
+
+The filtering is implemented in `BreedingTable.svelte` by creating filtered datasets based on the production year derived from the lambing start date.
+
 ## Page Structure
 
 ### 1. Main Components

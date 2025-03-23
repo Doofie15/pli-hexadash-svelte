@@ -23,6 +23,20 @@ The breeding module provides a complete solution for managing breeding records. 
 
 The All Breeding page serves as a template for other data display pages in the application. See the [Breeding Page Template Documentation](./docs/BREEDING_PAGE_TEMPLATE.md) for more details.
 
+### Data Source
+
+The breeding components use data from the `src/demo-data/breeding-records.json` file, which contains detailed breeding records including:
+- Group information
+- Mating types and dates
+- Ewe and ram counts
+- Lambing dates and statistics
+
+### Recent Updates
+
+- **Data Source Standardization**: All breeding components now use the standardized data source from breeding-records.json
+- **Time-Based Filtering**: Implemented filtering options for viewing records from the current year, last 5 years, or all time
+- **Improved Data Visualization**: Enhanced charts and tables for better data representation
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:

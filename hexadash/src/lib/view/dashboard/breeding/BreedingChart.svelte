@@ -3,6 +3,8 @@
 	import Chartjs from '@components/utilities/Chartjs.svelte';
 	import { chartLinearGradient, customTooltips } from '@components/utilities/utilities';
 	import { onMount } from 'svelte';
+	import breedingData from '@demo-data/breeding-records.json';
+	
 	let revenue = 'today';
 	let isLoading = false;
 
@@ -28,32 +30,89 @@
 	const tooltip = {
 		callbacks: {
 			title() {
-				return `Total Revenue`;
+				return `Breeding Statistics`;
 			},
 			label(t) {
 				const { formattedValue, dataset } = t;
-				return `${formattedValue}k ${dataset.label}`;
+				return `${formattedValue} ${dataset.label}`;
 			}
 		}
 	};
 
-	let salesRevenue = {
-		today: {
-			users: [100, 200],
-			labels: ['2020-01', '2020-02']
-		},
-		week: {
-			users: [40, 30, 35, 20, 25, 40, 35],
-			labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-		},
-		months: {
-			users: [45, 20, 35, 32, 50, 45, 55, 71, 36, 65, 55, 75],
-			labels: ['Jan', 'Feb', 'Mar', 'App', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Oct', 'Dec']
-		}
+	// Get current year
+	const currentYear = new Date().getFullYear();
+	
+	// Process breeding data for chart
+	const processBreedingData = () => {
+		// Filter data based on time period
+		const allRecords = breedingData.records;
+		
+		// This Year data (current year only)
+		const thisYearRecords = allRecords.filter(record => record.productionYear === currentYear);
+		
+		// 5 Years data (current year and 4 previous years)
+		const fiveYearsRecords = allRecords.filter(
+			record => record.productionYear >= currentYear - 4 && record.productionYear <= currentYear
+		);
+		
+		// Group data by production year
+		const groupByYear = (records) => {
+			const yearGroups = {};
+			
+			records.forEach(record => {
+				const year = record.productionYear;
+				if (!yearGroups[year]) {
+					yearGroups[year] = {
+						ewes: 0,
+						rams: 0
+					};
+				}
+				
+				yearGroups[year].ewes += record.ewes;
+				yearGroups[year].rams += record.rams;
+			});
+			
+			// Convert to arrays for chart
+			const years = Object.keys(yearGroups).sort();
+			const ewesData = years.map(year => yearGroups[year].ewes);
+			const ramsData = years.map(year => yearGroups[year].rams);
+			
+			return {
+				labels: years,
+				ewes: ewesData,
+				rams: ramsData
+			};
+		};
+		
+		// Process data for each time period
+		const thisYearData = groupByYear(thisYearRecords);
+		const fiveYearsData = groupByYear(fiveYearsRecords);
+		const allData = groupByYear(allRecords);
+		
+		return {
+			today: {
+				labels: thisYearData.labels,
+				ewes: thisYearData.ewes,
+				rams: thisYearData.rams
+			},
+			week: {
+				labels: fiveYearsData.labels,
+				ewes: fiveYearsData.ewes,
+				rams: fiveYearsData.rams
+			},
+			months: {
+				labels: allData.labels,
+				ewes: allData.ewes,
+				rams: allData.rams
+			}
+		};
 	};
+	
+	const chartData = processBreedingData();
+	
 	$: salesRevenueDatasets = [
 		{
-			data: salesRevenue[revenue].users,
+			data: chartData[revenue].ewes,
 			borderColor: primaryColor,
 			borderWidth: 3,
 			fill: true,
@@ -62,12 +121,33 @@
 					start: `rgba(${primaryColorRGB},0.4)`,
 					end: 'rgba(0,102,255,0.05)'
 				}), 
-			label: ' Ewes',
+			label: 'Ewes',
 			pointStyle: 'circle',
 			pointRadius: '0',
 			hoverRadius: '6',
 			pointBorderColor: '#fff',
 			pointBackgroundColor: primaryColor,
+			hoverBorderWidth: 2,
+			amount: '',
+			amountClass: 'current-amount',
+			lineTension: 0.5
+		},
+		{
+			data: chartData[revenue].rams,
+			borderColor: '#2C99FF',
+			borderWidth: 3,
+			fill: true,
+			backgroundColor: () =>
+				chartLinearGradient(document.getElementById('ninjadash-sales-revenue'), 300, {
+					start: 'rgba(44, 153, 255, 0.3)',
+					end: 'rgba(44, 153, 255, 0.05)'
+				}),
+			label: 'Rams',
+			pointStyle: 'circle',
+			pointRadius: '0',
+			hoverRadius: '6',
+			pointBorderColor: '#fff',
+			pointBackgroundColor: '#2C99FF',
 			hoverBorderWidth: 2,
 			amount: '',
 			amountClass: 'current-amount',
@@ -174,7 +254,7 @@
 						type="bar"
 						id="ninjadash-sales-revenue"
 						className="ninjadash-sales-revenue"
-						labels={salesRevenue[revenue].labels}
+						labels={chartData[revenue].labels}
 						datasets={salesRevenueDatasets}
 						{scales}
 						height={innerWidth < 1399 ? (innerWidth < 575 ? 200 : 150) : 120}

@@ -2,10 +2,19 @@
 	import PaginationBasic from '@components/paginations/PaginationBasic.svelte';
 	import { Container, Row, Col, Card, CardBody } from 'sveltestrap';
 	import BreadcrumbOne from '@components/breadcrumbs/BreadcrumbOne.svelte';
-	import GroupsTable from '../../../../lib/view/dashboard/groups/GroupsTable.svelte'
-	import TableToolbox from '@components/toolbox/TableToolboxgroups.svelte'
+	import GroupsTable from '@lib/view/dashboard/Groups/GroupsTable.svelte';
+	import TableToolbox from '@components/toolbox/TableToolboxgroups.svelte';
 	
-	
+	let timeFilter = 'This Year';
+	let searchTerm = '';
+
+	function handleFilterChange(event) {
+		timeFilter = event.detail.timeFilter;
+	}
+
+	function handleSearch(event) {
+		searchTerm = event.detail.searchTerm;
+	}
 
 	const breadcrumbData = {
 		pageTitle: 'Groups / Lambing Seasons',
@@ -27,8 +36,14 @@
 			<Col lg={12}>
 				<Card>
 					<CardBody>
-						<TableToolbox filtering={true} buttonText="Group" />
-						<GroupsTable></GroupsTable>
+						<TableToolbox 
+							filtering={true} 
+							buttonText="Group" 
+							{timeFilter}
+							on:filterChange={handleFilterChange}
+							on:search={handleSearch}
+						/>
+						<GroupsTable {timeFilter} {searchTerm}></GroupsTable>
 					</CardBody>
 				</Card>
 			</Col>

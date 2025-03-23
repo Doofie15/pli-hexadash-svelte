@@ -7,7 +7,15 @@
     "createdAt": "2025-01-10T08:30:00Z",
     "status": "Active",
     "animalCount": 27,
-    "location": "Section A - North Paddock"
+    "location": "Section A - North Paddock",
+    "matingType": "Natural Mating",
+    "matingStart": "2025-03-01",
+    "matingEnd": "2025-04-15",
+    "lambingStart": "2025-07-29",
+    "lambingEnd": "2025-09-12",
+    "scanningDate": "2025-05-15",
+    "weaningDate": "2025-10-30",
+    "productionYear": 2025
   },
   {
     "id": 2,
@@ -17,7 +25,15 @@
     "createdAt": "2025-01-15T09:45:00Z",
     "status": "Active",
     "animalCount": 30,
-    "location": "Section B - East Paddock"
+    "location": "Section B - East Paddock",
+    "matingType": "Cervical AI",
+    "matingStart": "2025-02-01",
+    "matingEnd": "2025-03-15",
+    "lambingStart": "2025-06-30",
+    "lambingEnd": "2025-08-13",
+    "scanningDate": "2025-04-20",
+    "weaningDate": "2025-09-25",
+    "productionYear": 2025
   },
   {
     "id": 3,
@@ -27,7 +43,15 @@
     "createdAt": "2025-01-20T10:15:00Z",
     "status": "Active",
     "animalCount": 16,
-    "location": "Section A - South Paddock"
+    "location": "Section A - South Paddock",
+    "matingType": "Natural Mating",
+    "matingStart": "2025-01-15",
+    "matingEnd": "2025-02-28",
+    "lambingStart": "2025-06-14",
+    "lambingEnd": "2025-07-29",
+    "scanningDate": "2025-04-01",
+    "weaningDate": "2025-09-10",
+    "productionYear": 2025
   },
   {
     "id": 4,
@@ -37,7 +61,15 @@
     "createdAt": "2025-01-25T11:30:00Z",
     "status": "Active",
     "animalCount": 22,
-    "location": "Section B - West Paddock"
+    "location": "Section B - West Paddock",
+    "matingType": "Laparoscopic AI",
+    "matingStart": "2025-01-20",
+    "matingEnd": "2025-02-10",
+    "lambingStart": "2025-06-19",
+    "lambingEnd": "2025-07-10",
+    "scanningDate": "2025-03-15",
+    "weaningDate": "2025-08-20",
+    "productionYear": 2025
   },
   {
     "id": 5,
@@ -47,7 +79,15 @@
     "createdAt": "2025-02-01T08:00:00Z",
     "status": "Active",
     "animalCount": 35,
-    "location": "Section C - Central Paddock"
+    "location": "Section C - Central Paddock",
+    "matingType": "Natural Mating",
+    "matingStart": "2025-03-10",
+    "matingEnd": "2025-04-25",
+    "lambingStart": "2025-08-07",
+    "lambingEnd": "2025-09-22",
+    "scanningDate": "2025-05-30",
+    "weaningDate": "2025-11-05",
+    "productionYear": 2025
   },
   {
     "id": 6,
@@ -57,7 +97,15 @@
     "createdAt": "2025-02-05T14:20:00Z",
     "status": "Active",
     "animalCount": 12,
-    "location": "Research Facility - Paddock 1"
+    "location": "Research Facility - Paddock 1",
+    "matingType": "Cervical AI",
+    "matingStart": "2025-02-15",
+    "matingEnd": "2025-03-01",
+    "lambingStart": "2025-07-14",
+    "lambingEnd": "2025-07-28",
+    "scanningDate": "2025-04-05",
+    "weaningDate": "2025-09-01",
+    "productionYear": 2025
   },
   {
     "id": 7,
@@ -67,7 +115,15 @@
     "createdAt": "2025-02-10T09:30:00Z",
     "status": "Active",
     "animalCount": 18,
-    "location": "Premium Section - Paddock 3"
+    "location": "Premium Section - Paddock 3",
+    "matingType": "Natural Mating",
+    "matingStart": "2025-02-20",
+    "matingEnd": "2025-04-05",
+    "lambingStart": "2025-07-19",
+    "lambingEnd": "2025-09-03",
+    "scanningDate": "2025-05-10",
+    "weaningDate": "2025-10-15",
+    "productionYear": 2025
   },
   {
     "id": 8,
@@ -77,7 +133,15 @@
     "createdAt": "2025-02-15T10:45:00Z",
     "status": "Active",
     "animalCount": 25,
-    "location": "Dorper Section - East Field"
+    "location": "Dorper Section - East Field",
+    "matingType": "Natural Mating",
+    "matingStart": "2025-03-05",
+    "matingEnd": "2025-04-20",
+    "lambingStart": "2025-08-02",
+    "lambingEnd": "2025-09-17",
+    "scanningDate": "2025-05-25",
+    "weaningDate": "2025-10-30",
+    "productionYear": 2025
   },
   {
     "id": 9,
@@ -87,6 +151,14 @@
     "createdAt": "2025-02-20T11:15:00Z",
     "status": "Active",
     "animalCount": 20,
-    "location": "Suffolk Section - North Field"
+    "location": "Suffolk Section - North Field",
+    "matingType": "Cervical AI",
+    "matingStart": "2025-03-01",
+    "matingEnd": "2025-03-15",
+    "lambingStart": "2025-07-29",
+    "lambingEnd": "2025-08-12",
+    "scanningDate": "2025-05-01",
+    "weaningDate": "2025-10-01",
+    "productionYear": 2025
   }
 ]
