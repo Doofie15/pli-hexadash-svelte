@@ -10,6 +10,7 @@ Hexadash is a comprehensive dashboard application built with Svelte and SvelteKi
 
 - **Dashboard Overview**: Visual representation of key metrics
 - **Breeding Management**: Complete system for tracking breeding records
+- **Groups Management**: Track and manage breeding groups and lambing seasons
 - **Order Management**: Track and manage customer orders
 - **User Management**: Manage user accounts and permissions
 
@@ -31,11 +32,38 @@ The breeding components use data from the `src/demo-data/breeding-records.json` 
 - Ewe and ram counts
 - Lambing dates and statistics
 
+## Groups Module
+
+The Groups module allows tracking of breeding groups and lambing seasons through their entire lifecycle:
+
+- **Groups Dashboard**: Overview of all breeding groups
+- **Status Tracking**: Visual indicators for Breeding, Scanning, Lambing, and Weaning events
+- **Filtering Options**: Filter groups by time period or search by name/attributes
+
+### Status Badges
+
+The Groups table includes status badges that provide at-a-glance information about each group's progress:
+- **B**: Breeding status (green for Recorded, yellow for Pending)
+- **S**: Scanning status (green for Recorded, yellow for Pending)
+- **L**: Lambing status (green for Recorded, yellow for Pending)
+- **W**: Weaning status (green for Recorded, yellow for Pending)
+
+### Data Source
+
+The groups components use data from the `src/demo-data/groups.json` file, which contains:
+- Group names and codes
+- Mating start and end dates
+- Scanning dates
+- Lambing start and end dates
+- Weaning dates
+
 ### Recent Updates
 
 - **Data Source Standardization**: All breeding components now use the standardized data source from breeding-records.json
 - **Time-Based Filtering**: Implemented filtering options for viewing records from the current year, last 5 years, or all time
 - **Improved Data Visualization**: Enhanced charts and tables for better data representation
+- **Groups Status Badges**: Added compact horizontal status badges to track breeding lifecycle events
+- **Table Toolbox Consistency**: Standardized table toolbox components across all data tables
 
 ## Developing
 

@@ -1,6 +1,57 @@
-# create-svelte
+# Hexadash Svelte Dashboard Documentation
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This documentation provides comprehensive information about the Hexadash Svelte Dashboard application.
+
+## Module Documentation
+
+- [Breeding Page Template](../hexadash/docs/BREEDING_PAGE_TEMPLATE.md) - Documentation for the breeding page structure and components
+- [Groups Module](../hexadash/docs/GROUPS_MODULE.md) - Documentation for the Groups module with status tracking badges
+
+## Development Guidelines
+
+### Component Structure
+
+All table toolbox components in the application follow a consistent structure matching the BreedingTableToolbox pattern:
+
+1. **Layout Structure**:
+   - Top-level div with class "table-top-toolbox-wrap" using d-flex, justify-content-between
+   - Left side contains search and filters in "toolbox-search global-shadow"
+   - Right side contains action buttons in "content-center mt-10"
+
+2. **Search Section**:
+   - Search icon with input field
+   - No button styling for the search input
+   - Border-0 and box-shadow-none classes for clean appearance
+
+3. **Filter Navigation**:
+   - Horizontal list with "nav px-1 data-filter-box" classes
+   - Filter options as anchor tags with active class for selected item
+   - Filter label with colon (e.g., "Time Period :")
+   - Click handlers that use preventDefault and dispatch custom events
+
+4. **Button Group**:
+   - Export button with "order-bg-opacity-secondary radius-md btn btn-sm color-secondary" classes
+   - Add button with "btn-primary radius-md btn btn-sm" classes
+   - Icon for add button using "la la-plus" class
+   - Consistent spacing with "m-0 mt-xl-0 mt-sm-10" classes
+
+### Page Structure
+
+Overview pages follow a standard structure:
+
+1. **Container Layout**:
+   - Uses `Container fluid` for full-width layout
+   - Organized in responsive `Row` and `Col` components from sveltestrap
+   - Consistent margin-bottom (`mb-25`) for spacing between components
+
+2. **Component Hierarchy**:
+   ```
+   +page.svelte
+   ├── BreadcrumbThree/BreadcrumbOne
+   ├── OverviewCards (if applicable)
+   ├── Charts (if applicable)
+   └── DataTable (full width)
+   ```
 
 ## Creating a project
 
