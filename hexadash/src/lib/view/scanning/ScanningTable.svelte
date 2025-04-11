@@ -85,46 +85,46 @@
 					</div>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Scanning Date</span>
+					<span class="userDatatable-title">Scan Date</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Ewes Mated</span>
+					<span class="userDatatable-title">Ewes Mated</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Ewes Scanned</span>
+					<span class="userDatatable-title">Ewes Scanned</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Ewes Pregnant</span>
+					<span class="userDatatable-title">Ewes Preg.</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Dry Ewes</span>
+					<span class="userDatatable-title">Dry</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Conception %</span>
+					<span class="userDatatable-title">Concep. %</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Singles</span>
+					<span class="userDatatable-title">Singles</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Twins</span>
+					<span class="userDatatable-title">Twins</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Triplets</span>
+					<span class="userDatatable-title">Trips</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Exp. Fetuses</span>
+					<span class="userDatatable-title">Fetuses</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Lambing % (Ewes Mated)</span>
+					<span class="userDatatable-title">Lamb % (Mated)</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Lambing % (Ewes Pregnant)</span>
+					<span class="userDatatable-title">Lamb % (Preg.)</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-center">Scanning Agency</span>
+					<span class="userDatatable-title">Agency</span>
 				</th>
 				<th>
-					<span class="userDatatable-title float-end">Action</span>
+					<span class="userDatatable-title text-center">Action</span>
 				</th>
 			</tr>
 		</thead>
@@ -156,37 +156,37 @@
 								</div>
 							</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{formatDate(record.scanningDate)}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesMated || '-'}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesScanned}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesPregnant}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.dryEwes}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{formatPercentage(record.conceptionRatio)}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesWithSingles}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesWithTwins}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.ewesWithTrips}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.expFetuses}</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-content d-inline-block">
 								<Badge
 									pill
@@ -197,7 +197,7 @@
 								</Badge>
 							</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-content d-inline-block">
 								<Badge
 									pill
@@ -208,7 +208,7 @@
 								</Badge>
 							</div>
 						</td>
-						<td class="text-center">
+						<td>
 							<div class="userDatatable-title">{record.scanningAgency || '-'}</div>
 						</td>
 						<td>
@@ -246,6 +246,19 @@
 	:global {
 		.selected {
 			background-color: rgba(95, 99, 242, 0.1);
+		}
+		
+		.userDatatable-header th {
+			padding: 0.75rem 0.5rem;
+		}
+		
+		.userDatatable-title {
+			font-size: 14px;
+			white-space: nowrap;
+		}
+		
+		.table td {
+			padding: 0.75rem 0.5rem;
 		}
 	}
 </style>
