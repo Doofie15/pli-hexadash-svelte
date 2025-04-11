@@ -38,13 +38,15 @@ This document provides a comprehensive overview of all scanning-related componen
 
 ### ScanningTable
 - **Purpose**: Tabular display of scanning records
-- **Location**: `src/lib/view/dashboard/scanning/ScanningTable.svelte`
+- **Location**: `src/lib/view/scanning/ScanningTable.svelte`
 - **Features**:
-  - Displays scanning date, group, number of ewes scanned, and scan results
-  - Sortable columns
-  - Time period filtering
-- **Props**:
-  - `timeFilter`: Controls the time period for data filtering
+  - Displays comprehensive scanning data including group name, scanning date, ewes mated/scanned/pregnant, and lambing percentages
+  - Color-coded lambing percentages based on performance thresholds:
+    - Lambing % (Ewes Mated): Red (<100%), Yellow (100-120%), Green (>120%)
+    - Lambing % (Ewes Pregnant): Red (<120%), Yellow (120-160%), Green (>160%)
+  - Centered data alignment for better readability
+  - Row selection functionality for batch operations
+  - Action buttons for edit, view, and delete operations
 - **Data Source**: `scanning-records.json`
 
 ## Data Structure

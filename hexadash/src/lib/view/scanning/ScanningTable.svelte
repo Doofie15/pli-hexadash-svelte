@@ -1,0 +1,251 @@
+<script>
+	import { onMount } from 'svelte';
+	import { Table, Badge, Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'sveltestrap';
+	import scanningData from '@demo-data/scanning-records.json';
+	import { selectedScanningRows, allScanningRowsSelected } from '$lib/stores/scanningStore';
+
+	$: checked = false;
+	function toggleCheck() {
+		checked = !checked;
+		if (checked) {
+			$selectedScanningRows = scanningData.records;
+		} else {
+			$selectedScanningRows = [];
+		}
+		$allScanningRowsSelected = checked;
+	}
+
+	function toggleRowSelection(record) {
+		if ($selectedScanningRows.find(r => r.id === record.id)) {
+			$selectedScanningRows = $selectedScanningRows.filter(r => r.id !== record.id);
+		} else {
+			$selectedScanningRows = [...$selectedScanningRows, record];
+		}
+		const visibleRecords = scanningData.records;
+		checked = $selectedScanningRows.length === visibleRecords.length;
+		$allScanningRowsSelected = checked;
+	}
+
+	$: isRowSelected = (record) => $selectedScanningRows.some(r => r.id === record.id);
+
+
+
+	function getStatusColor(percentage) {
+		if (!percentage) return 'danger';
+		if (percentage >= 170) return 'success';
+		if (percentage >= 150) return 'info';
+		if (percentage >= 130) return 'warning';
+		return 'danger';
+	}
+	
+	function getLambingTextColor(percentage) {
+		if (!percentage || percentage < 100) return 'text-danger';
+		if (percentage >= 100 && percentage < 120) return 'text-warning';
+		return 'text-success';
+	}
+	
+	function getLambingPregnantTextColor(percentage) {
+		if (!percentage || percentage < 120) return 'text-danger';
+		if (percentage >= 120 && percentage < 160) return 'text-warning';
+		return 'text-success';
+	}
+
+	function formatDate(dateStr) {
+		return new Date(dateStr).toLocaleDateString('en-GB');
+	}
+
+	function formatPercentage(value) {
+		if (value === undefined || value === null || isNaN(value)) return '0.0%';
+		return value.toFixed(1) + '%';
+	}
+
+	function getProductionYear(dateStr) {
+		return new Date(dateStr).getFullYear();
+	}
+
+
+</script>
+
+<div class="table-responsive">
+	<Table class="mb-0" borderless>
+		<thead>
+			<tr class="userDatatable-header">
+				<th>
+					<div class="d-flex align-items-center">
+						<div class="custom-checkbox check-all">
+							<input 
+								class="checkbox" 
+								type="checkbox" 
+								id="check-all" 
+								on:click={toggleCheck}
+								bind:checked={checked}
+							/>
+							<label for="check-all">Group Name</label>
+						</div>
+					</div>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Scanning Date</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Ewes Mated</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Ewes Scanned</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Ewes Pregnant</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Dry Ewes</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Conception %</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Singles</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Twins</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Triplets</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Exp. Fetuses</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Lambing % (Ewes Mated)</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Lambing % (Ewes Pregnant)</span>
+				</th>
+				<th>
+					<span class="userDatatable-title text-center">Scanning Agency</span>
+				</th>
+				<th>
+					<span class="userDatatable-title float-end">Action</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{#each scanningData.records as record, i}
+					<tr class:selected={isRowSelected(record)}>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="me-3 d-flex align-items-center">
+									<div class="checkbox-group-wrapper">
+										<div class="checkbox-group d-flex">
+											<div
+												class="checkbox-theme-default custom-checkbox checkbox-group__single d-flex"
+											>
+												<input
+													class="checkbox"
+													type="checkbox"
+													id="checkbox-{record.id}"
+													checked={isRowSelected(record)}
+													on:change={() => toggleRowSelection(record)}
+												/>
+												<label for="checkbox-{record.id}" />
+											</div>
+										</div>
+									</div>
+									<div class="orderDatatable-title">
+										<p class="d-block mb-0">{record.groupName}</p>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{formatDate(record.scanningDate)}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesMated || '-'}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesScanned}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesPregnant}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.dryEwes}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{formatPercentage(record.conceptionRatio)}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesWithSingles}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesWithTwins}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.ewesWithTrips}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.expFetuses}</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-content d-inline-block">
+								<Badge
+									pill
+									color={getStatusColor(record.expLambingPercentMated)}
+									class="badge-transparent {getLambingTextColor(record.ewesMated > 0 ? (record.expFetuses / record.ewesMated * 100) : 0)}"
+								>
+									{record.ewesMated > 0 ? formatPercentage(record.expFetuses / record.ewesMated * 100) : '0.0%'}
+								</Badge>
+							</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-content d-inline-block">
+								<Badge
+									pill
+									color={getStatusColor(record.ewesPregnant > 0 ? (record.expFetuses / record.ewesPregnant) * 100 : 0)}
+									class="badge-transparent {getLambingPregnantTextColor(record.ewesPregnant > 0 ? (record.expFetuses / record.ewesPregnant) * 100 : 0)}"
+								>
+									{record.ewesPregnant > 0 ? formatPercentage((record.expFetuses / record.ewesPregnant) * 100) : '0.0%'}
+								</Badge>
+							</div>
+						</td>
+						<td class="text-center">
+							<div class="userDatatable-title">{record.scanningAgency || '-'}</div>
+						</td>
+						<td>
+							<div class="card-extra">
+								<Dropdown nav>
+									<DropdownToggle nav>
+										<div class="orderDatatable_actions">
+											<span class="svg-icon">
+												<i class="uil uil-ellipsis-h" />
+											</span>
+										</div>
+									</DropdownToggle>
+									<DropdownMenu right>
+										<DropdownItem href={`/pages/page-edit_scanning?id=${record.id}`}>
+											<i class="uil uil-edit" /> Edit
+										</DropdownItem>
+										<DropdownItem href={`/pages/page-view_scanning?id=${record.id}`}>
+											<i class="uil uil-eye" /> View
+										</DropdownItem>
+										<DropdownItem>
+											<i class="uil uil-trash-alt" /> Delete
+										</DropdownItem>
+									</DropdownMenu>
+								</Dropdown>
+							</div>
+						</td>
+					</tr>
+
+			{/each}
+		</tbody>
+	</Table>
+</div>
+
+<style lang="scss">
+	:global {
+		.selected {
+			background-color: rgba(95, 99, 242, 0.1);
+		}
+	}
+</style>
