@@ -4,27 +4,6 @@
 	import scanningData from '@demo-data/scanning-records.json';
 	import { selectedScanningRows, allScanningRowsSelected } from '$lib/stores/scanningStore';
 
-	// Ensure we always have 10 rows for consistent table height
-	const MIN_ROWS = 10;
-	$: displayRecords = [...scanningData.records];
-	$: emptyRowsNeeded = Math.max(0, MIN_ROWS - displayRecords.length);
-	$: emptyRows = Array(emptyRowsNeeded).fill().map((_, i) => ({ 
-		id: `empty-${i}`, 
-		isEmpty: true,
-		groupName: '',
-		scanningDate: '',
-		ewesMated: '',
-		ewesScanned: '',
-		ewesPregnant: '',
-		dryEwes: '',
-		conceptionRatio: '',
-		ewesWithSingles: '',
-		ewesWithTwins: '',
-		ewesWithTrips: '',
-		expFetuses: '',
-		scanningAgency: ''
-	}));
-
 	$: checked = false;
 	function toggleCheck() {
 		checked = !checked;
@@ -48,8 +27,6 @@
 	}
 
 	$: isRowSelected = (record) => $selectedScanningRows.some(r => r.id === record.id);
-
-
 
 	function getStatusColor(percentage) {
 		if (!percentage) return 'danger';
@@ -83,12 +60,10 @@
 	function getProductionYear(dateStr) {
 		return new Date(dateStr).getFullYear();
 	}
-
-
 </script>
 
 <div class="table-responsive">
-	<Table hover class="table table-borderless compact-table">
+	<Table class="mb-0" borderless>
 		<thead>
 			<tr class="userDatatable-header">
 				<th>
@@ -106,7 +81,7 @@
 					</div>
 				</th>
 				<th>
-					<span class="userDatatable-title">Scan Date</span>
+					<span class="userDatatable-title text-center">Scanning Date</span>
 				</th>
 				<th>
 					<span class="userDatatable-title text-center">Ewes Mated</span>
@@ -145,17 +120,16 @@
 					<span class="userDatatable-title text-center">Scanning Agency</span>
 				</th>
 				<th>
-					<span class="userDatatable-title text-end">Action</span>
+					<span class="userDatatable-title text-center">Action</span>
 				</th>
 			</tr>
 		</thead>
 		<tbody>
-			{#each [...displayRecords, ...emptyRows] as record, i}
-					<tr class:selected={!record.isEmpty && isRowSelected(record)} class:empty-row={record.isEmpty}>
+			{#each scanningData.records as record, i}
+					<tr class:selected={isRowSelected(record)}>
 						<td>
-							{#if !record.isEmpty}
 							<div class="d-flex align-items-center">
-								<div class="me-2 d-flex align-items-center">
+								<div class="me-3 d-flex align-items-center">
 									<div class="checkbox-group-wrapper">
 										<div class="checkbox-group d-flex">
 											<div
@@ -177,60 +151,38 @@
 									</div>
 								</div>
 							</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{formatDate(record.scanningDate)}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesMated || '-'}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesScanned}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesPregnant}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.dryEwes}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{formatPercentage(record.conceptionRatio)}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesWithSingles}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesWithTwins}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.ewesWithTrips}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-title">{record.expFetuses}</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-content d-inline-block">
 								<Badge
 									pill
@@ -240,10 +192,8 @@
 									{record.ewesMated > 0 ? formatPercentage(record.expFetuses / record.ewesMated * 100) : '0.0%'}
 								</Badge>
 							</div>
-							{/if}
 						</td>
 						<td class="text-center">
-							{#if !record.isEmpty}
 							<div class="userDatatable-content d-inline-block">
 								<Badge
 									pill
@@ -253,31 +203,35 @@
 									{record.ewesPregnant > 0 ? formatPercentage((record.expFetuses / record.ewesPregnant) * 100) : '0.0%'}
 								</Badge>
 							</div>
-							{/if}
 						</td>
-						<td class="text-end">
-							{#if !record.isEmpty}
+						<td class="text-center">
 							<div class="userDatatable-title">{record.scanningAgency || '-'}</div>
-							{/if}
 						</td>
-						<td>
-							{#if !record.isEmpty}
-							<div class="card-extra">
+						<td class="text-center">
+							<div class="card-extra d-flex justify-content-center">
 								<Dropdown nav>
 									<DropdownToggle nav>
-										<img class="svg" alt="" src="/img/svg/more-horizontal.svg" />
+										<div class="orderDatatable_actions">
+											<span class="svg-icon">
+												<i class="uil uil-ellipsis-h" />
+											</span>
+										</div>
 									</DropdownToggle>
-									<DropdownMenu end>
-										<DropdownItem href={'#'}>View</DropdownItem>
-										<DropdownItem href={'#'}>Edit</DropdownItem>
-										<DropdownItem href={'#'}>Delete</DropdownItem>
+									<DropdownMenu right>
+										<DropdownItem href={`/pages/page-edit_scanning?id=${record.id}`}>
+											<i class="uil uil-edit" /> Edit
+										</DropdownItem>
+										<DropdownItem href={`/pages/page-view_scanning?id=${record.id}`}>
+											<i class="uil uil-eye" /> View
+										</DropdownItem>
+										<DropdownItem>
+											<i class="uil uil-trash-alt" /> Delete
+										</DropdownItem>
 									</DropdownMenu>
 								</Dropdown>
 							</div>
-							{/if}
 						</td>
 					</tr>
-
 			{/each}
 		</tbody>
 	</Table>
@@ -287,43 +241,6 @@
 	:global {
 		.selected {
 			background-color: rgba(95, 99, 242, 0.1);
-		}
-		
-		.empty-row {
-			height: 45px; /* Match the height of BreedingTable rows */
-		}
-		
-		/* Make table more compact like BreedingTable */
-		.compact-table {
-			margin-bottom: 0;
-			
-			th, td {
-				padding: 0.4rem 0.5rem;
-				font-size: 14px;
-				vertical-align: middle;
-			}
-			
-			.userDatatable-title, .userDatatable-content {
-				font-size: 14px;
-				margin-bottom: 0;
-			}
-			
-			.badge {
-				padding: 0.25rem 0.5rem;
-				font-size: 12px;
-			}
-		}
-	}
-	
-	/* Card extra styles for action buttons */
-	.card-extra {
-		:global {
-			.nav-link {
-				padding: 0;
-				svg {
-					outline: 0;
-				}
-			}
 		}
 	}
 </style>

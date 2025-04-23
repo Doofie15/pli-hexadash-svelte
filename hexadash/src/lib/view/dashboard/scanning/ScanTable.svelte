@@ -4,15 +4,38 @@
 		CardHeader,
 		CardBody
 	} from 'sveltestrap';
-	import ScanData from '@data/table-data.json';
-	import Scanning from '../../../components/tables/Scanning.svelte';
-	const sellers = ScanData.scanrecords;
+	import scanData from '@demo-data/scanning-records.json';
+	import Scanning from '@components/tables/Scanning.svelte';
+	
+	// Create filtered data sets based on scanning date year
+	const currentYear = new Date().getFullYear();
+	const fiveYearsAgo = currentYear - 5;
+	
+	const thisYearRecords = scanData.records.filter(record => {
+		const scanYear = new Date(record.scanningDate).getFullYear();
+		return scanYear === currentYear;
+	});
+	
+	const fiveYearRecords = scanData.records.filter(record => {
+		const scanYear = new Date(record.scanningDate).getFullYear();
+		return scanYear >= fiveYearsAgo;
+	});
+	
+	const allRecords = scanData.records;
+	
+	// Create a data structure similar to what the component expects
+	const periodData = {
+		'today': thisYearRecords,
+		'week': fiveYearRecords,
+		'month': allRecords
+	};
+	
 	let period = 'today';
 	let currentTab = 'today';
-	let dataPeriod = sellers[period];
+	let dataPeriod = periodData[period];
 
 	function changeData(data) {
-		dataPeriod = sellers[data];
+		dataPeriod = periodData[data];
 		currentTab = data;
 	}
 </script>

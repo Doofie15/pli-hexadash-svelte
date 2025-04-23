@@ -1,6 +1,21 @@
 <script>
 	export let dataPeriod;
 	export let tableHead = true;
+
+	// Format date function
+	function formatDate(dateString) {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('en-US', { 
+			year: 'numeric', 
+			month: 'short', 
+			day: 'numeric' 
+		});
+	}
+
+	// Format percentage
+	function formatPercentage(value) {
+		return value.toFixed(1) + '%';
+	}
 </script>
 
 <div class="selling-table-wrap selling-table-wrap--source table-responsive">
@@ -8,15 +23,18 @@
 		{#if tableHead}
 			<thead>
 				<tr>
-					<th>Scan Group Name</th>
+					<th>Group Name</th>
 					<th>Scanning Date</th>
-					<th># Ewes Mated</th>
-					<th># Ewes Scanned</th>
-					<th># Ewes Pregnant</th>
-					<th># Dry Ewes</th>
-					<th>Conseption Ratio</th>
-					<th># Fetuses</th>
-					<th>Exp. Lambing %</th>
+					<th>Ewes Mated</th>
+					<th>Ewes Scanned</th>
+					<th>Ewes Pregnant</th>
+					<th>Dry Ewes</th>
+					<th>Conception %</th>
+					<th>Singles</th>
+					<th>Twins</th>
+					<th>Triplets</th>
+					<th>Exp. Fetuses</th>
+					<th>Lambing % (Ewes Scanned)</th>
 				</tr>
 			</thead>
 		{/if}
@@ -26,29 +44,22 @@
 					<td>
 						<div class="selling-product-img d-flex align-items-center">
 							<div class="selling-product-img-wrapper order-bg-opacity-primary align-items-end">
-								<img class=" img-fluid" src="/img/sellers/{data.img}" alt="img" />
+								<img class="img-fluid" src="/img/sellers/sheep-icon.png" alt="sheep icon" />
 							</div>
-							<span>{data.grname}</span>
+							<span>{data.groupName}</span>
 						</div>
 					</td>
-					<td>{data.scdate}</td>
-					<td>{data.ewesmated}</td>
-					<td>{data.ewesscanned}</td>
-					<td>{data.ewespregnant}</td>
-					<td>{data.dryewes}</td>
-					<td>{data.ConseptionRatio}</td>
-					<td>{data.Fetuses}</td>
-					<td>{data.ExpLambingperc}</td>
-					<td><div class="table-actions">
-										<a href={'#'}>
-											<img class="svg" alt="" src={'/img/svg/edit.svg'} />
-										</a>
-										<a href={'#'}>
-											<img class="svg" alt="" src={'/img/svg/trash-2.svg'} />
-										</a>
-						</div>
-					</td>
-
+					<td>{formatDate(data.scanningDate)}</td>
+					<td>{data.ewesMated}</td>
+					<td>{data.ewesScanned}</td>
+					<td>{data.ewesPregnant}</td>
+					<td>{data.dryEwes}</td>
+					<td>{formatPercentage(data.conceptionRatio)}</td>
+					<td>{data.ewesWithSingles}</td>
+					<td>{data.ewesWithTwins}</td>
+					<td>{data.ewesWithTrips}</td>
+					<td>{data.expFetuses}</td>
+					<td>{formatPercentage(data.expLambingPercentScanned)}</td>
 				</tr>
 			{/each}
 		</tbody>
@@ -57,8 +68,8 @@
 
 <style lang="scss">
 	@import '../../../assets/sass/mixins/media-queries';
-	@import '../../../assets/sass/components/table';
 	@import '../../../assets/sass/mixins/functions';
+	
 	.selling-table-wrap {
 		.table--default tbody tr:last-child {
 			border-bottom: none;
@@ -87,18 +98,24 @@
 				tr {
 					background: var(--bg-normal);
 				}
+			
+				th {
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 18px;
+					color: var(--color-light);
+					text-transform: uppercase;
+					padding: 11px 15px;
+					text-align: center; /* Center the header text */
+				}
 			}
-		}
-		@include lg {
-			padding-bottom: 0;
-		}
-
-		table {
+			
 			tbody {
 				td {
 					white-space: nowrap;
 					padding: 10px 15px 10px 0;
 					color: var(--color-dark);
+					text-align: center; /* Center the cell content */
 				}
 
 				tr {
@@ -108,24 +125,17 @@
 						}
 					}
 				}
-			}
-
-			thead {
-				tr {
-					th {
-						font-size: 12px;
-						font-weight: 500;
-						line-height: 18px;
-						color: var(--color-light);
-						text-transform: uppercase;
-						padding: 11px 15px;
-					}
+				
+				/* Keep the first column (with the group name) left-aligned */
+				td:first-child {
+					text-align: left;
 				}
 			}
 
 			tr th {
 				&:first-child {
 					border-radius: 6px 0 0 6px;
+					text-align: left; /* Keep first header left-aligned */
 				}
 
 				&:last-child {
@@ -134,56 +144,6 @@
 			}
 		}
 
-		&.selling-table-wrap--2 {
-			table {
-				tbody {
-					tr {
-						&:first-child {
-							td {
-								padding-top: 3px;
-							}
-						}
-
-						td {
-							&:not(:first-child) {
-								font-size: 14px;
-							}
-
-							&:last-child {
-								padding-right: 0;
-							}
-						}
-					}
-				}
-			}
-		}
-		.selling-product-img {
-			img {
-				margin-right: 12px;
-				width: 32px;
-				height: 32px;
-				border-radius: 5px;
-			}
-
-			span {
-				color: var(--color-dark);
-				font-size: 15px;
-				font-weight: 500;
-				line-height: lh(15px, 20px);
-				@include ssm {
-					padding-right: 15px;
-				}
-			}
-
-			&--2 {
-				img {
-					width: 25px;
-					height: 25px;
-					border-radius: 0;
-					object-fit: contain;
-				}
-			}
-		}
 		&--source {
 			.selling-product-img-wrapper {
 				margin-right: 12px;
@@ -200,35 +160,24 @@
 					margin-right: 0;
 					border-radius: 0;
 				}
-
-				i {
-					font-size: 18px;
-				}
+			}
+		}
+		
+		.selling-product-img {
+			img {
+				margin-right: 12px;
+				width: 32px;
+				height: 32px;
+				border-radius: 5px;
 			}
 
-			.progress {
-				min-width: 120px;
-				height: 4px;
-			}
-			&.selling-table-wrap {
-				table {
-					tbody {
-						td {
-							width: 20%;
-						}
-					}
-				}
-			}
-
-			.table--default {
-				tr td:last-child {
-					padding-right: 0;
-				}
-
-				tbody tr {
-					&:hover {
-						background-color: transparent;
-					}
+			span {
+				color: var(--color-dark);
+				font-size: 15px;
+				font-weight: 500;
+				line-height: lh(15px, 20px);
+				@include ssm {
+					padding-right: 15px;
 				}
 			}
 		}

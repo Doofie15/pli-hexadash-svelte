@@ -203,6 +203,24 @@
 				</li>
 				<li class="has-child">
 					<a href={'#'} class="has-child__toggle">
+						<span class="nav-icon uil uil-scanner" />
+						<span class="menu-text">Scanning</span>
+						<span class="toggle-icon" />
+					</a>
+					<ul>
+						<li class="menu-item">
+							<a href="/home-scanning">Overview</a>
+						</li>
+						<li class="menu-item">
+							<a href="/pages/all-scanning">All Scanning</a>
+						</li>
+						<li class="menu-item">
+							<a href="/pages/page-add_scanning">Add Scanning</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-child">
+					<a href={'#'} class="has-child__toggle">
 						<span class="nav-icon uil uil-create-dashboard" />
 						<span class="menu-text">Other Dashboards</span>
 						<span class="toggle-icon" />

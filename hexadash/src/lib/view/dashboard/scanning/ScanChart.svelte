@@ -3,6 +3,8 @@
 	import Chartjs from '@components/utilities/Chartjs.svelte';
 	import { chartLinearGradient, customTooltips } from '@components/utilities/utilities';
 	import { onMount } from 'svelte';
+	import scanningData from '@demo-data/scanning-records.json';
+	
 	let revenue = 'today';
 	let isLoading = false;
 
@@ -27,33 +29,81 @@
 
 	const tooltip = {
 		callbacks: {
-			title() {
-				return `Total Revenue`;
+			title(tooltipItems) {
+				return tooltipItems[0].label;
 			},
 			label(t) {
-				const { formattedValue, dataset } = t;
-				return `${formattedValue}k ${dataset.label}`;
+				const { dataIndex, formattedValue, dataset } = t;
+				const groupName = t.chart.data.labels[dataIndex];
+				return [`${formattedValue}% ${dataset.label}`];
 			}
 		}
 	};
 
-	let salesRevenue = {
-		today: {
-			users: [80, 75],
-			labels: ['2020-01', '2020-02']
-		},
-		week: {
-			users: [40, 30, 35, 20, 25, 40, 35],
-			labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-		},
-		months: {
-			users: [45, 20, 35, 32, 50, 45, 55, 71, 36, 65, 55, 75],
-			labels: ['Jan', 'Feb', 'Mar', 'App', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Oct', 'Dec']
-		}
+	// Get current year
+	const currentYear = new Date().getFullYear();
+	
+	// Process scanning data for chart
+	const processScanningData = () => {
+		// Filter data based on time period
+		const allRecords = scanningData.records;
+		
+		// This Year data (current year only)
+		const thisYearRecords = allRecords.filter(record => {
+			const recordYear = new Date(record.scanningDate).getFullYear();
+			return recordYear === currentYear;
+		});
+		
+		// 5 Years data (current year and 4 previous years)
+		const fiveYearsRecords = allRecords.filter(record => {
+			const recordYear = new Date(record.scanningDate).getFullYear();
+			return recordYear >= currentYear - 4 && recordYear <= currentYear;
+		});
+		
+		// Group data by group name
+		const groupByGroup = (records) => {
+			// Sort records by conception ratio in descending order
+			const sortedRecords = [...records].sort((a, b) => b.conceptionRatio - a.conceptionRatio);
+			
+			// Take top 8 groups by conception ratio to avoid overcrowding
+			const topGroups = sortedRecords.slice(0, 8);
+			
+			// Extract group names and conception ratios
+			const groupNames = topGroups.map(record => record.groupName);
+			const conceptionRatios = topGroups.map(record => record.conceptionRatio);
+			
+			return {
+				labels: groupNames,
+				conception: conceptionRatios
+			};
+		};
+		
+		// Process data for each time period
+		const thisYearData = groupByGroup(thisYearRecords);
+		const fiveYearsData = groupByGroup(fiveYearsRecords);
+		const allData = groupByGroup(allRecords);
+		
+		return {
+			today: {
+				labels: thisYearData.labels,
+				conception: thisYearData.conception
+			},
+			week: {
+				labels: fiveYearsData.labels,
+				conception: fiveYearsData.conception
+			},
+			months: {
+				labels: allData.labels,
+				conception: allData.conception
+			}
+		};
 	};
+	
+	const chartData = processScanningData();
+	
 	$: salesRevenueDatasets = [
 		{
-			data: salesRevenue[revenue].users,
+			data: chartData[revenue].conception,
 			borderColor: primaryColor,
 			borderWidth: 3,
 			fill: true,
@@ -62,14 +112,13 @@
 					start: `rgba(${primaryColorRGB},0.4)`,
 					end: 'rgba(255,255,255,0.05)'
 				}),
-			label: '% ',
+			label: 'Conception Rate',
 			pointStyle: 'circle',
 			pointRadius: '0',
 			hoverRadius: '6',
 			pointBorderColor: '#fff',
 			pointBackgroundColor: primaryColor,
 			hoverBorderWidth: 2,
-			amount: '100 %',
 			amountClass: 'current-amount',
 			lineTension: 0.5
 		}
@@ -120,7 +169,11 @@
 					size: 14,
 					family: "'Jost', sans-serif"
 				},
-				color: '#747474'
+				color: '#747474',
+				padding: 10,
+				autoSkip: true,
+				maxRotation: 45,
+				minRotation: 45
 			}
 		}
 	};
@@ -174,7 +227,7 @@
 						type="bar"
 						id="ninjadash-sales-revenue"
 						className="ninjadash-sales-revenue"
-						labels={salesRevenue[revenue].labels}
+						labels={chartData[revenue].labels}
 						datasets={salesRevenueDatasets}
 						{scales}
 						height={innerWidth < 1399 ? (innerWidth < 575 ? 200 : 150) : 120}

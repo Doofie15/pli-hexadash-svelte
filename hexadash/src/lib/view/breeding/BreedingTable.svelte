@@ -121,7 +121,7 @@
 					<span class="userDatatable-title">Production Year</span>
 				</th>
 				<th>
-					<span class="userDatatable-title float-end">Action</span>
+					<span class="userDatatable-title text-end">Action</span>
 				</th>
 			</tr>
 		</thead>

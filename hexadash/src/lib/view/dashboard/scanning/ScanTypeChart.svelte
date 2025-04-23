@@ -51,6 +51,7 @@
 				value: 100,
 				count: 0,
 				color: '#78909C',
+				gradientColors: ['rgba(120, 144, 156, 0.9)', 'rgba(120, 144, 156, 0.7)'],
 				icon: 'info-circle'
 			}];
 		}
@@ -81,6 +82,7 @@
 				value: 100,
 				count: 0,
 				color: '#78909C',
+				gradientColors: ['rgba(120, 144, 156, 0.9)', 'rgba(120, 144, 156, 0.7)'],
 				icon: 'info-circle'
 			}];
 		}
@@ -112,6 +114,7 @@
 				value: 100,
 				count: 0,
 				color: '#78909C',
+				gradientColors: ['rgba(120, 144, 156, 0.9)', 'rgba(120, 144, 156, 0.7)'],
 				icon: 'info-circle'
 			}];
 		}
@@ -122,6 +125,15 @@
 			'Twins': '#2196F3',   // Blue
 			'Triplets': '#FF9800', // Orange
 			'Dry': '#F44336'    // Red
+		};
+		
+		// Define gradient colors with better opacity
+		const gradientColors = {
+			'Singles': ['rgba(76, 175, 80, 0.9)', 'rgba(76, 175, 80, 0.7)'],
+			'Twins': ['rgba(33, 150, 243, 0.9)', 'rgba(33, 150, 243, 0.7)'],
+			'Triplets': ['rgba(255, 152, 0, 0.9)', 'rgba(255, 152, 0, 0.7)'],
+			'Dry': ['rgba(244, 67, 54, 0.9)', 'rgba(244, 67, 54, 0.7)'],
+			'No Data': ['rgba(120, 144, 156, 0.9)', 'rgba(120, 144, 156, 0.7)']
 		};
 		
 		// Icons for each scan result
@@ -139,6 +151,7 @@
 				value: percentage,
 				count: count,
 				color: colors[type] || '#78909C', // Default color if not in predefined colors
+				gradientColors: gradientColors[type] || ['rgba(120, 144, 156, 0.9)', 'rgba(120, 144, 156, 0.7)'],
 				icon: icons[type] || 'info-circle'
 			});
 		}
@@ -163,23 +176,66 @@
 	$: labels = dataStats.map(item => item.label);
 	$: values = dataStats.map(item => item.value);
 	$: colors = dataStats.map(item => item.color);
+	$: gradientColorsArray = dataStats.map(item => item.gradientColors);
+
+	// Function to create gradient backgrounds
+	function createGradients(chart) {
+		const ctx = chart.ctx;
+		const chartArea = chart.chartArea;
+		
+		if (!chartArea) {
+			// This can happen on initial render
+			return;
+		}
+		
+		// Create gradients for each dataset
+		return dataStats.map((item, i) => {
+			const gradient = ctx.createRadialGradient(
+				chartArea.left + chartArea.width / 2,
+				chartArea.top + chartArea.height / 2,
+				0,
+				chartArea.left + chartArea.width / 2,
+				chartArea.top + chartArea.height / 2,
+				chartArea.width / 2
+			);
+			
+			gradient.addColorStop(0, item.gradientColors[0]);
+			gradient.addColorStop(1, item.gradientColors[1]);
+			
+			return gradient;
+		});
+	}
 
 	$: chartData = [
 		{
 			label: 'Scan Result Distribution',
 			data: values,
-			backgroundColor: colors
+			backgroundColor: function(context) {
+				const chart = context.chart;
+				const {ctx, chartArea} = chart;
+				
+				if (!chartArea) {
+					// This can happen on initial render
+					return gradientColorsArray.map(colors => colors[0]);
+				}
+				
+				return createGradients(chart);
+			},
+			borderWidth: 2,
+			borderColor: 'white'
 		}
 	];
 
 	let tooltip = {
-		backgroundColor: 'rgba(0, 0, 0, 0.8)',
+		backgroundColor: 'rgba(0, 0, 0, 0.85)',
 		titleFontSize: 16,
 		titleFontColor: '#ffffff',
 		bodyFontColor: '#ffffff',
 		bodyFontSize: 14,
 		displayColors: false,
-		padding: 10,
+		padding: 12,
+		cornerRadius: 6,
+		caretSize: 8,
 
 		callbacks: {
 			title(t) {
@@ -315,6 +371,7 @@
 					height: 12px;
 					border-radius: 50%;
 					margin-right: 5px;
+					box-shadow: 0 0 3px rgba(0,0,0,0.1);
 				}
 				
 				.icon {
