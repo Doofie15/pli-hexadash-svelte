@@ -1,6 +1,12 @@
-# PLI HexaDash - Svelte Livestock Management Dashboard
+# Pro Livestock Basic (Concept)
 
-A modern dashboard application built with SvelteKit for livestock breeding management. This application provides comprehensive tools for tracking breeding records, scanning data, and overall livestock management.
+A comprehensive livestock management solution built with Svelte and SvelteKit, focusing on breeding, scanning, and group management for professional livestock operations.
+
+> **Note**: This platform is part of a larger ecosystem of livestock management tools, designed to integrate seamlessly with other PLI services.
+
+## Project Overview
+
+The PLI Breeding Management Platform is a sophisticated web application designed to streamline and modernize livestock breeding operations. Built on the robust Hexadash framework, it provides powerful tools for tracking, analyzing, and optimizing breeding programs.
 
 ## Features
 
